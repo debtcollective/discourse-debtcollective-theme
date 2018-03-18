@@ -1,0 +1,34 @@
+#site-logo {
+    opacity: 0;
+}
+
+/** 
+* TODO: Gotta setup breakpoints for mobile. The logo is too big by default
+*/
+.d-header {
+    left: 0;
+    padding-top: 0;
+    height: 5.2em;
+    
+    .contents {
+        margin: 0;
+        
+        .title {
+            height: 6.7em;
+            width: 28.9em;
+            background-image: url('https://s3.amazonaws.com/tds-static/img/debtsyndicate/0.0.1/logo3x.png');
+            background-size: cover;
+            
+            /* This fills the title to make the whole element a link */
+            a {
+                height: 6.7em;
+                position: absolute;
+                width: 28.9em;
+            }
+
+            // &:hover {
+            //     cursor: pointer;
+            // }
+        }
+    }
+}
