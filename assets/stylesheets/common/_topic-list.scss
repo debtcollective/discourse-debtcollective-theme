@@ -1,0 +1,20 @@
+.topic-list {
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px $text-3;
+  margin-top: 25px;
+
+  tbody {
+    tr:last-child {
+      border-bottom: none;
+    }
+
+    tr:first-child {
+      border-top: none;
+    }
+  }
+
+  thead {
+    display: none;
+  }
+}

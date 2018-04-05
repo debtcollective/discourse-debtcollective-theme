@@ -1,1 +1,8 @@
-@import './navigation';
+@import 'variables';
+@import 'navigation';
+@import 'for-profit-student-debt-collective';
+@import 'background';
+@import 'topic-list';
+@import 'topic';
+
+@import url('http://localhost:8080/dist/css/bootstrap.css');
