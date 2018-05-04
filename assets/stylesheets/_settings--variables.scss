@@ -1,0 +1,31 @@
+// Colors
+$colors: (
+  "white": #ffffff,
+  "black": #000000,
+  "red": #ff4630,
+  "green": #24ba9d,
+  "gray-0": #2b2b2b,
+  "gray-1": #4f4f4f,
+  "gray-2": #828282,
+  "gray-3": #bdbdbd,
+  "gray-4": #e0e0e0,
+  "gray-5": #f2f2f2,
+  "bg-blue": #dbf8ff,
+  "bg-tan": #fcfbf7,
+  "ex-blue": #007fff,
+  "ex-blue-tint": #a6dfff,
+  "ex-red": #f23f56,
+  "ex-green": #70de54,
+  "ex-purple": #9460d6,
+  "ex-orange": #f17129,
+  "ex-yellow": #ffc957
+);
+
+// Color function
+@function color($color, $map: $colors) {
+  @if (map-has-key($map, $color)) {
+    @return map-get($map, $color);
+  }
+
+  @error "color `#{$color}` is missing";
+}

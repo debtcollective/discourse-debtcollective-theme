@@ -1,0 +1,41 @@
+.btn {
+  border-radius: 4px;
+  border: 1px solid rgba(color("gray-0"), 0.25);
+  padding: 8px 12px;
+
+  &-primary,
+  &-primary[disabled] {
+    background: color("green");
+
+    &:hover {
+      background: rgba(color("green"), 0.9);
+    }
+  }
+
+  .btn-primary[disabled],
+  [disabled]#create-topic,
+  .btn-primary.disabled,
+  .disabled#create-topic {
+  }
+}
+
+#create-topic {
+  @extend .btn-primary;
+  padding: 10px 15px;
+}
+
+.nav-pills {
+  li {
+    .active {
+      a {
+        background: color("red");
+      }
+    }
+
+    a {
+      &:hover {
+        background: rgba(color("red"), 0.25);
+      }
+    }
+  }
+}

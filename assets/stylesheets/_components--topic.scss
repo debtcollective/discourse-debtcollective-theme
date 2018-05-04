@@ -1,0 +1,59 @@
+.topic-post {
+  border-left: 0;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .row {
+    postion: relative;
+
+    .topic-avatar {
+      position: absolute;
+      left: 12px;
+      border-top: 0;
+    }
+
+    .topic-body {
+      background: color("white");
+      border-radius: 8px;
+      border: 1px solid color("gray-3");
+      padding: 10px 15px 0;
+
+      &.highlighted {
+        animation: background-fade-highlight 1s ease-out;
+      }
+
+      .regular {
+        margin-top: 35px;
+      }
+    }
+
+    .topic-meta-data {
+      padding-left: 50px;
+
+      .read-state {
+        right: 4px;
+        color: color("green");
+      }
+    }
+  }
+}
+
+.topic-status-info {
+  max-width: 712px;
+  border-top: 0;
+}
+
+@keyframes background-fade-highlight {
+  0% {
+    background-color: color("white");
+  }
+  50% {
+    background-color: color("ex-blue-tint");
+  }
+  100% {
+    background-color: color("white");
+  }
+}
