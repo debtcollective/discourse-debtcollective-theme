@@ -1,0 +1,30 @@
+$navigation-height: 70px;
+
+.d-header {
+  height: $navigation-height;
+  background-color: color("bg-tan");
+  border-bottom: 1px solid color("gray-3");
+  box-shadow: none;
+
+  #site-logo {
+    max-height: 52px;
+  }
+
+  .contents {
+    .panel {
+      margin-top: 5px;
+    }
+  }
+
+  .header-buttons {
+    .btn {
+      padding: 8px 12px;
+    }
+  }
+}
+
+// separation with header is done in the main-outlet
+// since the header is fixed
+#main-outlet {
+  padding-top: $navigation-height + 15px;
+}

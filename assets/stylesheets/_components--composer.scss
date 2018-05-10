@@ -1,0 +1,14 @@
+#reply-control {
+  &.draft {
+    background: color("green");
+  }
+
+  .grippie {
+    background: color("green");
+  }
+}
+
+.d-editor-textarea-wrapper {
+  border-radius: 4px;
+  border: 1px solid color("gray-3");
+}

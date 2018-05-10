@@ -1,0 +1,20 @@
+.admin-interface {
+  .admin-content {
+    .admin-contents {
+      padding: 10px;
+      background: color("white");
+
+      .admin-detail {
+        border-left: none;
+      }
+
+      .admin-controls {
+        margin: -10px -10px 0;
+      }
+
+      .admin-nav {
+        margin-left: -10px;
+      }
+    }
+  }
+}
