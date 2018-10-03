@@ -61,8 +61,8 @@ export default {
       });
 
       // Add links to the hamburger-menu
-      api.decorateWidget("hamburger-menu:generalLinks", () => {
-        return links.map(link => ({ href: link.href, rawLabel: link.label }));
+      api.decorateWidget("hamburger-menu:footerLinks", () => {
+        return links.map(link => ({ href: link.href, rawLabel: link.label, className: "debtcollective-link" }));
       }); 
     });
   }
