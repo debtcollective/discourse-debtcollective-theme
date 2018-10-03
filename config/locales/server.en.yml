@@ -1,0 +1,4 @@
+en:
+  site_settings:
+    debtcollective_theme_enabled: "Enable Debt Collective theme"
+    debtcollective_header_links: "Links to be display in both the header and the hamburger menu"
