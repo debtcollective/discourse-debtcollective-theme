@@ -1,4 +1,5 @@
 body {
   background: url("/plugins/discourse-debtcollective-theme/images/noisy-texture-300x300.png"),
     linear-gradient(color("bg-blue"), color("bg-tan") 25%);
+  overflow-x: hidden;
 }
