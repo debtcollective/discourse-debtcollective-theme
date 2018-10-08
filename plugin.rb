@@ -4,3 +4,5 @@
 # authors: Debt Collective team
 
 register_asset 'stylesheets/main.scss'
+
+enabled_site_setting :debtcollective_theme_enabled

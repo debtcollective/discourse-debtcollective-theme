@@ -1,0 +1,32 @@
+li.header-link {
+  float: left;
+  margin-right: 5px;
+  list-style: none;
+
+  a {
+    border: 1px solid transparent;
+    color: color("gray-0");
+    font-size: $font-up-1;
+    font-weight: 600;
+    line-height: $line-height-medium;
+    padding: 10px 17px;
+
+    &:hover {
+      border-radius: 4px;
+      border: 1px solid color("gray-3");
+    }
+  }
+}
+
+.d-header {
+  .header-buttons,
+  .title {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.desktop-view .vmo,
+.mobile-view .vdo {
+  display: none !important;
+}
