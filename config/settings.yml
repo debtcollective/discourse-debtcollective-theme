@@ -3,6 +3,6 @@ plugins:
     default: true
     client: true
   debtcollective_header_links:
-    default: "Dispute Your Debt, Dispute Your Debt, https://tools.debtcollective.org, vdo, blank, remove|Campaigns, Campaigns, /latest, vdo, self, remove|Events, Events, /latest, vdo, self, remove"
+    default: "Dispute Your Debt, Dispute Your Debt, https://tools.debtcollective.org, vdo, self, remove"
     client: true
     type: list
