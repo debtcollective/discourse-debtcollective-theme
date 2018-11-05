@@ -82,7 +82,6 @@ export default {
                   return debtcollectiveLinks.map(l => {
                     return this.attach("link", {
                       href: l.href,
-                      className: l.className,
                       rawLabel: l.label
                     });
                   });
