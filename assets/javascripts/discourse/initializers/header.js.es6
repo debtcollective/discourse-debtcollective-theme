@@ -2,10 +2,8 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 import { applyDecorators } from "discourse/widgets/widget";
 import { h } from "virtual-dom";
 
-const flatten = array => [].concat.apply([], array);
-
 export default {
-  name: "debtcollective-init",
+  name: "debtcollective-header",
   initialize() {
     withPluginApi("0.8.9", api => {
       /*
@@ -26,7 +24,7 @@ export default {
        * List settings in Discourse are strings separated by '|'
        * Header links follow this pattern
        * label, title, href, className, target, keep
-       * 
+       *
        * keep is used to preserve the link when scrolling inside a topic
        */
       const headerLinks = headerLinksConfig => {
@@ -117,7 +115,7 @@ export default {
               this.attach("menu-links", {
                 name: "admin-links",
                 contents: () => {
-                  const extraLinks = flatten(
+                  const extraLinks = _.flatten(
                     applyDecorators(this, "admin-links", this.attrs, this.state)
                   );
                   return this.adminLinks().concat(extraLinks);
