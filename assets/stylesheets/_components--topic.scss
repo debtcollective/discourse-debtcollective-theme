@@ -1,41 +1,99 @@
-.topic-post {
-  border-left: 0;
-  margin-bottom: 10px;
+.post-stream {
+  .topic-post {
+    border-left: 0;
+    margin-bottom: 10px;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  .row {
-    postion: relative;
-
-    .topic-avatar {
-      position: absolute;
-      left: 12px;
-      border-top: 0;
+    &:last-child {
+      margin-bottom: 0;
     }
 
-    .topic-body {
-      background: color("white");
-      border-radius: 8px;
-      border: 1px solid color("gray-3");
-      padding: 10px 15px 0;
+    article > .row {
+      position: relative;
 
-      &.highlighted {
-        animation: background-fade-highlight 1s ease-out;
+      & > .topic-avatar {
+        position: absolute;
+        left: 11px;
+        padding-top: 10px;
+        border-top: 0;
       }
 
-      .regular {
-        margin-top: 35px;
+      & > .topic-body {
+        background: color("white");
+        border-radius: 8px;
+        border: 1px solid color("gray-3");
+        padding: 10px;
+
+        &.highlighted {
+          animation: background-fade-highlight 1s ease-out;
+        }
+
+        .post-menu-area {
+          margin: 10px 0;
+        }
+
+        .cooked {
+          padding: 0;
+          padding-left: 5px;
+        }
+
+        .post-menu-area {
+          padding-left: 5px;
+        }
+
+        & > .topic-meta-data {
+          padding: 0;
+          height: 45px;
+          align-items: center;
+
+          @media screen and (min-width: $small-width + 1) {
+            padding-left: 51px;
+          }
+
+          .read-state {
+            right: 4px;
+            color: color("green");
+          }
+        }
       }
+    }
+  }
+
+  .embedded-posts {
+    &.bottom {
+      padding-top: 14px;
+      border-top: 1px solid #e9e9e9;
+    }
+
+    .topic-header {
+      display: flex;
+      padding-left: 24px;
+      padding-bottom: 0;
+    }
+
+    .topic-avatar {
+      border-top: 0;
+      padding-left: 0;
+      padding-top: 0px;
     }
 
     .topic-meta-data {
-      padding-left: 50px;
+      flex: 1;
+      padding-left: 0 !important;
 
       .read-state {
         right: 4px;
         color: color("green");
+      }
+    }
+
+    .topic-body {
+      padding: 0;
+      border-top: 0 !important;
+      width: 100%;
+      padding: 0 24px;
+
+      .cooked {
+        margin-top: 10px;
       }
     }
   }
