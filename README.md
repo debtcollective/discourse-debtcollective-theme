@@ -1,3 +1,3 @@
-The Debt Syndicate's Discourse theme and aesthetic-will-enforcer.
+# discourse-debtcollective-theme
 
-Please see [debtsyndicate/tds-static](https://github.com/debtsyndicate/tds-static) for a description of the files hosted in the Debt Syndicate's static visual asset S3 bucket. The logo, and other such resources, are located there.
+Plugin to bend Discourse to the Debt Collective's aesthetic will.

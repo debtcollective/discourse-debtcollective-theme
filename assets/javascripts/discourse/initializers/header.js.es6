@@ -6,21 +6,29 @@ export default {
   name: "debtcollective-header",
   initialize() {
     withPluginApi("0.8.9", api => {
-      /*
+      /**
        * Render headers links
        * Taken from https://github.com/hnb-ku/discourse-custom-header-links/blob/master/common/header.html
        */
 
       api.decorateWidget("home-logo:after", helper => {
-        const titleVisible = helper.attrs.minimized;
-        if (titleVisible) {
-          $(".header-link:not(.keep)").hide();
-        } else {
-          $(".header-link").show();
-        }
+        /**
+         * Something changed in the latest version of Discourse https://meta.discourse.org/t/custom-header-links/90588/16
+         * For now I'm just wrapping this in a setTimeout
+         */
+        setTimeout(() => {
+          const titleVisible = helper.attrs.minimized;
+          //eslint-disable-next-line
+
+          if (titleVisible) {
+            $(".header-link:not(.keep)").hide();
+          } else {
+            $(".header-link").show();
+          }
+        }, 0);
       });
 
-      /*
+      /**
        * List settings in Discourse are strings separated by '|'
        * Header links follow this pattern
        * label, title, href, className, target, keep

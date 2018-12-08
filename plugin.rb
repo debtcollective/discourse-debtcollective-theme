@@ -1,5 +1,5 @@
 # name: discourse-debtcollective-theme
-# about: Plugin to bend Discourse to the Debt Syndicate's aesthetic will
+# about: Plugin to bend Discourse to the Debt Collective's aesthetic will
 # version: 0.0.1
 # authors: Debt Collective team
 
