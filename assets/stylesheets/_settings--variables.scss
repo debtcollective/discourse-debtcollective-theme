@@ -21,6 +21,9 @@ $colors: (
   "ex-yellow": #ffc957
 );
 
+$transition: color 0.15s linear, background-color 0.15s linear,
+  border-color 0.15s linear, box-shadow 0.15s linear;
+
 // Color function
 @function color($color, $map: $colors) {
   @if (map-has-key($map, $color)) {
