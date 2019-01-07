@@ -1,0 +1,12 @@
+.topic-list {
+  tbody {
+    border-top: 0;
+  }
+
+  &-item {
+    td,
+    th {
+      padding: 7px;
+    }
+  }
+}

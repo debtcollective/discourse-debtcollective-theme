@@ -1,0 +1,16 @@
+.category-list {
+  .topic-list {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &-item {
+    padding-top: 0;
+
+    .category-topic-link .main-link .age {
+      display: block;
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+}

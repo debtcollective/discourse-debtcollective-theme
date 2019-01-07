@@ -5,4 +5,6 @@
 
 register_asset 'stylesheets/main.scss'
 
+register_asset 'stylesheets/mobile/main.scss', :mobile
+
 enabled_site_setting :debtcollective_theme_enabled
