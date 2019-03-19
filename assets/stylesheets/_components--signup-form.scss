@@ -1,0 +1,24 @@
+$signup-max-height: 550px;
+
+.d-modal.create-account {
+  .modal-body {
+    padding: 5px 0;
+  }
+
+  .login-form {
+    width: 100%;
+
+    &:before {
+      content: none;
+    }
+
+    form {
+      max-height: $signup-max-height;
+      padding: 0 15px;
+
+      tr {
+        margin-top: 0;
+      }
+    }
+  }
+}
