@@ -1,12 +1,24 @@
 $signup-max-height: 550px;
 
-.d-modal.create-account {
+.d-modal.create-account,
+.d-modal.login-modal {
   .modal-body {
     padding: 5px 0;
   }
 
+  #login-form {
+    padding: 0 15px;
+  }
+
+  #credentials {
+    padding: 5px 0;
+  }
+}
+
+.d-modal.create-account {
   .login-form {
     width: 100%;
+    padding: 0;
 
     &:before {
       content: none;
