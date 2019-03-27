@@ -1,4 +1,4 @@
-$signup-max-height: 550px;
+$signup-min-height: 550px;
 
 .d-modal.create-account,
 .d-modal.login-modal {
@@ -25,7 +25,7 @@ $signup-max-height: 550px;
     }
 
     form {
-      max-height: $signup-max-height;
+      min-height: $signup-min-height;
       padding: 0 15px;
 
       tr {
