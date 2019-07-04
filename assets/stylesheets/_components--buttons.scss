@@ -2,26 +2,52 @@
   border-radius: 4px;
   border: 1px solid rgba(color("gray-0"), 0.25);
   padding: 8px 12px;
+}
 
-  &-primary,
-  &-primary[disabled] {
+.btn-primary {
+  background: color("green");
+  color: color("white");
+
+  &:hover,
+  &.btn-hover {
     background: color("green");
-
-    &:hover {
-      background: rgba(color("green"), 0.9);
-    }
+    color: color("white");
+    opacity: 0.8;
   }
 
-  .btn-primary[disabled],
-  [disabled]#create-topic,
-  .btn-primary.disabled,
-  .disabled#create-topic {
+  .discourse-no-touch & {
+    // only allow hover on no-touch devices
+    &:hover,
+    &.btn-hover {
+      background: color("green");
+      color: color("white");
+      opacity: 0.8;
+
+      .d-icon {
+        color: currentColor;
+      }
+    }
   }
 }
 
 #create-topic {
   @extend .btn-primary;
   padding: 10px 15px;
+}
+
+.btn-primary[disabled],
+.btn-primary.disabled,
+#create-topic[disabled],
+#create-topic.disabled {
+  background: color("green");
+  color: color("white");
+  opacity: 0.8;
+
+  &:hover {
+    background: color("green");
+    color: color("white");
+    opacity: 0.6;
+  }
 }
 
 .nav-pills {
