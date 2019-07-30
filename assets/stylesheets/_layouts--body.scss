@@ -1,3 +1,8 @@
 body {
   background: linear-gradient(color("bg-blue"), color("bg-tan") 50%);
 }
+
+// Reset the Discourse core CSS code to avoid scroll issues
+html {
+  overflow-y: initial;
+}

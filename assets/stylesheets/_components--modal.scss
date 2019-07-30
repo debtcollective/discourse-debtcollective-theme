@@ -3,3 +3,9 @@
     padding: 5px 10px;
   }
 }
+
+// Avoid double scroll on all browsers but Safari iOS <= 12
+body.modal-open {
+  height: 100%;
+  overflow: hidden; 
+}
