@@ -4,6 +4,13 @@
   }
 }
 
+// Use percentages instead vh units to limit modal height and avoid iOS issues
+.modal-inner-container,
+.fixed-modal .modal-inner-container {
+  max-height: 90%;
+  margin-bottom: 0;
+}
+
 // Avoid double scroll on all browsers but Safari iOS <= 12
 body.modal-open {
   height: 100%;
