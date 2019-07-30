@@ -6,3 +6,12 @@ body {
 html {
   overflow-y: initial;
 }
+
+html.device-ios {
+  &.not-support-overflow-hidden {
+    body.modal-open { 
+      position: fixed;
+      width: 100%;
+    }
+  }
+}
