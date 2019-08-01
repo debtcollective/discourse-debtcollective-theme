@@ -5,9 +5,7 @@ body {
 // Reset the Discourse core CSS code to avoid scroll issues
 html {
   overflow-y: initial;
-}
-
-html.device-ios {
+  
   &.not-support-overflow-hidden {
     body.modal-open { 
       position: fixed;
