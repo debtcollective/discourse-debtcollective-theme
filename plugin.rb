@@ -4,7 +4,8 @@
 # authors: Debt Collective team
 
 register_asset 'stylesheets/main.scss'
-
 register_asset 'stylesheets/mobile/main.scss', :mobile
+
+register_asset 'javascripts/helpers/device'
 
 enabled_site_setting :debtcollective_theme_enabled
