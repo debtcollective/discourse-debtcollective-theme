@@ -11,8 +11,12 @@
   margin-bottom: 0;
 }
 
+.modal-inner-container {
+  -webkit-overflow-scrolling: touch;
+}
+
 // Avoid double scroll on all browsers but Safari iOS <= 12
 body.modal-open {
   height: 100%;
-  overflow: hidden; 
+  overflow: hidden;
 }
