@@ -5,5 +5,8 @@
   "assets": {
   },
   "color_schemes": {
+    "Standard": {
+      "primary": "222222"
+    }
   }
 }
