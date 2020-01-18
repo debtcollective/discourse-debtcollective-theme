@@ -1,0 +1,49 @@
+{
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.0.10",
+    "lint-staged": ">=8",
+    "postcss-html": "^0.36.0",
+    "postcss-markdown": "^0.36.0",
+    "postcss-syntax": "^0.36.2",
+    "prettier": "^1.19.1",
+    "prettier-eslint-cli": "^5.0.0",
+    "stylefmt": "^6.0.3",
+    "stylelint": "^13.0.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-prettier": "^1.1.2"
+  },
+  "scripts": {
+    "husky:commitmsg": "commitlint -E HUSKY_GIT_PARAMS",
+    "husky:precommit": "yarn run prettier"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "prettier": {},
+  "lint-staged": {
+    "*.{js,html}": [
+      "prettier-eslint --write",
+      "git add"
+    ],
+    "*.{md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "stylefmt",
+      "stylelint --syntax scss",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  }
+}
