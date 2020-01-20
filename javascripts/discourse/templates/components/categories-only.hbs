@@ -2,15 +2,15 @@
 {{#if categories}}
 <h2 class="dc-heading">{{theme-i18n "dc.categories.collectives"}}</h2>
 {{#each categories as |c|}}
-<div class="dc-category dc-card">
-  <div class="dc-category__title">
-    {{category-title-link category=c}}
+<a class="dc-category dc-card" href={{c.url}}>
+  <div class="dc-category__title dc-card__title">
+    {{c.name}}
   </div>
-  <div class="dc-category__description">
+  <div class="dc-category__description dc-card__text">
     {{#if c.description_excerpt}}
     {{{dir-span c.description_excerpt}}}
     {{/if}}
   </div>
-</div>
+</a>
 {{/each}}
 {{/if}}
