@@ -1,3 +1,15 @@
-@import "common/foundation/variables";
+// Colours
+$beige: #faf9f5;
+$blue: #d8f6ff;
+$gray: #2b2b2b;
+$green: #d6ffb8;
+$purple: #dac4f5;
+$red: #ff4630;
+$yellow: #ffed9c;
 
-$body-bg: white;
+// Custom
+$font-family-sans-serif: "Libre Franklin", sans-serif;
+$font-family-monospace: "More Gothic Bold", Impact, sans-serif;
+
+$body-bg: $beige;
+$primary: $red;
