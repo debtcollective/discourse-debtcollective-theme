@@ -8,9 +8,37 @@ $red: #ff4630;
 $yellow: #ffed9c;
 $white: #ffffff;
 
-// Custom
+// Theme
 $dc-font-family-sans-serif: "Libre Franklin", sans-serif;
 $dc-font-family-monospace: "More Gothic Bold", Impact, sans-serif;
 
 $dc-body-bg: $beige;
 $dc-primary: $red;
+
+// Foundation customisation
+
+$small-width: map-get(
+  $map: $container-max-widths,
+  $key: "md"
+);
+$medium-width: map-get(
+  $map: $container-max-widths,
+  $key: "lg"
+);
+$large-width: map-get(
+  $map: $container-max-widths,
+  $key: "xl"
+);
+
+@import "common/foundation/variables";
+
+/*
+  There is a set of variables $small-width: 800px !default; $medium-width: 995px !default;
+  $large-width: 1110px !default; but due to the inability to overwrite them, this patch overwrites
+  the rule we wanted to affect.
+*/
+
+.wrap {
+  max-width: map-get($map: $container-max-widths, $key: "xl");
+  padding: 0 $grid-gutter-width/2;
+}
