@@ -1,16 +1,22 @@
 {{!-- https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/components/categories-only.hbs --}}
 {{#if categories}}
-<h2 class="dc-heading">{{theme-i18n "dc.categories.collectives"}}</h2>
-{{#each categories as |c|}}
-<a class="dc-category dc-card" href={{c.url}}>
-  <div class="dc-category__title dc-card__title">
-    {{c.name}}
+<div class="dc-categories-container">
+  <h2 class="dc-heading">{{theme-i18n "dc.categories.collectives"}}</h2>
+  <div class="dc-row">
+    {{#each categories as |c|}}
+    <div class="dc-col-sm-6">
+      <a class="dc-category dc-card" href={{c.url}}>
+        <div class="dc-category__title dc-card__title">
+          {{c.name}}
+        </div>
+        <div class="dc-category__description dc-card__text">
+          {{#if c.description_excerpt}}
+          {{{dir-span c.description_excerpt}}}
+          {{/if}}
+        </div>
+      </a>
+    </div>
+    {{/each}}
   </div>
-  <div class="dc-category__description dc-card__text">
-    {{#if c.description_excerpt}}
-    {{{dir-span c.description_excerpt}}}
-    {{/if}}
-  </div>
-</a>
-{{/each}}
+</div>
 {{/if}}
