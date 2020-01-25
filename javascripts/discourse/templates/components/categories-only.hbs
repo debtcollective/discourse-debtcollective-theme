@@ -5,7 +5,7 @@
   <div class="dc-row">
     {{#each categories as |c|}}
     <div class="dc-col-sm-6">
-      <a class="dc-category dc-card" href={{c.url}}>
+      <a class="dc-category dc-card" href={{c.url}} style="border-top-color: #{{c.color}};">
         <div class="dc-category__title dc-card__title">
           {{c.name}}
         </div>
