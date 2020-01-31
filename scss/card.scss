@@ -7,14 +7,34 @@
   padding: 1.5rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+  // to being able to overwrite #list-area h2 rule
+  #list-area &__title,
   &__title {
     color: $primary;
     text-transform: capitalize;
     font-size: 1.5rem;
     font-weight: 600;
+    margin-top: 0;
   }
 
   &__text {
     color: $primary;
   }
+}
+
+.dc-category {
+  height: 12em;
+  justify-content: space-between;
+}
+
+.dc-category__description {
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+
+.dc-category__meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $primary !important;
 }

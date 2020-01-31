@@ -7,13 +7,19 @@
     {{#if c.is_collective}}
     <div class="dc-col-sm-6">
       <a class="dc-category dc-card" href={{c.url}} style="border-top-color: #{{c.color}};">
-        <div class="dc-category__title dc-card__title">
-          {{c.name}}
+        <div class="dc-category__content">
+          <h2 class="dc-category__title dc-card__title">
+            {{c.name}}
+          </h2>
+          <div class="dc-category__description dc-card__text">
+            {{#if c.description_excerpt}}
+            {{{dir-span c.description_excerpt}}}
+            {{/if}}
+          </div>
         </div>
-        <div class="dc-category__description dc-card__text">
-          {{#if c.description_excerpt}}
-          {{{dir-span c.description_excerpt}}}
-          {{/if}}
+        <div class="dc-category__meta">
+          <span class="material-icons">comment</span>
+          <p class="m-0 ml-1">{{c.totalTopicCount}}</p>
         </div>
       </a>
     </div>
@@ -30,13 +36,19 @@
     {{#unless c.is_collective}}
     <div class="dc-col-sm-6">
       <a class="dc-category dc-card" href={{c.url}} style="border-top-color: #{{c.color}};">
-        <div class="dc-category__title dc-card__title">
-          {{c.name}}
+        <div class="dc-category__content">
+          <h2 class="dc-category__title dc-card__title">
+            {{c.name}}
+          </h2>
+          <div class="dc-category__description dc-card__text">
+            {{#if c.description_excerpt}}
+            {{{dir-span c.description_excerpt}}}
+            {{/if}}
+          </div>
         </div>
-        <div class="dc-category__description dc-card__text">
-          {{#if c.description_excerpt}}
-          {{{dir-span c.description_excerpt}}}
-          {{/if}}
+        <div class="dc-category__meta">
+          <span class="material-icons">comment</span>
+          <p class="m-0 ml-1">{{c.totalTopicCount}}</p>
         </div>
       </a>
     </div>
