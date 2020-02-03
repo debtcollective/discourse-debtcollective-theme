@@ -6,16 +6,7 @@
     {{#each categories as |c|}}
     {{#if c.is_collective}}
     <div class="dc-col-sm-6">
-      <a class="dc-category dc-card" href={{c.url}} style="border-top-color: #{{c.color}};">
-        <div class="dc-category__title dc-card__title">
-          {{c.name}}
-        </div>
-        <div class="dc-category__description dc-card__text">
-          {{#if c.description_excerpt}}
-          {{{dir-span c.description_excerpt}}}
-          {{/if}}
-        </div>
-      </a>
+      {{dc-category-card category=c}}
     </div>
     {{/if}}
     {{/each}}
@@ -29,16 +20,7 @@
     {{#each categories as |c|}}
     {{#unless c.is_collective}}
     <div class="dc-col-sm-6">
-      <a class="dc-category dc-card" href={{c.url}} style="border-top-color: #{{c.color}};">
-        <div class="dc-category__title dc-card__title">
-          {{c.name}}
-        </div>
-        <div class="dc-category__description dc-card__text">
-          {{#if c.description_excerpt}}
-          {{{dir-span c.description_excerpt}}}
-          {{/if}}
-        </div>
-      </a>
+      {{dc-category-card category=c}}
     </div>
     {{/unless}}
     {{/each}}
