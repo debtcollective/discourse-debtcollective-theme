@@ -1,3 +1,7 @@
 body {
   background: $dc-body-bg;
 }
+
+.dc-clamp-3 {
+  @include clamp-text();
+}
