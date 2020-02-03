@@ -6,22 +6,7 @@
     {{#each categories as |c|}}
     {{#if c.is_collective}}
     <div class="dc-col-sm-6">
-      <a class="dc-category dc-card" href={{c.url}} style="border-top-color: #{{c.color}};">
-        <div class="dc-category__content">
-          <h2 class="dc-category__title dc-card__title">
-            {{c.name}}
-          </h2>
-          <div class="dc-category__description dc-card__text dc-clamp-3">
-            {{#if c.description_excerpt}}
-            {{{dir-span c.description_excerpt}}}
-            {{/if}}
-          </div>
-        </div>
-        <div class="dc-category__meta">
-          <span class="material-icons">comment</span>
-          <p class="m-0 ml-1">{{c.totalTopicCount}}</p>
-        </div>
-      </a>
+      {{dc-category-card category=c}}
     </div>
     {{/if}}
     {{/each}}
@@ -35,22 +20,7 @@
     {{#each categories as |c|}}
     {{#unless c.is_collective}}
     <div class="dc-col-sm-6">
-      <a class="dc-category dc-card" href={{c.url}} style="border-top-color: #{{c.color}};">
-        <div class="dc-category__content">
-          <h2 class="dc-category__title dc-card__title">
-            {{c.name}}
-          </h2>
-          <div class="dc-category__description dc-card__text dc-clamp-3">
-            {{#if c.description_excerpt}}
-            {{{dir-span c.description_excerpt}}}
-            {{/if}}
-          </div>
-        </div>
-        <div class="dc-category__meta">
-          <span class="material-icons">comment</span>
-          <p class="m-0 ml-1">{{c.totalTopicCount}}</p>
-        </div>
-      </a>
+      {{dc-category-card category=c}}
     </div>
     {{/unless}}
     {{/each}}
