@@ -1,6 +1,9 @@
 {{!-- https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/components/topic-list.hbs --}}
-{{#each filteredTopics as |topic|}}
-{{topic-list-item topic=topic
+<div class="dc-topic-list-container">
+  <div class="dc-row">
+    {{#each filteredTopics as |topic|}}
+    <div class="dc-col-sm-6">
+      {{topic-list-item topic=topic
                       bulkSelectEnabled=bulkSelectEnabled
                       showTopicPostBadges=showTopicPostBadges
                       hideCategory=hideCategory
@@ -12,5 +15,8 @@
                       lastVisitedTopic=lastVisitedTopic
                       selected=selected
                       tagsForUser=tagsForUser}}
-{{raw "list/visited-line" lastVisitedTopic=lastVisitedTopic topic=topic}}
-{{/each}}
+      {{raw "list/visited-line" lastVisitedTopic=lastVisitedTopic topic=topic}}
+    </div>
+    {{/each}}
+  </div>
+</div>

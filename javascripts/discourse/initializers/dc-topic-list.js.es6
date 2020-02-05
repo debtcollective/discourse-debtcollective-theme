@@ -7,6 +7,10 @@ export default {
       api.modifyClass("component:topic-list", {
         tagName: "div"
       });
+
+      api.modifyClass("component:topic-list-item", {
+        tagName: "div"
+      });
     });
   }
 };
