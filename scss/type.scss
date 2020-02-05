@@ -15,3 +15,7 @@ body {
 .dc-text-light {
   @include dc-text-light;
 }
+
+.dc-text-small {
+  font-size: $dc-font-size-sm;
+}
