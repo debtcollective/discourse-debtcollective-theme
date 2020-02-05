@@ -7,13 +7,17 @@
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 1rem;
 
   &,
   &:visited,
   &:active {
     color: $primary;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
   }
 
   // to being able to overwrite #list-area h2 rule

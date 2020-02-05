@@ -1,0 +1,16 @@
+{{!-- 
+The author is always the first poster, nevertheless, we are not able to use
+helpers like https://handlebarsjs.com/api-reference/data-variables.html#first
+neither change to use handlebars array syntax like "posters.0" because when
+we complete the composition to render the avatar it yields error.
+ --}}
+<div class="dc-show-only-first-poster">
+  {{#each posters as |poster|}}
+  {{avatar 
+    poster 
+    avatarTemplatePath="user.avatar_template" 
+    usernamePath="user.username" 
+    namePath="user.name" 
+    imageSize="large"}}
+  {{/each}}
+</div>
