@@ -10,6 +10,12 @@
   padding: 1.5rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+  &,
+  &:visited,
+  &:active {
+    color: $primary;
+  }
+
   // to being able to overwrite #list-area h2 rule
   #list-area &__title,
   &__title {
@@ -28,6 +34,5 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: $primary;
   }
 }
