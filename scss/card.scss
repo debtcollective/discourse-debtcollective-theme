@@ -24,6 +24,11 @@
     font-size: $dc-font-size-lg;
     font-weight: 600;
     margin-top: 0;
+    margin-bottom: 0.625rem;
+  }
+
+  &__title ~ &__meta {
+    margin-top: -0.625rem;
   }
 
   &__text {
@@ -34,5 +39,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    p {
+      margin: 0;
+    }
   }
 }

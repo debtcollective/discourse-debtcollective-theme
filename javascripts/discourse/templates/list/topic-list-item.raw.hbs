@@ -4,6 +4,16 @@
     <h2 class="dc-card__title">
       {{topic.fancyTitle}}
     </h2>
+    <div class="dc-card__meta dc-text-small">
+      {{#if topic.pinned}}
+      <p class="dc-info-pill mr-1" style="background-color: #{{topic.category.color}};">
+        staff post
+      </p>
+      {{/if}}
+      <p class="dc-text-light">
+        {{#if topic.pinned}}&middot;{{/if}} 17 Jan, 2020
+      </p>
+    </div>
     <div class="dc-card__text dc-clamp-3">
       {{raw "list/topic-excerpt" topic=topic}}
     </div>
