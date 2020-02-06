@@ -5,3 +5,17 @@ body {
 .dc-heading {
   font-size: 2rem;
 }
+
+@mixin dc-text-light($size: inherit) {
+  color: $primary;
+  font-weight: 300;
+  font-size: $size;
+}
+
+.dc-text-light {
+  @include dc-text-light;
+}
+
+.dc-text-small {
+  font-size: $dc-font-size-sm;
+}

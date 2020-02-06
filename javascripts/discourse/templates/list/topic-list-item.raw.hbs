@@ -1,0 +1,32 @@
+{{!-- https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/list/topic-list-item.raw.hbs#L1 --}}
+<a class="dc-topic dc-card" href={{topic.lastUnreadUrl}} style="border-top-color: #{{topic.category.color}};">
+  <header class="dc-card__header">
+    <div class="mr-2">
+      {{raw "list/topic-author" posters=topic.featuredUsers}}
+    </div>
+    <div>
+      <h2 class="dc-card__title">
+        {{topic.fancyTitle}}
+      </h2>
+      <div class="dc-card__meta dc-text-small">
+        {{#if topic.pinned}}
+        <p class="dc-info-pill mr-1" style="background-color: #{{topic.category.color}};">
+          staff post
+        </p>
+        {{/if}}
+        <p class="dc-text-light">
+          {{#if topic.pinned}}&middot;{{/if}} 17 Jan, 2020
+        </p>
+      </div>
+    </div>
+  </header>
+  <div class="dc-card__content">
+    <div class="dc-card__text dc-clamp-3">
+      {{raw "list/topic-excerpt" topic=topic}}
+    </div>
+  </div>
+  <footer class="dc-card__meta">
+    <span class="material-icons">comment</span>
+    <p class="m-0 ml-1 dc-text-light">{{topic.replyCount}}</p>
+  </footer>
+</a>

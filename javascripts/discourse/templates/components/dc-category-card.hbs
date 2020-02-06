@@ -1,16 +1,16 @@
 <a class="dc-category dc-card" href={{category.url}} style="border-top-color: #{{category.color}};">
-  <div class="dc-category__content">
-    <h2 class="dc-category__title dc-card__title">
+  <div class="dc-card__content">
+    <h2 class="dc-card__title">
       {{category.name}}
     </h2>
-    <div class="dc-category__description dc-card__text dc-clamp-3">
+    <div class="dc-card__text dc-clamp-3">
       {{#if category.description_excerpt}}
       {{{dir-span category.description_excerpt}}}
       {{/if}}
     </div>
   </div>
-  <div class="dc-category__meta">
+  <div class="dc-card__meta">
     <span class="material-icons">comment</span>
-    <p class="m-0 ml-1">{{category.totalTopicCount}}</p>
+    <p class="m-0 ml-1 dc-text-light">{{category.totalTopicCount}}</p>
   </div>
 </a>
