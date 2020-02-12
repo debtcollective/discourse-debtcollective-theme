@@ -1,33 +1,33 @@
 <a class="dc-topic dc-card" href={{topic.lastUnreadUrl}} style="border-top-color: #{{topic.category.color}};">
-  <header class="dc-card__header">
-    <div class="mr-2">
-      {{raw "list/dc-topic-author" posters=topic.featuredUsers}}
-    </div>
-    <div>
-      <h2 class="dc-card__title">
-        {{topic.fancyTitle}}
-      </h2>
-      <div class="dc-card__meta dc-text-small">
-        {{#if topic.pinned}}
-        <p class="dc-info-pill mr-1" style="background-color: #{{topic.category.color}};">
-          staff post
-        </p>
-        {{/if}}
-        <p class="dc-text-light">
-          {{#if topic.pinned}}&middot;{{/if}} 17 Jan, 2020
-        </p>
-      </div>
-    </div>
-  </header>
-  {{#if topic.hasExcerpt}}
+  <div class="mr-2">
+    {{raw "list/dc-topic-author" posters=topic.featuredUsers}}
+  </div>
   <div class="dc-card__content">
+    <header class="dc-card__header">
+      <div>
+        <h2 class="dc-card__title">
+          {{topic.fancyTitle}}
+        </h2>
+        <div class="dc-card__meta dc-text-small">
+          {{#if topic.pinned}}
+          <p class="dc-info-pill mr-1" style="background-color: #{{topic.category.color}};">
+            staff post
+          </p>
+          {{/if}}
+          <p class="dc-text-light">
+            {{#if topic.pinned}}&middot;{{/if}} 17 Jan, 2020
+          </p>
+        </div>
+      </div>
+    </header>
+    {{#if topic.hasExcerpt}}
     <div class="dc-card__text dc-clamp-3">
       {{{dir-span topic.escapedExcerpt}}}
     </div>
+    {{/if}}
+    <footer class="dc-card__meta">
+      <span class="material-icons">comment</span>
+      <p class="m-0 ml-1 dc-text-light">{{topic.replyCount}}</p>
+    </footer>
   </div>
-  {{/if}}
-  <footer class="dc-card__meta">
-    <span class="material-icons">comment</span>
-    <p class="m-0 ml-1 dc-text-light">{{topic.replyCount}}</p>
-  </footer>
 </a>
