@@ -1,4 +1,3 @@
-{{!-- https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/list/topic-list-item.raw.hbs#L1 --}}
 <a class="dc-topic dc-card" href={{topic.lastUnreadUrl}} style="border-top-color: #{{topic.category.color}};">
   <header class="dc-card__header">
     <div class="mr-2">
