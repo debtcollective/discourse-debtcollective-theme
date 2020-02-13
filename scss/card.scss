@@ -14,7 +14,7 @@
   &:hover,
   &:visited,
   &:active {
-    color: $primary;
+    color: $body-color;
   }
 
   &__header {
@@ -25,7 +25,7 @@
   // to being able to overwrite #list-area h2 rule
   #list-area &__title,
   &__title {
-    color: $primary;
+    color: $body-color;
     text-transform: capitalize;
     font-size: $font-size-lg;
     font-weight: 600;

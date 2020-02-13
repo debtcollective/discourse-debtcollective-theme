@@ -7,7 +7,6 @@ body {
 }
 
 @mixin dc-text-light($size: inherit) {
-  color: $primary;
   font-weight: 300;
   font-size: $size;
 }
