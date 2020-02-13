@@ -1,0 +1,27 @@
+// https://github.com/discourse/discourse/blob/master/app/assets/stylesheets/common/components/buttons.scss
+
+.btn-dark {
+  @include btn(
+    $text-color: $secondary,
+    $bg-color: lighten($primary, 10%),
+    $icon-color: $secondary,
+    $hover-bg-color: lighten($primary, 20%),
+    $hover-icon-color: $secondary
+  );
+  border-radius: $border-radius;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: $btn-block-spacing-y;
+  }
+}
+
+.btn-lg {
+  font-size: $btn-font-size-lg;
+  padding: $btn-padding-y-lg $btn-padding-x-lg;
+}

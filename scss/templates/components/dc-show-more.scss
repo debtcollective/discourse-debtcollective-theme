@@ -3,3 +3,11 @@
     display: none;
   }
 }
+
+.btn-show-more {
+  @extend .btn-dark;
+  @extend .btn-block;
+  @extend .btn-lg;
+  font-weight: $font-weight-bold;
+  font-size: 1.25rem;
+}
