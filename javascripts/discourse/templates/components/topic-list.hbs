@@ -1,22 +1,24 @@
-{{!-- https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/components/topic-list.hbs --}}
+{{! https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/components/topic-list.hbs }}
 <div class="dc-topic-list-container">
   <div class="dc-row">
     {{#each filteredTopics as |topic|}}
-    <div class="dc-col-sm-6">
-      {{topic-list-item topic=topic
-                      bulkSelectEnabled=bulkSelectEnabled
-                      showTopicPostBadges=showTopicPostBadges
-                      hideCategory=hideCategory
-                      showPosters=showPosters
-                      showLikes=showLikes
-                      showOpLikes=showOpLikes
-                      expandGloballyPinned=expandGloballyPinned
-                      expandAllPinned=expandAllPinned
-                      lastVisitedTopic=lastVisitedTopic
-                      selected=selected
-                      tagsForUser=tagsForUser}}
-      {{raw "list/visited-line" lastVisitedTopic=lastVisitedTopic topic=topic}}
-    </div>
+      <div class="dc-col-sm-6">
+        {{topic-list-item
+          topic=topic
+          bulkSelectEnabled=bulkSelectEnabled
+          showTopicPostBadges=showTopicPostBadges
+          hideCategory=hideCategory
+          showPosters=showPosters
+          showLikes=showLikes
+          showOpLikes=showOpLikes
+          expandGloballyPinned=expandGloballyPinned
+          expandAllPinned=expandAllPinned
+          lastVisitedTopic=lastVisitedTopic
+          selected=selected
+          tagsForUser=tagsForUser
+        }}
+        {{raw "list/visited-line" lastVisitedTopic=lastVisitedTopic topic=topic}}
+      </div>
     {{/each}}
   </div>
 </div>
