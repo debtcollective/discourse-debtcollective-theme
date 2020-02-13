@@ -9,43 +9,38 @@ $yellow: #ffed9c;
 $white: #ffffff;
 
 // Theme
-$dc-font-family-sans-serif: "Libre Franklin", sans-serif;
-$dc-font-family-monospace: "More Gothic Bold", Impact, sans-serif;
+$font-family-sans-serif: "Libre Franklin", sans-serif;
+$font-family-monospace: "More Gothic Bold", Impact, sans-serif;
 
-$dc-font-size-base: 1rem;
-$dc-font-size-lg: $font-size-base * 1.5;
-$dc-font-size-sm: $font-size-base * 0.875;
-$dc-font-weight-light: 300;
-$dc-font-weight-normal: 400;
-$dc-font-weight-bold: 600;
+$font-size-base: 1rem;
+$font-size-lg: 1rem * 1.5;
+$font-size-sm: 1rem * 0.875;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
 
-$dc-body-bg: $beige;
-$dc-primary: $red;
-$dc-card-height: 14rem;
+$input-btn-padding-y-lg: 0.75rem;
+$input-btn-padding-x-lg: 1.5rem;
 
-// Foundation customisation
-
-$small-width: map-get(
-  $map: $container-max-widths,
-  $key: "md"
-);
-$medium-width: map-get(
-  $map: $container-max-widths,
-  $key: "lg"
-);
-$large-width: map-get(
-  $map: $container-max-widths,
-  $key: "xl"
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
 );
 
-@import "common/foundation/variables";
+$grid-gutter-width: 30px;
+$container-padding-x: $grid-gutter-width / 2;
+
+$body-bg: $beige;
+$primary: $gray;
+$card-height: 14rem;
 
 /*
-  There is a set of variables $small-width: 800px !default; $medium-width: 995px !default;
-  $large-width: 1110px !default; but due to the inability to overwrite them, this patch overwrites
-  the rule we wanted to affect.
+  There is a set of variables on "Foundation": $small-width: 800px !default; $medium-width: 995px !default;
+  $large-width: 1110px !default; but due to the inability to overwrite them, the rule below overwrites
+  the CSS we wanted to affect.
 */
-
 .wrap {
   max-width: map-get($map: $container-max-widths, $key: "xl");
   padding: 0 $grid-gutter-width/2;
