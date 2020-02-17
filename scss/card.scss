@@ -41,6 +41,12 @@
     @include dc-text-light($dc-font-size-sm);
   }
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   &__meta {
     display: flex;
     align-items: center;

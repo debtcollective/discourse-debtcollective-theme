@@ -1,0 +1,7 @@
+{{!-- https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/mobile/list/topic-list-item.hbr --}}
+{{!-- 
+  This template doesn't seems to render as expected
+  https://meta.discourse.org/t/unable-to-replace-topic-list-item-raw-hbs-topic-list-item-hbr-on-mobile/141395
+  the customisation of this is happening within javascripts/discourse/templates/components/topic-list-item.hbs
+ --}}
+{{raw 'list/dc-topic-card' topic=topic}}
