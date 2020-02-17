@@ -11,10 +11,22 @@ body {
   font-size: $size;
 }
 
+.dc-text-body {
+  font-size: $font-size-base;
+  color: $body-color;
+}
+
 .dc-text-light {
   @include dc-text-light;
 }
 
 .dc-text-small {
   font-size: $font-size-sm;
+}
+
+.dc-inline-icons {
+  $icon-correction: 2px;
+  font-size: $font-size-base;
+  position: relative;
+  top: $icon-correction;
 }

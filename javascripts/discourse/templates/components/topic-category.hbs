@@ -1,0 +1,12 @@
+{{! https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/components/topic-category.hbs }}
+{{#unless topic.isPrivateMessage}}
+  <a href={{topic.category.url}}>
+    <span class="dc-text-body">
+      <span class="material-icons dc-inline-icons">
+        arrow_back_ios
+      </span>
+      Back to
+    </span>
+    {{topic.category.name}}
+  </a>
+{{/unless}}
