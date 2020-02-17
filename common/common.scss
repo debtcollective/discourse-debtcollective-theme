@@ -2,10 +2,11 @@
 @import url("https://s3.amazonaws.com/tds-static/fonts/moregothic/1.0.0/More+Gothic+Bold.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-@import "bootstrap/bootstrap-grid";
 @import "variables";
+@import "bootstrap/bootstrap-grid";
 @import "functions";
 
+@import "button";
 @import "layout";
 @import "type";
 @import "card";
@@ -13,6 +14,7 @@
 
 @import "templates/components/categories-only";
 @import "templates/components/topic-list";
+@import "templates/components/dc-show-more";
 
 @import "templates/list/dc-topic-author";
 @import "templates/list/dc-topic-card";

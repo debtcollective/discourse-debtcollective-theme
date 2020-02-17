@@ -1,6 +1,6 @@
 {
   // Allow to use built-in @ts-check to help the vanilla JS
-  "javascript.validate.enable": true,
+  "javascript.validate.enable": false,
   // Allow the style linting work as expected
   "editor.formatOnSave": true
 }

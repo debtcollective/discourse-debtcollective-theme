@@ -1,0 +1,13 @@
+.show-more-section {
+  &:not(.expanded) .show-more-visible-false {
+    display: none;
+  }
+}
+
+.btn-show-more {
+  @extend .btn-dark;
+  @extend .btn-block;
+  @extend .btn-lg;
+  font-weight: $font-weight-bold;
+  font-size: 1.25rem;
+}

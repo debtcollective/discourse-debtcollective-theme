@@ -1,0 +1,6 @@
+{{yield}}
+{{#if displayButton}}
+  <button class="btn-show-more" {{on "click" this.toggleExpanded}}>
+    {{displayText}}
+  </button>
+{{/if}}

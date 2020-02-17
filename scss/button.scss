@@ -1,0 +1,28 @@
+@import "discourse/button";
+
+.btn-dark {
+  @include btn(
+    $text-color: $white,
+    $bg-color: $dark,
+    $icon-color: $white,
+    $hover-text-color: $white,
+    $hover-bg-color: lighten($dark, 10%),
+    $hover-icon-color: $white
+  );
+  border-radius: $border-radius;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: $btn-block-spacing-y;
+  }
+}
+
+.btn-lg {
+  font-size: $btn-font-size-lg;
+  padding: $btn-padding-y-lg $btn-padding-x-lg;
+}

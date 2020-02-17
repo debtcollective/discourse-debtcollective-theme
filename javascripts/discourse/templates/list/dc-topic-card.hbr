@@ -10,24 +10,31 @@
         </h2>
         <div class="dc-card__meta dc-text-small">
           {{#if topic.pinned}}
-          <p class="dc-info-pill mr-1" style="background-color: #{{topic.category.color}};">
-            staff post
-          </p>
+            <p class="dc-info-pill mr-1" style="background-color: #{{topic.category.color}};">
+              staff post
+            </p>
           {{/if}}
           <p class="dc-text-light">
-            {{#if topic.pinned}}&middot;{{/if}} 17 Jan, 2020
+            {{#if topic.pinned}}
+              ·
+            {{/if}}
+            {{dc-format-date topic.createdAt}}
           </p>
         </div>
       </div>
     </header>
     {{#if topic.hasExcerpt}}
-    <div class="dc-card__text dc-clamp-3">
-      {{{dir-span topic.escapedExcerpt}}}
-    </div>
+      <div class="dc-card__text dc-clamp-3">
+        {{{dir-span topic.escapedExcerpt}}}
+      </div>
     {{/if}}
     <footer class="dc-card__meta">
-      <span class="material-icons">comment</span>
-      <p class="m-0 ml-1 dc-text-light">{{topic.replyCount}}</p>
+      <span class="material-icons">
+        comment
+      </span>
+      <p class="m-0 ml-1 dc-text-light">
+        {{topic.replyCount}}
+      </p>
     </footer>
   </div>
 </a>

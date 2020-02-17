@@ -1,0 +1,65 @@
+// https://github.com/discourse/discourse/blob/master/app/assets/stylesheets/common/components/buttons.scss
+
+@mixin btn(
+  $text-color: $primary,
+  $bg-color: $primary-low,
+  $icon-color: $primary-high,
+  $hover-text-color: $secondary,
+  $hover-bg-color: $primary-medium,
+  $hover-icon-color: $primary-low
+) {
+  display: inline-block;
+  margin: 0;
+  padding: 6px 12px;
+  min-height: 30px;
+  border: none;
+  box-sizing: border-box;
+  font-weight: normal;
+  color: $text-color;
+  background: $bg-color;
+  font-size: $font-0;
+  line-height: $line-height-small;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  .d-icon {
+    color: $icon-color;
+    margin-right: 0.45em;
+    transition: color 0.25s;
+    line-height: $line-height-medium; // Match button text line-height
+  }
+  &.no-text {
+    .d-icon {
+      margin-right: 0;
+    }
+  }
+  @include hover {
+    background: $hover-bg-color;
+    color: $hover-text-color;
+    .d-icon {
+      color: $hover-icon-color;
+    }
+  }
+  &[href] {
+    color: $text-color;
+  }
+  &:active,
+  &.btn-active {
+    @include linear-gradient(
+      scale-color($bg-color, $lightness: -20%),
+      $bg-color
+    );
+  }
+  &[disabled],
+  &.disabled {
+    opacity: 0.4;
+    &:hover {
+      color: $text-color;
+      background: $bg-color;
+      .d-icon {
+        color: $icon-color;
+      }
+    }
+    cursor: not-allowed;
+  }
+}
