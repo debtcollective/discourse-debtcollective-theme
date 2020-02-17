@@ -6,6 +6,8 @@ export default Component.extend({
   classNames: ["show-more-section"],
   classNameBindings: ["isExpanded:expanded:collapsed"],
   isExpanded: false,
+  collapsable: false,
+  displayButton: true,
   displayText: "",
 
   init() {
@@ -19,6 +21,7 @@ export default Component.extend({
 
   @action
   toggleExpanded() {
+    this.set("displayButton", this.collapsable);
     this.set("isExpanded", !this.isExpanded);
   },
 
