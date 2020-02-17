@@ -1,8 +1,8 @@
 en:
   dc:
     show_more:
-      expanded: "Show less"
-      collapsed: "Show more"
+      expanded: "Show less topics"
+      collapsed: "Show more topics"
     categories:
       collectives: "Our Collectives"
       others: "Others categories"
