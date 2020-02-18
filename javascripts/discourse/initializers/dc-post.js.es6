@@ -39,6 +39,28 @@ export default {
         }
       });
 
+      api.reopenWidget("post-avatar", {
+        tagName: "div.dc-col-1.d-none.d-lg-block",
+        settings: {
+          size: "extra_large",
+          displayPosterName: false
+        },
+        html(attrs) {
+          const html = this._super(attrs);
+
+          return h("div.dc-topic-avatar", html);
+        }
+      });
+
+      api.reopenWidget("post-body", {
+        tagName: "div.dc-col",
+        html(attrs) {
+          const html = this._super(attrs);
+
+          return h("div.dc-topic-body", html);
+        }
+      });
+
       api.reopenWidget("post-article", {
         buildClasses(attrs) {
           const classes = this._super(attrs);
