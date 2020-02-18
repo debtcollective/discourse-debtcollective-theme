@@ -15,9 +15,12 @@
 @import "templates/components/categories-only";
 @import "templates/components/topic-list";
 @import "templates/components/dc-show-more";
+@import "templates/topic";
 
 @import "templates/list/dc-topic-author";
 @import "templates/list/dc-topic-card";
+
+@import "widgets/post";
 
 // Re-apply foundation styles with different variables to overwrite rules
 
