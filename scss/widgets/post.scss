@@ -40,11 +40,13 @@
     }
   }
 
-  &.is-first-post .topic-meta-data {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+  &.is-first-post {
+    .topic-meta-data {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
   }
 
   &:not(.is-first-post) {
