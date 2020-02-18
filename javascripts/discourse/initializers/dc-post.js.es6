@@ -6,15 +6,36 @@ export default {
   initialize() {
     withPluginApi("0.8", api => {
       api.modifyClass("component:scrolling-post-stream", {
-        didInsertElement() {
-          this._super(...arguments);
+        buildArgs() {
+          // Add topicData as extra property to pass down
+          return this.getProperties(
+            "topicData",
+            "posts",
+            "canCreatePost",
+            "multiSelect",
+            "gaps",
+            "selectedQuery",
+            "selectedPostsCount",
+            "searchService",
+            "showReadIndicator"
+          );
+        }
+      });
 
-          const $topicTitle = $("#topic-title");
-          const $topicTitleDestination = $(".embed-topic-title");
+      api.reopenWidget("post", {
+        /**
+         * rewrite implementation of https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/widgets/post.js.es6#L683
+         * to allow pass topic data within the attributes to child post widget and render title within metadata
+         */
+        html(attrs) {
+          if (attrs.cloaked) return "";
 
-          $(window).on("load", function() {
-            $topicTitle.appendTo(".embed-topic-title");
-          });
+          return this.attach(
+            "post-article",
+            Object.assign({}, attrs, {
+              topicData: this.parentWidget.attrs.topicData
+            })
+          );
         }
       });
 
@@ -36,7 +57,7 @@ export default {
           let html = this._super(attrs);
 
           if (attrs.firstPost) {
-            html.unshift(this.attach("dc-topic-title", attrs));
+            html.unshift(this.attach("dc-topic-title", attrs.topicData));
           }
 
           return html;
