@@ -47,6 +47,13 @@
     align-items: flex-start;
   }
 
+  &:not(.is-first-post) {
+    .dc-topic-avatar img {
+      width: 2.8125rem;
+      height: 2.8125rem;
+    }
+  }
+
   .topic-meta-data {
     margin-bottom: $spacer * 1.75;
   }
