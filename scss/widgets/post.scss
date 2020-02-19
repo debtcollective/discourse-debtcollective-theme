@@ -77,3 +77,9 @@
 .topic-post + .topic-post {
   margin-top: $spacer * 1.5;
 }
+
+.post-notice {
+  width: 100%;
+  max-width: none;
+  margin-bottom: $spacer;
+}
