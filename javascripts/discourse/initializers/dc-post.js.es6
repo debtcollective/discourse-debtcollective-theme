@@ -55,6 +55,7 @@ export default {
       api.reopenWidget("post-body", {
         tagName: "div.dc-col",
         html(attrs) {
+          attrs.showTopicMap = false;
           const html = this._super(attrs);
 
           return h("div.dc-topic-body", html);
