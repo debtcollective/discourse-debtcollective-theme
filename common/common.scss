@@ -15,6 +15,19 @@
 @import "templates/components/categories-only";
 @import "templates/components/topic-list";
 @import "templates/components/dc-show-more";
+@import "templates/topic";
 
 @import "templates/list/dc-topic-author";
 @import "templates/list/dc-topic-card";
+
+@import "widgets/post";
+
+// Re-apply foundation styles with different variables to overwrite rules
+
+// https://github.com/discourse/discourse/blob/master/app/assets/stylesheets/common/foundation/base.scss
+$tertiary: $red;
+$primary: $body-color;
+$secondary: $body-bg;
+$base-font-family: $font-family-sans-serif;
+$base-font-size: $font-size-base;
+@import "common/foundation/base";
