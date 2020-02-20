@@ -1,5 +1,13 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+import { transformBasicPost } from "discourse/lib/transform-post";
+import { postTransformCallbacks } from "discourse/widgets/post-stream";
 import { h } from "virtual-dom";
+
+function transformWithCallbacks(post) {
+  let transformed = transformBasicPost(post);
+  postTransformCallbacks(transformed);
+  return transformed;
+}
 
 export default {
   name: "dc-post",
@@ -63,6 +71,13 @@ export default {
       });
 
       api.reopenWidget("post-article", {
+        defaultState() {
+          const state = this._super();
+          return Object.assign(state, {
+            expandedFirstPost: false,
+            repliesBelow: []
+          });
+        },
         buildClasses(attrs) {
           const classes = this._super(attrs);
           classes.push("dc-topic-post");
@@ -71,7 +86,76 @@ export default {
             classes.push("is-first-post");
           }
 
+          if (!this.state.repliesShown) {
+            classes.push("contents");
+          }
+
           return classes;
+        },
+        html(attrs, state) {
+          let html = this._super(attrs, state);
+          const extraState = {
+            state: { repliesShown: !!state.repliesBelow.length }
+          };
+
+          const postMenu = this.attach("post-menu", attrs, extraState);
+
+          html.push(h("div.row", h("div.dc-col", postMenu)));
+
+          if (state.repliesBelow.length) {
+            html.push(
+              h("section.embedded-posts.bottom", [
+                state.repliesBelow.map(p => {
+                  return this.attach("embedded-post", p, {
+                    model: this.store.createRecord("post", p)
+                  });
+                }),
+                this.attach("button", {
+                  title: "post.collapse",
+                  icon: "chevron-up",
+                  action: "toggleRepliesBelow",
+                  actionParam: "true",
+                  className: "btn collapse-up"
+                })
+              ])
+            );
+          }
+
+          return html;
+        },
+        toggleRepliesBelow(goToPost = "false") {
+          if (this.state.repliesBelow.length) {
+            this.state.repliesBelow = [];
+            if (goToPost === "true") {
+              DiscourseURL.routeTo(
+                `${this.attrs.topicUrl}/${this.attrs.post_number}`
+              );
+            }
+            return;
+          }
+
+          const post = this.findAncestorModel();
+          const topicUrl = post ? post.get("topic.url") : null;
+          return this.store
+            .find("post-reply", { postId: this.attrs.id })
+            .then(posts => {
+              this.state.repliesBelow = posts.map(p => {
+                p.shareUrl = `${topicUrl}/${p.post_number}`;
+                return transformWithCallbacks(p);
+              });
+            });
+        }
+      });
+
+      api.reopenWidget("post-contents", {
+        html(attrs, state) {
+          let html = this._super(attrs, state);
+          const postMenuIndex = html.findIndex(
+            widget => widget.key && widget.key.includes("post-menu")
+          );
+          const postMenu = html.splice(postMenuIndex, 1);
+
+          return html;
         }
       });
 
