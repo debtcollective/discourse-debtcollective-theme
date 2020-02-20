@@ -107,23 +107,20 @@ export default {
           html.push(h("div.row", h("div.dc-col", postMenu)));
 
           if (state.repliesBelow.length) {
-            const embeddedPosts = h(
-              "section.embedded-posts.bottom.dc-embedded-posts",
-              [
-                state.repliesBelow.map(p => {
-                  return this.attach("embedded-post", p, {
-                    model: this.store.createRecord("post", p)
-                  });
-                }),
-                this.attach("button", {
-                  title: "post.collapse",
-                  icon: "chevron-up",
-                  action: "toggleRepliesBelow",
-                  actionParam: "true",
-                  className: "btn collapse-up"
-                })
-              ]
-            );
+            const embeddedPosts = h("section.embedded-posts.bottom", [
+              state.repliesBelow.map(p => {
+                return this.attach("embedded-post", p, {
+                  model: this.store.createRecord("post", p)
+                });
+              }),
+              this.attach("button", {
+                title: "post.collapse",
+                icon: "chevron-up",
+                action: "toggleRepliesBelow",
+                actionParam: "true",
+                className: "btn collapse-up"
+              })
+            ]);
 
             html.push(
               h(
