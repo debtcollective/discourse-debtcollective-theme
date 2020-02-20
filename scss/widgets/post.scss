@@ -5,6 +5,11 @@
 .dc-topic-body {
   position: relative;
 
+  .read-state {
+    top: -($grid-gutter-width / 4);
+    right: -($grid-gutter-width / 4);
+  }
+
   .post-infos {
     position: absolute;
     top: 0;
