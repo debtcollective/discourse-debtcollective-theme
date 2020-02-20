@@ -42,7 +42,13 @@ section.embedded-posts.top.topic-body.offset2:not(.dc-component) {
 
   .topic-body {
     @include make-col-ready;
-    @include make-col(11);
+    @include make-col(12);
+
+    @include media-breakpoint-up(lg) {
+      // Avatar pictures are being rendered and take one column
+      @include make-col(11);
+    }
+
     padding-top: 0;
 
     > * {
