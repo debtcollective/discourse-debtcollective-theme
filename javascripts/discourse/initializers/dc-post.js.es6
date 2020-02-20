@@ -70,6 +70,10 @@ export default {
         }
       });
 
+      api.reopenWidget("embedded-post", {
+        tagName: "div.dc-embedded-post"
+      });
+
       api.reopenWidget("post-article", {
         defaultState() {
           const state = this._super();
@@ -103,8 +107,9 @@ export default {
           html.push(h("div.row", h("div.dc-col", postMenu)));
 
           if (state.repliesBelow.length) {
-            html.push(
-              h("section.embedded-posts.bottom", [
+            const embeddedPosts = h(
+              "section.embedded-posts.bottom.dc-embedded-posts",
+              [
                 state.repliesBelow.map(p => {
                   return this.attach("embedded-post", p, {
                     model: this.store.createRecord("post", p)
@@ -117,7 +122,14 @@ export default {
                   actionParam: "true",
                   className: "btn collapse-up"
                 })
-              ])
+              ]
+            );
+
+            html.push(
+              h(
+                "div.embedded-posts-container",
+                h("div.row", h("div.dc-col", embeddedPosts))
+              )
             );
           }
 
