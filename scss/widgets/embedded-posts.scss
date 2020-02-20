@@ -33,6 +33,18 @@ section.embedded-posts.top.topic-body.offset2:not(.dc-component) {
   }
 }
 
+.embedded-posts.bottom .collapse-up {
+  @include media-breakpoint-down(lg) {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.embedded-posts.top .collapse-down {
+  @include media-breakpoint-down(lg) {
+    transform: translate(-50%, -52%);
+  }
+}
+
 .embedded-posts.embedded-posts {
   border: 0;
   margin: 0;
