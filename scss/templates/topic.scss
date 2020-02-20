@@ -15,3 +15,7 @@
     padding-right: 4rem;
   }
 }
+
+nav.post-controls button.bookmark.bookmarked .d-icon {
+  color: $primary;
+}

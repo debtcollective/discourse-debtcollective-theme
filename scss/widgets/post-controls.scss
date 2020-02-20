@@ -1,0 +1,42 @@
+nav.post-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &.clearfix::after,
+  &.clearfix::before {
+    clear: initial;
+    display: none;
+  }
+
+  .actions,
+  .show-replies {
+    float: none;
+    margin: 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    order: 1;
+
+    @include media-breakpoint-up(lg) {
+      @include make-col-offset(1);
+    }
+
+    > .widget-button.reply {
+      @extend %action-button;
+      margin-left: 0;
+      margin-right: $spacer;
+      order: 1;
+    }
+
+    > * {
+      order: 2;
+    }
+  }
+
+  .show-replies {
+    order: 2;
+  }
+}

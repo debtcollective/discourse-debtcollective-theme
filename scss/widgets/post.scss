@@ -97,6 +97,11 @@
   margin-bottom: $spacer;
 }
 
+.post-menu-row {
+  margin-top: $spacer * 3;
+  border-top: 0.0625rem solid $gray-300;
+}
+
 .post-menu-area,
 section.post-menu-area {
   padding: 0;

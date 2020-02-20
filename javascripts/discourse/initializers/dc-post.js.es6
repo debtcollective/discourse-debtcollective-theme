@@ -104,7 +104,7 @@ export default {
 
           const postMenu = this.attach("post-menu", attrs, extraState);
 
-          html.push(h("div.row", h("div.dc-col", postMenu)));
+          html.push(h("div.row.post-menu-row", h("div.dc-col", postMenu)));
 
           if (state.repliesAbove.length) {
             const replies = state.repliesAbove.map(p => {
