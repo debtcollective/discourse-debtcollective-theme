@@ -6,3 +6,12 @@
 .small-action.onscreen-post {
   max-width: 100%;
 }
+
+.dc-topic-title {
+  padding-top: 1.5rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 0;
+    padding-right: 4rem;
+  }
+}
