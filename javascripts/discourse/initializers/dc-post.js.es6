@@ -134,12 +134,14 @@ export default {
           }
 
           if (state.repliesBelow.length) {
+            const replies = state.repliesBelow.map(p => {
+              return this.attach("embedded-post", p, {
+                model: this.store.createRecord("post", p)
+              });
+            });
+
             const embeddedPosts = h("section.embedded-posts.bottom", [
-              state.repliesBelow.map(p => {
-                return this.attach("embedded-post", p, {
-                  model: this.store.createRecord("post", p)
-                });
-              }),
+              replies,
               this.attach("button", {
                 title: "post.collapse",
                 icon: "chevron-up",
