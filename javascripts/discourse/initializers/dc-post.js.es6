@@ -106,6 +106,33 @@ export default {
 
           html.push(h("div.row", h("div.dc-col", postMenu)));
 
+          if (state.repliesAbove.length) {
+            const replies = state.repliesAbove.map(p => {
+              return this.attach("embedded-post", p, {
+                model: this.store.createRecord("post", p),
+                state: { above: true }
+              });
+            });
+
+            const embeddedPosts = h("section.embedded-posts.top.dc-component", [
+              this.attach("button", {
+                title: "post.collapse",
+                icon: "chevron-down",
+                action: "toggleReplyAbove",
+                actionParam: "true",
+                className: "btn collapse-down"
+              }),
+              replies
+            ]);
+
+            html.unshift(
+              h(
+                "div.embedded-posts-container.above-post-correction",
+                h("div.row", h("div.dc-col", embeddedPosts))
+              )
+            );
+          }
+
           if (state.repliesBelow.length) {
             const embeddedPosts = h("section.embedded-posts.bottom", [
               state.repliesBelow.map(p => {

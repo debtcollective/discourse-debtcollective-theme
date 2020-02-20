@@ -17,7 +17,12 @@
   }
 }
 
-.embedded-posts.bottom {
+section.embedded-posts.top.topic-body.offset2:not(.dc-component) {
+  display: none;
+}
+
+.embedded-posts.bottom,
+.embedded-posts.top {
   .row {
     padding-bottom: 0;
 
@@ -29,9 +34,11 @@
 }
 
 .embedded-posts.embedded-posts {
-  margin: 0;
   border: 0;
+  margin: 0;
+  max-width: 100%;
   padding: 0;
+  width: auto;
 
   .topic-body {
     @include make-col-ready;

@@ -28,10 +28,18 @@
 
 // Make extra emphasis to overcome guest styles
 .dc-topic-post.dc-topic-post {
+  $padding-top: $spacer * 1.25;
   @include make-container;
   background-color: $beige;
   box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.25);
   padding-top: $spacer * 1.25;
+
+  // Allow to move above post components to the edge
+  .above-post-correction,
+  .post-notice {
+    position: relative;
+    top: -($spacer * 1.25);
+  }
 
   .row {
     @include make-row;
