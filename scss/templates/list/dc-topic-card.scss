@@ -1,4 +1,6 @@
-.dc-topic.dc-card {
-  flex-direction: row;
-  justify-content: flex-start;
+.dc-topic {
+  .avatar-col {
+    max-width: 3.75rem;
+    padding-right: 0;
+  }
 }
