@@ -1,5 +1,21 @@
 @import "discourse/button";
 
+%action-button {
+  @include btn(
+    $text-color: $white,
+    $bg-color: $btn-action-color,
+    $icon-color: $white,
+    $hover-text-color: $white,
+    $hover-bg-color: lighten($btn-action-color, 10%),
+    $hover-icon-color: $white
+  );
+  border-radius: $border-radius;
+}
+
+.btn-action {
+  @extend %action-button;
+}
+
 .btn-dark {
   @include btn(
     $text-color: $white,

@@ -1,7 +1,21 @@
-.container.posts {
+.container.posts,
+.topic-category {
   margin-top: $spacer;
 }
 
 .small-action.onscreen-post {
   max-width: 100%;
+}
+
+.dc-topic-title {
+  padding-top: 1.5rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 0;
+    padding-right: 4rem;
+  }
+}
+
+nav.post-controls button.bookmark.bookmarked .d-icon {
+  color: $primary;
 }
