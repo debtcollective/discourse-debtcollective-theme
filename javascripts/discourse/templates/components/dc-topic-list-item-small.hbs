@@ -1,0 +1,33 @@
+<a class="dc-topic dc-card dc-topic-small" href={{topic.lastUnreadUrl}}>
+  <div class="dc-row">
+    <div class="dc-col">
+      <div class="dc-card__content">
+        {{raw "list/dc-topic-author" posters=topic.featuredUsers}}
+        <h2 class="dc-card__title">
+          {{topic.fancyTitle}}
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="dc-row">
+    <footer>
+      <div class="dc-col">
+        <div class="dc-card__meta">
+          <span class="material-icons">
+            comment
+          </span>
+          <p class="m-0 ml-1 dc-text-light">
+            {{topic.replyCount}}
+          </p>
+          {{#if topic.pinned}}
+            <div id="pinned-topic">
+              <p class="dc-info-pill mr-1" style="background-color: #{{topic.category.color}};">
+                staff post
+              </p>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </footer>
+  </div>
+</a>

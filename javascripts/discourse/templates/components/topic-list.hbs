@@ -3,22 +3,28 @@
   {{#dc-show-more}}
     <div class="dc-row">
       {{#each filteredTopics as |topic|}}
-        <div class="dc-col-sm-6 show-more-visible-{{topic.pinned}}">
-          {{topic-list-item
-            topic=topic
-            bulkSelectEnabled=bulkSelectEnabled
-            showTopicPostBadges=showTopicPostBadges
-            hideCategory=hideCategory
-            showPosters=showPosters
-            showLikes=showLikes
-            showOpLikes=showOpLikes
-            expandGloballyPinned=expandGloballyPinned
-            expandAllPinned=expandAllPinned
-            lastVisitedTopic=lastVisitedTopic
-            selected=selected
-            tagsForUser=tagsForUser
-          }}
-        </div>
+        {{#if renderCompact}}
+          <div class="dc-col-sm-4">
+            {{dc-topic-list-item-small topic=topic}}
+          </div>
+        {{else}}
+          <div class="dc-col-sm-6 show-more-visible-{{topic.pinned}}">
+            {{topic-list-item
+              topic=topic
+              bulkSelectEnabled=bulkSelectEnabled
+              showTopicPostBadges=showTopicPostBadges
+              hideCategory=hideCategory
+              showPosters=showPosters
+              showLikes=showLikes
+              showOpLikes=showOpLikes
+              expandGloballyPinned=expandGloballyPinned
+              expandAllPinned=expandAllPinned
+              lastVisitedTopic=lastVisitedTopic
+              selected=selected
+              tagsForUser=tagsForUser
+            }}
+          </div>
+        {{/if}}
       {{/each}}
     </div>
   {{/dc-show-more}}
