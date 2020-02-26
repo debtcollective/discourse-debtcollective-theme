@@ -1,9 +1,9 @@
 <a class="dc-topic dc-card dc-topic-small" href={{topic.lastUnreadUrl}}>
-  <div class="dc-row">
+  <div class="dc-row h-100">
     <div class="dc-col">
-      <div class="dc-card__content">
+      <div class="dc-card__content justify-content-around text-center h-100">
         {{raw "list/dc-topic-author" posters=topic.featuredUsers}}
-        <h2 class="dc-card__title">
+        <h2 class="dc-card__title dc-clamp-2-fixed">
           {{topic.fancyTitle}}
         </h2>
       </div>
@@ -12,16 +12,20 @@
   <div class="dc-row">
     <footer>
       <div class="dc-col">
-        <div class="dc-card__meta">
-          <span class="material-icons">
-            comment
-          </span>
-          <p class="m-0 ml-1 dc-text-light">
-            {{topic.replyCount}}
-          </p>
+        <div class="dc-card__meta justify-content-between">
+          <div id="icon-based-info" class="d-flex">
+            <div id="replies" class="d-flex">
+              <span class="material-icons">
+                comment
+              </span>
+              <p class="m-0 ml-1 dc-text-light">
+                {{topic.replyCount}}
+              </p>
+            </div>
+          </div>
           {{#if topic.pinned}}
             <div id="pinned-topic">
-              <p class="dc-info-pill mr-1" style="background-color: #{{topic.category.color}};">
+              <p class="dc-info-pill-sm" style="background-color: #{{topic.category.color}};">
                 staff post
               </p>
             </div>
