@@ -9,7 +9,7 @@
     $hover-bg-color: lighten($btn-action-color, 10%),
     $hover-icon-color: $white
   );
-  border-radius: $border-radius;
+  border-radius: 0.625rem;
 }
 
 .btn-default,
