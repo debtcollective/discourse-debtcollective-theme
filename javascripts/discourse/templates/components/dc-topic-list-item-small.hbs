@@ -13,13 +13,21 @@
     <footer>
       <div class="dc-col">
         <div class="dc-card__meta justify-content-between">
-          <div id="icon-based-info" class="d-flex">
-            <div id="replies" class="d-flex">
-              <span class="material-icons">
+          <div class="icons-line">
+            <div id="replies" class="icons-line-item">
+              <span class="material-icons dc-icon">
                 comment
               </span>
-              <p class="m-0 ml-1 dc-text-light">
+              <p class="icons-line-label">
                 {{topic.replyCount}}
+              </p>
+            </div>
+            <div id="likes" class="icons-line-item">
+              <span class="material-icons dc-icon">
+                favorite
+              </span>
+              <p class="icons-line-label">
+                {{topic.like_count}}
               </p>
             </div>
           </div>

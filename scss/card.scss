@@ -58,3 +58,20 @@
     }
   }
 }
+
+.icons-line {
+  display: flex;
+
+  &-item {
+    display: flex;
+
+    & + & {
+      margin-left: $spacer/1.5;
+    }
+  }
+
+  .dc-icon + &-label {
+    @extend .dc-text-light;
+    margin: 0 0 0 $spacer/5;
+  }
+}
