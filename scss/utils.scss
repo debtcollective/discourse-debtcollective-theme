@@ -1,0 +1,17 @@
+@for $i from 1 through 3 {
+  .dc-clamp-#{$i} {
+    @include clamp-text($i);
+  }
+
+  .dc-clamp-#{$i}-fixed {
+    @include clamp-text($i, true);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.h-100 {
+  height: 100%;
+}
