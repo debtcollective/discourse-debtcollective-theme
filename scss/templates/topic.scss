@@ -17,6 +17,7 @@
   }
 }
 
-nav.post-controls button.bookmark.bookmarked .d-icon {
+nav.post-controls button.bookmark.bookmarked .d-icon,
+#topic-footer-buttons .bookmark.bookmarked .d-icon-bookmark {
   color: $primary;
 }

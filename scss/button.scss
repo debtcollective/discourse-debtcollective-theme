@@ -12,7 +12,14 @@
   border-radius: $border-radius;
 }
 
-.btn-action {
+.btn-default,
+.widget-button {
+  border-radius: $border-radius;
+}
+
+.btn-action,
+.btn-primary,
+.widget-button.reply {
   @extend %action-button;
 }
 
