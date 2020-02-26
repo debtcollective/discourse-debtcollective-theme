@@ -35,18 +35,16 @@
           {{/if}}
         </div>
         <div class="dc-row">
-          <footer>
-            <div class="dc-col">
-              <div class="dc-card__meta">
-                <span class="material-icons">
-                  comment
-                </span>
-                <p class="m-0 ml-1 dc-text-light">
-                  {{topic.replyCount}}
-                </p>
-              </div>
+          <div class="dc-col">
+            <div class="dc-card__meta">
+              <span class="material-icons">
+                comment
+              </span>
+              <p class="m-0 ml-1 dc-text-light">
+                {{topic.replyCount}}
+              </p>
             </div>
-          </footer>
+          </div>
         </div>
       </div>
     </div>
