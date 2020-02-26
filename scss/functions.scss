@@ -1,8 +1,13 @@
 // This solution has strong support on Safari and Chrome which are the main users we have
-@mixin clamp-text($lines: 3) {
+@mixin clamp-text($lines: 3, $fixed-height: false, $line-height: 1.4em) {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $lines;
+
+  @if $fixed-height {
+    line-height: $line-height;
+    height: $line-height * $lines;
+  }
 }
