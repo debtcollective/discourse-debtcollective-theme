@@ -1,0 +1,85 @@
+// Otherwise the timeline won't fit into the screen
+$container-post-width-xl: map-get(
+  $map: $container-max-widths,
+  $key: "lg"
+);
+
+.container.posts {
+  width: $container-post-width-xl;
+  max-width: 100%;
+  position: relative;
+}
+
+.timeline-container {
+  display: none;
+
+  @include media-breakpoint-up(xl) {
+    display: block;
+    margin-left: $container-post-width-xl;
+  }
+
+  &.timeline-docked {
+    top: 0 !important;
+  }
+
+  .topic-timeline {
+    display: flex;
+  }
+
+  .timeline-scrollarea-wrapper {
+    margin-left: $grid-gutter-width / 2;
+    white-space: nowrap;
+  }
+
+  .topic-timeline {
+    margin-left: $grid-gutter-width / 2;
+  }
+
+  .dc-topic-timeline-controls,
+  .timeline-footer-controls {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topic-timeline .timeline-controls,
+  .topic-timeline .timeline-footer-controls {
+    margin: 0;
+
+    > *,
+    > button {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    button.widget-button.toggle-admin-menu,
+    button.widget-button.create,
+    button.dropdown-select-box-header {
+      box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.25);
+      border-radius: 100%;
+      display: flex;
+      height: 3.125rem;
+      margin: 0 0 0.625rem;
+      padding: 0;
+      width: 3.125rem;
+      justify-content: center;
+    }
+
+    button.widget-button.toggle-admin-menu,
+    button.dropdown-select-box-header {
+      background: $white;
+    }
+  }
+
+  .topic-timeline .timeline-footer-controls {
+    > button.widget-button.create {
+      @extend %action-button;
+      border-radius: 100%;
+      order: 2;
+    }
+
+    > * {
+      order: 1;
+    }
+  }
+}
