@@ -9,10 +9,17 @@
     $hover-bg-color: lighten($btn-action-color, 10%),
     $hover-icon-color: $white
   );
+  border-radius: 0.625rem;
+}
+
+.btn-default,
+.widget-button {
   border-radius: $border-radius;
 }
 
-.btn-action {
+.btn-action,
+.btn-primary,
+.widget-button.reply {
   @extend %action-button;
 }
 

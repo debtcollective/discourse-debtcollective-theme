@@ -3,7 +3,8 @@
   margin-top: $spacer;
 }
 
-.small-action.onscreen-post {
+.small-action.onscreen-post,
+.topic-status-info {
   max-width: 100%;
 }
 
@@ -16,6 +17,32 @@
   }
 }
 
-nav.post-controls button.bookmark.bookmarked .d-icon {
-  color: $primary;
+nav.post-controls button.bookmark.bookmarked .d-icon,
+#topic-footer-buttons .bookmark.bookmarked .d-icon-bookmark {
+  color: $red;
+}
+
+.select-kit.dropdown-select-box .dropdown-select-box-header,
+#topic-footer-buttons .btn {
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.625rem;
+}
+
+#topic-footer-buttons .btn:not(.btn-primary) {
+  background: transparent;
+  border: 0.0625rem solid $blue;
+  font-weight: $font-weight-bold;
+
+  &:hover {
+    background: $blue;
+  }
+
+  &:not(:hover)
+    .d-icon:not(.d-icon-flag):not(.d-icon-bookmark):not(.d-icon-caret-down) {
+    color: $blue;
+  }
+}
+
+#topic-footer-buttons .select-kit .select-kit-header .selected-name .name {
+  font-weight: $font-weight-bold;
 }
