@@ -4,13 +4,24 @@ $container-post-width-xl: map-get(
   $key: "lg"
 );
 
-.container.posts {
-  width: $container-post-width-xl;
-  max-width: 100%;
-  position: relative;
+.show-topic-admin {
+  display: none !important;
 }
 
-.timeline-container {
+.container.posts {
+  max-width: 100%;
+  position: relative;
+
+  @include media-breakpoint-up(xl) {
+    width: $container-post-width-xl;
+  }
+}
+
+.timeline-container.timeline-fullscreen {
+  background-color: $beige;
+}
+
+.timeline-container:not(.timeline-fullscreen) {
   display: none;
 
   @include media-breakpoint-up(xl) {
@@ -32,7 +43,7 @@ $container-post-width-xl: map-get(
   }
 
   .topic-timeline {
-    margin-left: $grid-gutter-width / 2;
+    margin-left: $grid-gutter-width;
   }
 
   .dc-topic-timeline-controls,
@@ -81,5 +92,18 @@ $container-post-width-xl: map-get(
     > * {
       order: 1;
     }
+  }
+}
+
+#topic-progress-wrapper {
+  display: flex;
+
+  @include media-breakpoint-up(xl) {
+    display: none;
+  }
+
+  &.docked {
+    position: fixed;
+    bottom: 0 !important;
   }
 }
