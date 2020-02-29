@@ -39,6 +39,11 @@ $container-post-width-xl: map-get(
 
   .topic-timeline {
     display: flex;
+
+    > .timeline-footer-controls {
+      // Avoid to render the controls outside the wrapper after user resize the window
+      display: none;
+    }
   }
 
   .timeline-scrollarea-wrapper {
