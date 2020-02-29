@@ -4,21 +4,14 @@ $container-post-width-xl: map-get(
   $key: "lg"
 );
 
-.show-topic-admin {
-  display: none !important;
-}
-
-.container.posts {
+.container.posts,
+.suggested-topics {
   max-width: 100%;
   position: relative;
 
   @include media-breakpoint-up(xl) {
     width: $container-post-width-xl;
   }
-}
-
-.timeline-container.timeline-fullscreen {
-  background-color: $beige;
 }
 
 .timeline-container:not(.timeline-fullscreen) {
@@ -28,7 +21,18 @@ $container-post-width-xl: map-get(
     display: block;
     margin-left: $container-post-width-xl;
   }
+}
 
+// This is a button that is not needed after the layout update of topic-timeline/topic-progress
+.show-topic-admin {
+  display: none !important;
+}
+
+.timeline-container.timeline-fullscreen {
+  background-color: $beige;
+}
+
+.timeline-container:not(.timeline-fullscreen) {
   &.timeline-docked {
     top: 0 !important;
   }
