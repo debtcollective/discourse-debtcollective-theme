@@ -1,4 +1,21 @@
-.dc-topic.dc-card {
-  flex-direction: row;
-  justify-content: flex-start;
+.dc-topic {
+  .avatar-col {
+    max-width: 3.75rem;
+    padding-right: 0;
+  }
+}
+
+.dc-topic-small.dc-card {
+  padding-bottom: 0;
+  height: $card-height * 0.75;
+
+  .dc-card__title {
+    font-size: $font-size-base;
+  }
+
+  footer {
+    border-top: 0.0625rem solid $gray-300;
+    padding: 0.625rem 0;
+    width: 100%;
+  }
 }

@@ -15,6 +15,16 @@ export default Component.extend({
     this._updateDisplayText();
   },
 
+  didInsertElement() {
+    const visibleElementsClass = ".show-more-visible-true";
+    const hasVisibleElements =
+      this.element.querySelectorAll(visibleElementsClass).length > 0;
+
+    if (hasVisibleElements) return;
+
+    this.toggleExpanded();
+  },
+
   willUpdate() {
     this._updateDisplayText();
   },

@@ -1,0 +1,45 @@
+<a class="dc-topic dc-card dc-topic-small" href={{topic.lastUnreadUrl}}>
+  <div class="dc-row h-100">
+    <div class="dc-col">
+      <div class="dc-card__content justify-content-around text-center h-100">
+        {{raw "list/dc-topic-author" posters=topic.featuredUsers}}
+        <h2 class="dc-card__title dc-clamp-2-fixed">
+          {{topic.fancyTitle}}
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="dc-row">
+    <footer>
+      <div class="dc-col">
+        <div class="dc-card__meta justify-content-between">
+          <div class="icons-line">
+            <div id="replies" class="icons-line-item">
+              <span class="material-icons dc-icon">
+                comment
+              </span>
+              <p class="icons-line-label">
+                {{topic.replyCount}}
+              </p>
+            </div>
+            <div id="likes" class="icons-line-item">
+              <span class="material-icons dc-icon">
+                favorite
+              </span>
+              <p class="icons-line-label">
+                {{topic.like_count}}
+              </p>
+            </div>
+          </div>
+          {{#if topic.pinned}}
+            <div id="pinned-topic">
+              <p class="dc-info-pill-sm" style="background-color: #{{topic.category.color}};">
+                staff post
+              </p>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </footer>
+  </div>
+</a>

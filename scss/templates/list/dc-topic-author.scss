@@ -1,5 +1,7 @@
 // Ideally, we should be able to achieve this effect with handlebars
 .dc-show-only-first-poster {
+  text-align: center;
+
   > *:not(:first-child) {
     display: none;
   }

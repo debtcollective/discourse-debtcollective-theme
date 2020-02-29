@@ -2,7 +2,3 @@ body {
   // Usage of variables yield error on SCSS compiler
   background: linear-gradient(180deg, #dbf8ff 0%, #fcfbf7 88.74%);
 }
-
-.dc-clamp-3 {
-  @include clamp-text();
-}
