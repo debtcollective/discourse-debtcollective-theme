@@ -188,9 +188,10 @@ export default {
       api.reopenWidget("post-contents", {
         html(attrs, state) {
           let html = this._super(attrs, state);
-          const postMenuIndex = html.findIndex(
-            widget => widget.key && widget.key.includes("post-menu")
-          );
+          const postMenuIndex = html.findIndex(widget => {
+            if (!widget) return;
+            widget.key && widget.key.includes("post-menu");
+          });
           const postMenu = html.splice(postMenuIndex, 1);
 
           return html;
