@@ -1,4 +1,5 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+import { h } from "virtual-dom";
 
 export default {
   name: "dc-header",
@@ -47,6 +48,55 @@ export default {
 
           // remove the hamburguer menu
           html.splice(menuWidgetIndex, 1);
+
+          // add notifications icon with count
+          const { user } = attrs;
+          const unreadNotifications = user.get("unread_notifications");
+
+          html.push(
+            h(
+              "li.header-dropdown-toggle#notifications",
+              h("a", { href: `${user.path}/notifications` }, [
+                h("div.icon.btn-flat.material-icons", "notifications"),
+                unreadNotifications
+                  ? h(
+                      "span.badge-notification.unread-notifications",
+                      {
+                        title: I18n.t(
+                          themePrefix("notifications.tooltip.regular"),
+                          { count: unreadNotifications }
+                        )
+                      },
+                      unreadNotifications
+                    )
+                  : null
+              ])
+            )
+          );
+
+          // add messages icon with count
+          const unreadPMs = user.get("unread_private_messages");
+
+          html.push(
+            h(
+              "li.header-dropdown-toggle#inbox",
+              h("a", { href: `${user.path}/messages` }, [
+                h("div.icon.btn-flat.material-icons", "email"),
+                unreadPMs
+                  ? h(
+                      "span.badge-notification.unread-private-messages",
+                      {
+                        title: I18n.t(
+                          themePrefix("notifications.tooltip.message"),
+                          { count: unreadPMs }
+                        )
+                      },
+                      unreadPMs
+                    )
+                  : null
+              ])
+            )
+          );
 
           return html;
         }

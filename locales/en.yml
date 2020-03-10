@@ -6,3 +6,11 @@ en:
     categories:
       collectives: "Our Collectives"
       others: "Others categories"
+  notifications:
+    tooltip:
+      regular:
+        one: "%{count} unseen notification"
+        other: "{{count}} unseen notifications"
+      message:
+        one: "%{count} unread message"
+        other: "{{count}} unread messages"
