@@ -1,3 +1,4 @@
+{{! TODO: avoid to duplicate whole code in favor of conditionally change tagName }}
 {{#if bulkSelectEnabled}}
   <div
     class="dc-topic dc-card"
