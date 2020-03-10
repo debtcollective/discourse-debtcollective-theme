@@ -20,7 +20,6 @@ export default {
       api.reopenWidget("header-icons", {
         html(attrs, state) {
           const html = this._super(attrs, state);
-          console.log("html", html);
 
           const menuWidgetIndex = html.findIndex(widget => {
             if (!widget) return;
@@ -32,6 +31,7 @@ export default {
             );
           });
 
+          // remove the hamburguer menu
           html.splice(menuWidgetIndex, 1);
 
           return html;
