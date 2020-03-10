@@ -4,6 +4,20 @@ export default {
   name: "dc-header",
   initialize() {
     withPluginApi("0.8", api => {
+      api.modifyClass("component:site-header", {
+        afterRender() {
+          this._super();
+
+          const searchButton = this.element.querySelector("#search-button");
+
+          if ($(searchButton).hasClass("material-icons")) return;
+
+          $(searchButton)
+            .addClass("material-icons")
+            .html("search");
+        }
+      });
+
       api.reopenWidget("header-notifications", {
         html(attrs, state) {
           const html = this._super(attrs, state);
