@@ -4,6 +4,19 @@ export default {
   name: "dc-header",
   initialize() {
     withPluginApi("0.8", api => {
+      api.reopenWidget("header-notifications", {
+        html(attrs, state) {
+          const html = this._super(attrs, state);
+          const profileImage = html.find(widget => {
+            if (!widget) return;
+
+            return widget.tagName === "IMG";
+          });
+
+          return profileImage;
+        }
+      });
+
       api.reopenWidget("header-icons", {
         html(attrs, state) {
           const html = this._super(attrs, state);
