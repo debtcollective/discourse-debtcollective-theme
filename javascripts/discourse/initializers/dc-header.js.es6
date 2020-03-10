@@ -51,6 +51,9 @@ export default {
 
           // add notifications icon with count
           const { user } = attrs;
+
+          if (!user) return html;
+
           const unreadNotifications = user.get("unread_notifications");
 
           html.push(
