@@ -19,6 +19,15 @@ export default {
         }
       });
 
+      api.reopenWidget("user-menu", {
+        defaultState() {
+          const state = this._super();
+          return Object.assign({}, state, {
+            currentQuickAccess: "profile"
+          });
+        }
+      });
+
       api.reopenWidget("header-notifications", {
         html(attrs, state) {
           const html = this._super(attrs, state);
