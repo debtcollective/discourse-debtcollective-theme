@@ -1,0 +1,45 @@
+$dc-categories-border: "0.0625rem solid #ebe7dc";
+$dc-categories-height: 4rem;
+
+#main-outlet {
+  // We need to increase the separation between content and header due to categories-nav
+  padding-top: $header-height + $dc-categories-height + $spacer;
+}
+
+.dc-categories {
+  background: $beige;
+  box-shadow: 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.25);
+  border-top: unquote($dc-categories-border);
+  align-items: center;
+  display: flex;
+  margin-top: $header-height;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  // just below the header to avoid any false effect from the box-shadow
+  z-index: z("header") - 1;
+}
+
+.dc-categories-nav {
+  list-style: none;
+  display: flex;
+
+  &,
+  &-container {
+    margin: 0 auto;
+  }
+
+  > * {
+    display: flex;
+    align-items: center;
+    font-weight: $font-weight-bold;
+    border-left: unquote($dc-categories-border);
+    text-transform: uppercase;
+    height: $dc-categories-height;
+    padding: 0 $grid-gutter-width/2;
+
+    &:last-child {
+      border-right: unquote($dc-categories-border);
+    }
+  }
+}
