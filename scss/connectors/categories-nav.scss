@@ -24,6 +24,10 @@ $dc-categories-height: 4rem;
   list-style: none;
   display: flex;
 
+  &-container {
+    overflow-x: auto;
+  }
+
   &,
   &-container {
     margin: 0 auto;
@@ -37,6 +41,7 @@ $dc-categories-height: 4rem;
     text-transform: uppercase;
     height: $dc-categories-height;
     padding: 0 $grid-gutter-width/2;
+    white-space: nowrap;
 
     &:last-child {
       border-right: unquote($dc-categories-border);
