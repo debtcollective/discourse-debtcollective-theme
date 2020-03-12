@@ -1,3 +1,4 @@
+$dc-header-box-shadow: "0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.25)";
 $dc-categories-border: "0.0625rem solid #ebe7dc";
 $dc-categories-height: 4rem;
 
@@ -6,9 +7,24 @@ $dc-categories-height: 4rem;
   padding-top: $header-height + $dc-categories-height + $spacer;
 }
 
+.d-header {
+  box-shadow: none;
+
+  @if $header-categories == "" {
+    box-shadow: unquote($dc-header-box-shadow);
+  }
+}
+
+.dc-categories {
+  box-shadow: unquote($dc-header-box-shadow);
+
+  @if $header-categories == "" {
+    box-shadow: none;
+  }
+}
+
 .dc-categories {
   background: $beige;
-  box-shadow: 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.25);
   border-top: unquote($dc-categories-border);
   align-items: center;
   display: flex;
