@@ -2,3 +2,13 @@ body {
   // Usage of variables yield error on SCSS compiler
   background: linear-gradient(180deg, #dbf8ff 0%, #fcfbf7 88.74%);
 }
+
+// Container we use is neither fluid or typical container from bootstrap. Instead, is a fluid with a max-width
+%custom-container {
+  @include make-container;
+  max-width: map-get($map: $container-max-widths, $key: "xl");
+}
+
+.wrap {
+  @extend %custom-container;
+}
