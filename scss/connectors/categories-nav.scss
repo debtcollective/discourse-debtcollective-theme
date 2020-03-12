@@ -33,6 +33,17 @@ $dc-categories-height: 4rem;
     margin: 0 auto;
   }
 
+  a,
+  a:visited,
+  a:active {
+    transition: color ease 0.216s;
+    color: $body-color;
+  }
+
+  a:hover {
+    color: $primary;
+  }
+
   > * {
     display: flex;
     align-items: center;

@@ -1,0 +1,11 @@
+<div class="dc-categories-nav-container">
+  <ul class="dc-categories-nav">
+    {{#each categories as |category|}}
+      <li>
+        <a id="category-{{category.id}}" href={{category.url}}>
+          {{category.name}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
