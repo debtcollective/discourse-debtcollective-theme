@@ -15,7 +15,7 @@
           <header class="dc-card__header">
             <div>
               <h2 class="dc-card__title">
-                {{topic.title}}
+                {{{topic.fancyTitle}}}
               </h2>
               <div class="dc-card__meta dc-text-small">
                 {{#if topic.pinned}}
