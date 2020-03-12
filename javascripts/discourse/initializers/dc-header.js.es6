@@ -6,9 +6,7 @@ export default {
   initialize() {
     withPluginApi("0.8", api => {
       api.modifyClass("component:site-header", {
-        afterRender() {
-          this._super();
-
+        _updateSearchIcon() {
           const searchButton = this.element.querySelector("#search-button");
 
           if ($(searchButton).hasClass("material-icons")) return;
@@ -16,6 +14,10 @@ export default {
           $(searchButton)
             .addClass("material-icons")
             .html("search");
+        },
+        afterRender() {
+          this._super();
+          this._updateSearchIcon();
         }
       });
 
