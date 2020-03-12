@@ -5,6 +5,6 @@ export default createWidget("dc-topic-title", {
   tagName: "div.dc-topic-title",
 
   html(attrs, state) {
-    return h("h1.fancy-title", attrs.fancyTitle);
+    return h("h1.fancy-title", attrs.title);
   }
 });

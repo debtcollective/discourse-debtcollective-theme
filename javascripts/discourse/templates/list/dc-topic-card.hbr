@@ -1,4 +1,8 @@
-<a class="dc-topic dc-card" href={{topic.lastUnreadUrl}} style="border-top-color: #{{topic.category.color}};">
+<a
+  class="dc-topic dc-card"
+  href={{topic.lastUnreadUrl}}
+  style="border-top-color: #{{topic.category.color}};"
+>
   <div class="dc-row h-100">
     <div class="dc-col avatar-col">
       <div class="mr-2">
@@ -11,11 +15,14 @@
           <header class="dc-card__header">
             <div>
               <h2 class="dc-card__title">
-                {{topic.fancyTitle}}
+                {{topic.title}}
               </h2>
               <div class="dc-card__meta dc-text-small">
                 {{#if topic.pinned}}
-                  <p class="dc-info-pill mr-1" style="background-color: #{{topic.category.color}};">
+                  <p
+                    class="dc-info-pill mr-1"
+                    style="background-color: #{{topic.category.color}};"
+                  >
                     staff post
                   </p>
                 {{/if}}
