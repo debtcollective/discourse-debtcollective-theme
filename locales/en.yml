@@ -4,8 +4,12 @@ en:
       expanded: "Show less topics"
       collapsed: "Show more topics"
     categories:
-      collectives: "Our Collectives"
-      others: "Others categories"
+      collectives: 
+        title: "Our Collectives"
+        description: "When you join the Debt Collective you will be placed into a group based on your debt type. We call these groups <strong>collectives</strong>.
+        You will be able to meet other people in your situation to share information and learn how to fight back together against creditors and collectors."
+      others: 
+        title: "Others categories"
   notifications:
     tooltip:
       regular:
