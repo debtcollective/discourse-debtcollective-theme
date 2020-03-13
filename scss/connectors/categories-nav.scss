@@ -1,0 +1,82 @@
+$dc-header-box-shadow: "0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.25)";
+$dc-categories-border: "0.0625rem solid #ebe7dc";
+$dc-categories-height: 4rem;
+
+#main-outlet {
+  // We need to increase the separation between content and header due to categories-nav
+  padding-top: $header-height + $dc-categories-height + $spacer;
+
+  @if $header-categories == "" {
+    padding-top: $header-height + $spacer;
+  }
+}
+
+.d-header {
+  box-shadow: none;
+
+  @if $header-categories == "" {
+    box-shadow: unquote($dc-header-box-shadow);
+  }
+}
+
+.dc-categories {
+  box-shadow: unquote($dc-header-box-shadow);
+
+  @if $header-categories == "" {
+    box-shadow: none;
+    display: none !important;
+  }
+}
+
+.dc-categories {
+  background: $beige;
+  border-top: unquote($dc-categories-border);
+  align-items: center;
+  display: flex;
+  margin-top: $header-height;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  // just below the header to avoid any false effect from the box-shadow
+  z-index: z("header") - 1;
+}
+
+.dc-categories-nav {
+  list-style: none;
+  display: flex;
+
+  &-container {
+    overflow-x: auto;
+  }
+
+  &,
+  &-container {
+    margin: 0 auto;
+  }
+
+  a,
+  a:visited,
+  a:active {
+    transition: color ease 0.216s;
+    color: $body-color;
+  }
+
+  a:hover {
+    color: $primary;
+  }
+
+  > * {
+    display: flex;
+    align-items: center;
+    font-weight: $font-weight-bold;
+    border-left: unquote($dc-categories-border);
+    text-transform: uppercase;
+    height: $dc-categories-height;
+    padding: 0 $grid-gutter-width/2;
+    white-space: nowrap;
+
+    &:last-child {
+      border-right: unquote($dc-categories-border);
+    }
+  }
+}

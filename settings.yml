@@ -1,0 +1,6 @@
+header_categories:
+  type: list
+  default: ""
+  list_type: category
+  description:
+    en: A list of categories to render below the header. Defaults to off.

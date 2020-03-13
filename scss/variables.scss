@@ -48,12 +48,4 @@ $dark: #3c3c3c;
 $card-height: 14rem;
 $btn-action-color: $secondary;
 
-/*
-  There is a set of variables on "Foundation": $small-width: 800px !default; $medium-width: 995px !default;
-  $large-width: 1110px !default; but due to the inability to overwrite them, the rule below overwrites
-  the CSS we wanted to affect.
-*/
-.wrap {
-  max-width: map-get($map: $container-max-widths, $key: "xl");
-  padding: 0 $grid-gutter-width/2;
-}
+$header-height: 5rem;
