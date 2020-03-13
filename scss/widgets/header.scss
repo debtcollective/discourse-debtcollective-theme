@@ -4,6 +4,14 @@
   margin-bottom: 0;
 }
 
+.d-header .panel {
+  display: flex;
+
+  .d-header-icons {
+    order: 2;
+  }
+}
+
 .d-header .header-buttons {
   order: 2;
   margin: 0 0 0 0.5rem;
