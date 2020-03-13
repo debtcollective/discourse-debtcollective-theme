@@ -11,9 +11,11 @@
   }
 
   .post-infos {
+    align-items: flex-start;
+    flex-direction: column;
     position: absolute;
-    top: 0;
     right: 0;
+    top: 0;
   }
 
   .regular.contents {
