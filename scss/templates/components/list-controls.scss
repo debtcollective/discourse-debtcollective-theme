@@ -1,0 +1,42 @@
+.list-controls {
+  .select-kit.categories-admin-dropdown,
+  .select-kit.tags-admin-dropdown,
+  .select-kit.category-notifications-button,
+  .select-kit.tag-notifications-button,
+  .navigation-container {
+    display: flex;
+    align-items: center;
+  }
+
+  #navigation-bar {
+    margin-right: auto;
+  }
+
+  ol.category-breadcrumb li {
+    margin-right: 0;
+  }
+
+  #create-topic {
+    order: 1;
+  }
+
+  .select-kit,
+  .select-kit.dropdown-select-box .dropdown-select-box-header,
+  .btn {
+    border-radius: $border-radius;
+    order: 2;
+  }
+
+  .select-kit:not(.category-drop) {
+    margin-left: $spacer;
+  }
+
+  .navigation-container > * {
+    margin-bottom: 0;
+  }
+
+  .nav,
+  .btn {
+    margin: 0;
+  }
+}
