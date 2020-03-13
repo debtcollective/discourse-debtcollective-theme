@@ -12,3 +12,8 @@ body {
 .wrap {
   @extend %custom-container;
 }
+
+// Make sure when rendering categories-and-latest we remove margin since "latest" has been removed
+.categories-and-latest.categories-and-latest .column.categories {
+  margin: 0;
+}
