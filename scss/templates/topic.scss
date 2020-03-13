@@ -3,7 +3,11 @@
   margin-top: $spacer;
 }
 
-.small-action.onscreen-post,
+.time-gap.small-action {
+  margin-top: $spacer * 2;
+}
+
+.small-action.small-action,
 .topic-status-info {
   max-width: 100%;
 }
