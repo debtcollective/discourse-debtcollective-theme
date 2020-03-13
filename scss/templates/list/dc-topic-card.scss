@@ -5,6 +5,17 @@
   }
 }
 
+.dc-topic-bulk-select {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  margin: 0;
+}
+
+.dc-topic.dc-card {
+  position: relative;
+}
+
 .dc-topic-small.dc-card {
   padding-bottom: 0;
   height: $card-height * 0.75;

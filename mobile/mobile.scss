@@ -1,3 +1,19 @@
 .post-menu-row {
   padding-top: 0.5rem;
 }
+
+.menu-links-row {
+  .glyphs {
+    .user-notifications-link,
+    .user-pms-link {
+      display: block;
+    }
+  }
+}
+
+.d-header-icons {
+  #notifications,
+  #inbox {
+    display: none;
+  }
+}

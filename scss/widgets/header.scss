@@ -1,0 +1,41 @@
+.d-header .header-buttons {
+  order: 2;
+  margin: 0 0 0 0.5rem;
+}
+
+.d-header-icons {
+  align-items: center;
+  display: flex;
+
+  li {
+    order: 1;
+
+    & + li {
+      margin-left: $spacer/2;
+    }
+  }
+
+  #inbox {
+    order: 2;
+  }
+
+  #notifications {
+    order: 3;
+  }
+
+  #current-user {
+    order: 4;
+  }
+
+  .icon.btn-flat.material-icons {
+    font-size: $font-size-base * 1.25;
+    color: $dark;
+    height: auto;
+    width: auto;
+  }
+
+  .badge-notification {
+    left: -2px;
+    right: auto;
+  }
+}

@@ -17,15 +17,18 @@
 @import "templates/components/topic-list";
 @import "templates/components/dc-show-more";
 @import "templates/topic";
+@import "templates/user";
 
 @import "templates/list/dc-topic-author";
 @import "templates/list/dc-topic-card";
 
+@import "widgets/header";
 @import "widgets/post";
 @import "widgets/post-controls";
 @import "widgets/embedded-posts";
 @import "widgets/select-kit";
 @import "widgets/topic-timeline";
+@import "widgets/user-menu";
 
 // Re-apply foundation styles with different variables to overwrite rules
 
