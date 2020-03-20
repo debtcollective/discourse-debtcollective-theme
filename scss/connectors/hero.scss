@@ -1,0 +1,14 @@
+.dc-hero {
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+
+  &__subheading {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+  }
+
+  .btn {
+    font-size: $font-size-base;
+    border-radius: 0.25rem;
+  }
+}
