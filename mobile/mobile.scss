@@ -17,3 +17,13 @@
     display: none;
   }
 }
+
+.dc-hero {
+  .btn {
+    width: 100%;
+  }
+
+  .btn + .btn {
+    margin-top: 1rem;
+  }
+}

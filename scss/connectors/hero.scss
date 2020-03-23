@@ -1,9 +1,14 @@
 .dc-hero {
-  padding-top: $spacer;
-  padding-bottom: $spacer;
+  margin-top: $spacer * 1.5;
+  margin-bottom: $spacer * 3;
+
+  @include media-breakpoint-up(xl) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   &__heading {
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
       font-size: 11vw;
     }
   }
@@ -11,8 +16,9 @@
   &__subheading {
     font-size: $font-size-lg;
     font-weight: $font-weight-bold;
+    margin-top: 0;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
       font-size: 5vw;
     }
   }
