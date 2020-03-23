@@ -1,5 +1,10 @@
 en:
   dc:
+    hero:
+      heading: "Organize to end <strike>debt</strike>."
+      subheading: "Collectives to organize and take action with the help of our members."
+      cta: "Join a Collective"
+      cta_option: "Learn more"
     show_more:
       expanded: "Show less topics"
       collapsed: "Show more topics"
