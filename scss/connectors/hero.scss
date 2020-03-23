@@ -2,9 +2,19 @@
   padding-top: $spacer;
   padding-bottom: $spacer;
 
+  &__heading {
+    @include media-breakpoint-down(md) {
+      font-size: 11vw;
+    }
+  }
+
   &__subheading {
     font-size: $font-size-lg;
     font-weight: $font-weight-bold;
+
+    @include media-breakpoint-down(md) {
+      font-size: 5vw;
+    }
   }
 
   .btn {
