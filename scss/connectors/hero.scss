@@ -1,3 +1,15 @@
+body {
+  .dc-hero {
+    display: none;
+  }
+
+  &.navigation-categories {
+    .dc-hero {
+      display: block;
+    }
+  }
+}
+
 .dc-hero {
   margin-top: $spacer * 1.5;
   margin-bottom: $spacer * 3;
