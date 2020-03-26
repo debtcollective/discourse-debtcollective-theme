@@ -1,0 +1,48 @@
+body {
+  .dc-hero {
+    display: none;
+  }
+
+  &.navigation-categories {
+    .dc-hero {
+      display: block;
+    }
+  }
+}
+
+.dc-hero {
+  margin-top: $spacer * 1.5;
+  margin-bottom: $spacer * 3;
+
+  @include media-breakpoint-up(xl) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__heading {
+    @include media-breakpoint-down(sm) {
+      font-size: 11vw;
+    }
+
+    strike,
+    span {
+      color: $primary;
+    }
+  }
+
+  &__subheading {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    margin-top: 0;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 5vw;
+    }
+  }
+
+  .btn {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-base;
+    border-radius: 0.25rem;
+  }
+}
