@@ -1,0 +1,8 @@
+{{! https://github.com/discourse/discourse/blob/3e897749084faeb29eb9a524d3f3b3f1d46a8738/app/assets/javascripts/discourse/templates/list/visited-line.hbr }}
+{{#if view.isLastVisited}}
+  <div class="dc-col-12">
+    <div class="dc-topic-divider">
+      {{i18n "topics.new_messages_marker"}}
+    </div>
+  </div>
+{{/if}}
