@@ -1,3 +1,15 @@
+body {
+  .list-controls {
+    display: block;
+  }
+
+  &.navigation-categories {
+    .list-controls {
+      display: none;
+    }
+  }
+}
+
 .list-controls {
   .select-kit.categories-admin-dropdown,
   .select-kit.tags-admin-dropdown,
