@@ -17,6 +17,10 @@
   margin: 0 0 0 0.5rem;
 }
 
+.d-header.with-user .header-buttons {
+  order: 2;
+}
+
 .d-header-icons {
   align-items: center;
   display: flex;
