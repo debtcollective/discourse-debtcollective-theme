@@ -18,7 +18,7 @@
           <div class="dc-card__content">
             <header class="dc-card__header">
               <div>
-                <h2 class="dc-card__title">
+                <h2 class="dc-card__title dc-clamp-3">
                   {{{topic.fancyTitle}}}
                 </h2>
                 <div class="dc-card__meta dc-text-small">
@@ -78,7 +78,7 @@
           <div class="dc-card__content">
             <header class="dc-card__header">
               <div>
-                <h2 class="dc-card__title">
+                <h2 class="dc-card__title dc-clamp-3">
                   {{{topic.fancyTitle}}}
                 </h2>
                 <div class="dc-card__meta dc-text-small">
