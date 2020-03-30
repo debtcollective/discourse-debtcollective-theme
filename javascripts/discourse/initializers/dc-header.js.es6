@@ -8,7 +8,7 @@ export default {
       api.modifyClass("component:site-header", {
         _bindUserClass() {
           if (this.currentUser) {
-            $("d-header").addClass("with-user");
+            $(".d-header").addClass("with-user");
           }
         },
         _updateSearchIcon() {
