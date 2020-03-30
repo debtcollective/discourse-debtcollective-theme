@@ -6,6 +6,11 @@ export default {
   initialize() {
     withPluginApi("0.8", api => {
       api.modifyClass("component:site-header", {
+        _bindUserClass() {
+          if (this.currentUser) {
+            $("d-header").addClass("with-user");
+          }
+        },
         _updateSearchIcon() {
           const searchButton = this.element.querySelector("#search-button");
 
@@ -18,6 +23,7 @@ export default {
         afterRender() {
           this._super();
           this._updateSearchIcon();
+          this._bindUserClass();
         }
       });
 
