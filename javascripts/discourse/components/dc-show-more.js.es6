@@ -16,13 +16,7 @@ export default Component.extend({
   },
 
   didInsertElement() {
-    const visibleElementsClass = ".show-more-visible-true";
-    const hasVisibleElements =
-      this.element.querySelectorAll(visibleElementsClass).length > 0;
-
-    if (hasVisibleElements) return;
-
-    this.toggleExpanded();
+    this._ensureVisibleElements();
   },
 
   willUpdate() {
@@ -33,6 +27,16 @@ export default Component.extend({
   toggleExpanded() {
     this.set("displayButton", this.collapsable);
     this.set("isExpanded", !this.isExpanded);
+  },
+
+  _ensureVisibleElements() {
+    const visibleElementsClass = ".show-more-visible-true";
+    const hasVisibleElements =
+      this.element.querySelectorAll(visibleElementsClass).length > 0;
+
+    if (hasVisibleElements) return;
+
+    this.toggleExpanded();
   },
 
   _updateDisplayText() {
