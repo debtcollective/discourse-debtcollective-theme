@@ -18,7 +18,7 @@
           <div class="dc-card__content">
             <header class="dc-card__header">
               <div>
-                <h2 class="dc-card__title dc-clamp-3">
+                <h2 class="dc-card__title dc-clamp-2">
                   {{{topic.fancyTitle}}}
                 </h2>
                 <div class="dc-card__meta dc-text-small">
@@ -78,7 +78,7 @@
           <div class="dc-card__content">
             <header class="dc-card__header">
               <div>
-                <h2 class="dc-card__title dc-clamp-3">
+                <h2 class="dc-card__title dc-clamp-2">
                   {{{topic.fancyTitle}}}
                 </h2>
                 <div class="dc-card__meta dc-text-small">
@@ -100,7 +100,7 @@
               </div>
             </header>
             {{#if topic.hasExcerpt}}
-              <div class="dc-card__text dc-clamp-3">
+              <div class="dc-card__text dc-clamp-1">
                 {{{dir-span topic.escapedExcerpt}}}
               </div>
             {{/if}}
