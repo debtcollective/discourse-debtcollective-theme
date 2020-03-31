@@ -12,16 +12,11 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-    this._updateDisplayText();
   },
 
   didInsertElement() {
     this._ensureVisibleElements();
     this._hideLoadingMessage();
-  },
-
-  willUpdate() {
-    this._updateDisplayText();
   },
 
   @action
@@ -53,14 +48,5 @@ export default Component.extend({
     if (hasVisibleElements) return;
 
     this.toggleExpanded();
-  },
-
-  _updateDisplayText() {
-    this.set(
-      "displayText",
-      this.isExpanded
-        ? I18n.t(themePrefix("dc.show_more.expanded"))
-        : I18n.t(themePrefix("dc.show_more.collapsed"))
-    );
   }
 });
