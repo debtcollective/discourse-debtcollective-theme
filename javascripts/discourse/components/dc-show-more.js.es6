@@ -17,6 +17,7 @@ export default Component.extend({
 
   didInsertElement() {
     this._ensureVisibleElements();
+    this._hideLoadingMessage();
   },
 
   willUpdate() {
@@ -27,6 +28,21 @@ export default Component.extend({
   toggleExpanded() {
     this.set("displayButton", this.collapsable);
     this.set("isExpanded", !this.isExpanded);
+
+    this._hideLoadingMessage();
+  },
+
+  /**
+   * avoid to show the message of "no more topics" if not expanded yet
+   * prevent to show the loading spinner until component gets expanded
+   */
+  _hideLoadingMessage() {
+    const loadingContainerSelectors = [".topic-list-bottom"];
+
+    $(loadingContainerSelectors.join(",")).css(
+      "display",
+      this.isExpanded ? "block" : "none"
+    );
   },
 
   _ensureVisibleElements() {
