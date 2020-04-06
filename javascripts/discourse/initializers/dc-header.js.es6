@@ -39,8 +39,8 @@ export default {
       api.reopenWidget("quick-access-item", {
         html(attrs) {
           // Allow to inject nodes within the quick-access-profile items
-          if (attrs.customItem) {
-            return attrs.customItem;
+          if (attrs.custom) {
+            return attrs.custom;
           }
 
           const html = this._super(attrs);
@@ -59,19 +59,19 @@ export default {
           const { currentUser, siteSettings } = this;
           const { reviewable_default_topics } = siteSettings;
 
-          links.push({
-            customItem: this.attach("link", {
+          links.push(
+            this.attach("link", {
               route: "discovery.latest",
               className: "latest-topics-link",
               label: "filters.latest.title",
               title: "filters.latest.help",
               omitSpan: true
             })
-          });
+          );
 
           if (currentUser) {
-            links.push({
-              customItem: this.attach("link", {
+            links.push(
+              this.attach("link", {
                 route: "discovery.new",
                 className: "new-topics-link",
                 labelCount: "filters.new.title_with_count",
@@ -80,10 +80,10 @@ export default {
                 count: this._lookupCount("new"),
                 omitSpan: true
               })
-            });
+            );
 
-            links.push({
-              customItem: this.attach("link", {
+            links.push(
+              this.attach("link", {
                 route: "discovery.unread",
                 className: "unread-topics-link",
                 labelCount: "filters.unread.title_with_count",
@@ -92,13 +92,13 @@ export default {
                 count: this._lookupCount("unread"),
                 omitSpan: true
               })
-            });
+            );
           }
 
           if (currentUser.staff || currentUser.reviewable_count) {
             // Staff always see the review link. Non-staff will see it if there are items to review
-            links.push({
-              customItem: this.attach("link", {
+            links.push(
+              this.attach("link", {
                 route: reviewable_default_topics ? "review.topics" : "review",
                 className: "review",
                 label: "review.title",
@@ -106,7 +106,7 @@ export default {
                 badgeClass: "reviewables",
                 omitSpan: true
               })
-            });
+            );
           }
 
           return links;
@@ -114,9 +114,13 @@ export default {
 
         _getDefaultItems() {
           const items = this._super();
-          const customItems = this._customLinks();
+          const customLinks = this._customLinks();
+          const customSection = {
+            className: "embedded-menu-item",
+            custom: h("div.embedded-menu", customLinks)
+          };
 
-          return items.concat(customItems);
+          return items.concat(customSection);
         }
       });
 
