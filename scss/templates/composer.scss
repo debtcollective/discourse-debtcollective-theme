@@ -1,0 +1,49 @@
+%composer-input-controls {
+  border-radius: 0.25rem;
+  border: 0.0625rem solid $gray-300;
+  margin-bottom: 0;
+  padding: 0.5rem 0.75rem;
+}
+
+// Use id's to overlap Discourse default
+#reply-control #reply-title {
+  @extend %composer-input-controls;
+}
+
+#reply-control
+  .reply-area:not(.with-tags)
+  .title-and-category.show-event-controls
+  .category-input {
+  margin-bottom: 0;
+}
+
+#reply-control .name {
+  display: inherit;
+}
+
+#reply-control .user-selector.with-preview,
+#reply-control .title-and-category.with-preview,
+#reply-control .title-input {
+  margin-bottom: $spacer/2;
+}
+
+.composer-fields .composer-controls-event .event-label button.no-text {
+  @extend %composer-input-controls;
+  padding: 0;
+  margin: 0;
+  max-height: none;
+  // For the sake of simplicity adjust to the known height of surround inputs
+  height: 2.3125rem;
+}
+
+.composer-fields-outlet {
+  .btn.add-event {
+    @extend %composer-input-controls;
+  }
+}
+
+.d-editor-textarea-wrapper {
+  @extend %composer-input-controls;
+  margin-bottom: $spacer/2;
+  padding: 0;
+}
