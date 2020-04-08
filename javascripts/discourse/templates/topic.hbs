@@ -1,5 +1,10 @@
 {{! https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/topic.hbs#L78 }}
-{{#discourse-topic multiSelect=multiSelect enteredAt=enteredAt topic=model hasScrolled=hasScrolled}}
+{{#discourse-topic
+  multiSelect=multiSelect
+  enteredAt=enteredAt
+  topic=model
+  hasScrolled=hasScrolled
+}}
   {{topic-category topic=model class="topic-category"}}
   {{#if model.postStream.loaded}}
     <div class="container posts">
@@ -7,9 +12,15 @@
         {{partial "selected-posts"}}
       </div>
       <div class="row">
-        <section class="topic-area" id="topic" data-topic-id="{{unbound model.id}}">
+        <section
+          class="topic-area"
+          id="topic"
+          data-topic-id="{{unbound model.id}}"
+        >
           <div class="posts-wrapper">
-            {{conditional-loading-spinner condition=model.postStream.loadingAbove}}
+            {{conditional-loading-spinner
+              condition=model.postStream.loadingAbove
+            }}
             {{plugin-outlet name="topic-above-posts" args=(hash model=model)}}
             {{#unless model.postStream.loadingFilter}}
               {{scrolling-post-stream
@@ -58,10 +69,14 @@
                 showInvite=(route-action "showInvite")
               }}
             {{/unless}}
-            {{conditional-loading-spinner condition=model.postStream.loadingBelow}}
+            {{conditional-loading-spinner
+              condition=model.postStream.loadingBelow
+            }}
           </div>
           <div id="topic-bottom"></div>
-          {{#conditional-loading-spinner condition=model.postStream.loadingFilter}}
+          {{#conditional-loading-spinner
+            condition=model.postStream.loadingFilter
+          }}
             {{#if loadedAllPosts}}
               {{#if model.pending_posts}}
                 <div class="pending-posts">
@@ -78,7 +93,10 @@
                       <div class="post-contents-wrapper">
                         {{reviewable-created-by user=currentUser tagName=""}}
                         <div class="post-contents">
-                          {{reviewable-created-by-name user=currentUser tagName=""}}
+                          {{reviewable-created-by-name
+                            user=currentUser
+                            tagName=""
+                          }}
                           <div class="post-body">
                             {{cook-text pending.raw}}
                           </div>
@@ -99,9 +117,19 @@
               {{#if model.queued_posts_count}}
                 <div class="has-pending-posts">
                   <div>
-                    {{{i18n "review.topic_has_pending" count=model.queued_posts_count}}}
+                    {{{i18n
+                      "review.topic_has_pending"
+                      count=model.queued_posts_count
+                    }}}
                   </div>
-                  {{#link-to "review" (query-params topic_id=model.id type="ReviewableQueuedPost" status="pending")}}
+                  {{#link-to
+                    "review"
+                    (query-params
+                      topic_id=model.id
+                      type="ReviewableQueuedPost"
+                      status="pending"
+                    )
+                  }}
                     {{i18n "review.view_pending"}}
                   {{/link-to}}
                 </div>
@@ -113,7 +141,9 @@
                   executeAt=model.private_topic_timer.execute_at
                   duration=model.private_topic_timer.duration
                   removeTopicTimer=(action
-                    "removeTopicTimer" model.private_topic_timer.status_type "private_topic_timer"
+                    "removeTopicTimer"
+                    model.private_topic_timer.status_type
+                    "private_topic_timer"
                   )
                 }}
               {{/if}}
@@ -124,12 +154,17 @@
                 basedOnLastPost=model.topic_timer.based_on_last_post
                 duration=model.topic_timer.duration
                 categoryId=model.topic_timer.category_id
-                removeTopicTimer=(action "removeTopicTimer" model.topic_timer.status_type "topic_timer")
+                removeTopicTimer=(action
+                  "removeTopicTimer" model.topic_timer.status_type "topic_timer"
+                )
               }}
               {{#if session.showSignupCta}}
                 {{! replace "Log In to Reply" with the infobox }}{{signup-cta}}
               {{else if currentUser}}
-                {{plugin-outlet name="topic-above-footer-buttons" args=(hash model=model)}}
+                {{plugin-outlet
+                  name="topic-above-footer-buttons"
+                  args=(hash model=model)
+                }}
                 {{topic-footer-buttons
                   topic=model
                   toggleMultiSelect=(action "toggleMultiSelect")
@@ -165,7 +200,11 @@
           {{/conditional-loading-spinner}}
         </section>
       </div>
-      {{#topic-navigation topic=model jumpToDate=(action "jumpToDate") jumpToIndex=(action "jumpToIndex") as |info|}}
+      {{#topic-navigation
+        topic=model
+        jumpToDate=(action "jumpToDate")
+        jumpToIndex=(action "jumpToIndex") as |info|
+      }}
         {{#if info.renderAdminMenuButton}}
           {{topic-admin-menu-button
             topic=model
@@ -211,8 +250,15 @@
           convertToPublicTopic=(action "convertToPublicTopic")
           convertToPrivateMessage=(action "convertToPrivateMessage")
         }}
-        {{#topic-progress topic=model expanded=info.topicProgressExpanded jumpToPost=(action "jumpToPost")}}
-          {{plugin-outlet name="before-topic-progress" args=(hash model=model jumpToPost=(action "jumpToPost"))}}
+        {{#topic-progress
+          topic=model
+          expanded=info.topicProgressExpanded
+          jumpToPost=(action "jumpToPost")
+        }}
+          {{plugin-outlet
+            name="before-topic-progress"
+            args=(hash model=model jumpToPost=(action "jumpToPost"))
+          }}
           {{#if info.renderAdminMenuButton}}
             {{topic-admin-menu-button
               topic=model
@@ -249,7 +295,11 @@
             </div>
             {{#if model.noRetry}}
               {{#unless currentUser}}
-                {{d-button action=(route-action "showLogin") class="btn-primary topic-retry" icon="user" label="log_in"
+                {{d-button
+                  action=(route-action "showLogin")
+                  class="btn-primary topic-retry"
+                  icon="user"
+                  label="log_in"
                 }}
               {{/unless}}
             {{else}}
