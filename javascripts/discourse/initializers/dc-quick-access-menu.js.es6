@@ -23,6 +23,8 @@ export default {
           return tts ? tts.lookupCount(type) : 0;
         },
 
+        // The code in regards links below has been imported from Discourse hamburger-menu widget code
+        // https://github.com/discourse/discourse/blob/79b8c08d45da40248484b6ea564f604b9d58e919/app/assets/javascripts/discourse/widgets/hamburger-menu.js.es6#L85
         _customLinks() {
           const links = [];
           const { currentUser, siteSettings } = this;
