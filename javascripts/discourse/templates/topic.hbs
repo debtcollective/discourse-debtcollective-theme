@@ -17,6 +17,7 @@
           id="topic"
           data-topic-id="{{unbound model.id}}"
         >
+          {{plugin-outlet name="topic-title" args=(hash model=model)}}
           <div class="posts-wrapper">
             {{conditional-loading-spinner
               condition=model.postStream.loadingAbove
