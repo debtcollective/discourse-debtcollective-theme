@@ -4,7 +4,7 @@
       <div class="dc-card__content justify-content-around text-center h-100">
         {{raw "list/dc-topic-author" posters=topic.featuredUsers}}
         <h2 class="dc-card__title dc-clamp-2-fixed">
-          {{topic.fancyTitle}}
+          {{{topic.fancyTitle}}}
         </h2>
       </div>
     </div>
@@ -33,7 +33,10 @@
           </div>
           {{#if topic.pinned}}
             <div id="pinned-topic">
-              <p class="dc-info-pill-sm" style="background-color: #{{topic.category.color}};">
+              <p
+                class="dc-info-pill-sm"
+                style="background-color: #{{topic.category.color}};"
+              >
                 staff post
               </p>
             </div>
