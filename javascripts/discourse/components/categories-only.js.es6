@@ -6,14 +6,12 @@ export default Component.extend({
 
   @discourseComputed("categories")
   collectives(categories) {
-    const _categories = categories.content;
-    return _categories.filter(c => c.is_collective);
+    return categories.filter(category => category.is_collective);
   },
 
   @discourseComputed("categories")
   nonCollectives(categories) {
-    const _categories = categories.content;
-    return _categories.filter(c => !c.is_collective);
+    return categories.filter(category => !category.is_collective);
   },
 
   @discourseComputed("topics")
