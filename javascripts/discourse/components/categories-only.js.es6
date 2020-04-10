@@ -14,5 +14,10 @@ export default Component.extend({
   nonCollectives(categories) {
     const _categories = categories.content;
     return _categories.filter(c => !c.is_collective);
+  },
+
+  @discourseComputed("topics")
+  currentEfforts(topics) {
+    return topics.filter(topic => topic.pinned);
   }
 });
