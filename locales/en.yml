@@ -3,8 +3,8 @@ en:
     hero:
       heading: "Organize to end <strike>debt</strike>."
       subheading: "Collectives to organize and take action with the help of our members."
-      cta: "Join a Collective"
-      cta_option: "Learn more"
+      cta: "Learn more"
+      cta_link: "https://community.debtcollective.org/t/member-guide-getting-started/2901"
     show_more:
       expanded: "Show less topics"
       collapsed: "Show more topics"
