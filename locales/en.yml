@@ -9,6 +9,10 @@ en:
       expanded: "Show less topics"
       collapsed: "Show more topics"
     categories:
+      currentEfforts:
+        title: "Current efforts"
+        description: "We strive to make accessible to you all the efforts that are happening right now around the debt collective organization. 
+        Below you can find some of those. Keep exploring the community to find out more"
       collectives: 
         title: "Our Collectives"
         description: "When you join the Debt Collective you will be placed into a group based on your debt type. We call these groups <strong>collectives</strong>.
