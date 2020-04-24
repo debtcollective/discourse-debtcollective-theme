@@ -9,5 +9,8 @@
     "Standard": {
       "primary": "222222"
     }
+  },
+  "modifiers": {
+    "serialize_topic_excerpts": true
   }
 }
