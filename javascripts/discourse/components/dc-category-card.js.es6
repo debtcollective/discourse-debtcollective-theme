@@ -4,9 +4,10 @@ import { computed } from "@ember/object";
 export default Component.extend({
   groupCount: computed(function() {
     const category = this.category;
+    const isCollective = category.tdc_is_collective;
 
-    if (!category.is_collective) return null;
+    if (!isCollective) return null;
 
-    return category.collective_group.user_count;
+    return category.tdc_collective_group.user_count;
   })
 });
