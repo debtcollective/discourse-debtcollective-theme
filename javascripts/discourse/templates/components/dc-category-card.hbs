@@ -20,5 +20,13 @@
     <p class="m-0 ml-1 dc-text-light">
       {{category.totalTopicCount}}
     </p>
+    {{#if category.tdc_is_collective}}
+      <span class="ml-2 material-icons">
+        supervisor_account
+      </span>
+      <p class="m-0 ml-1 dc-text-light">
+        {{groupCount}}
+      </p>
+    {{/if}}
   </div>
 </a>
