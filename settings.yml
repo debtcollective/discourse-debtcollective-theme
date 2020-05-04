@@ -10,3 +10,6 @@ show_hero:
 show_current_efforts:
   type: bool
   default: false
+logo_href:
+  type: string
+  default: ""
