@@ -1,0 +1,33 @@
+{{! https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/app/templates/discovery.hbs }}
+{{#if errorHtml}}
+  {{html-safe errorHtml}}
+{{else}}
+  <div class="container">
+    {{discourse-banner user=currentUser banner=site.banner}}
+  </div>
+  {{#if category}}
+    {{outlet "navigation-bar"}}
+  {{/if}}
+  {{conditional-loading-spinner condition=loading}}
+  <div class="container list-container {{if loading "hidden"}}">
+    <div class="row">
+      <div class="full-width">
+        <div id="header-list-area">
+          {{outlet "header-list-container"}}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="full-width">
+        <div id="list-area">
+          {{plugin-outlet
+            name="discovery-list-container-top"
+            args=(hash category=category listLoading=loading)
+          }}
+          {{outlet "list-container"}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{plugin-outlet name="discovery-below"}}
+{{/if}}

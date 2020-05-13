@@ -1,0 +1,35 @@
+#navigation-bar {
+  border-bottom: 0.125rem solid $gray-ligth;
+  display: flex;
+  flex: 1;
+  margin: 0;
+}
+
+.nav.nav-pills {
+  > li {
+    float: none;
+    margin: 0;
+  }
+
+  > li a {
+    background: none;
+    border: 0.125rem solid transparent;
+    position: relative;
+    top: 0.125rem;
+    transition: all ease 0.216s;
+    padding: 0.75rem 1rem;
+  }
+
+  > li a.active {
+    background: none;
+  }
+
+  > li a.active {
+    border-bottom-color: $primary;
+    color: $primary;
+  }
+
+  > li > a:hover {
+    color: $primary;
+  }
+}
