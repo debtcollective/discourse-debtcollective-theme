@@ -17,25 +17,25 @@
 @import "connectors/hero";
 
 @import "templates/components/categories-only";
-@import "templates/components/topic-list";
 @import "templates/components/dc-show-more";
 @import "templates/components/list-controls";
+@import "templates/components/topic-list";
+@import "templates/composer";
 @import "templates/topic";
 @import "templates/user";
-@import "templates/composer";
 
 @import "templates/list/dc-topic-author";
 @import "templates/list/dc-topic-card";
 @import "templates/list/visited-line";
 
-@import "widgets/header";
-@import "widgets/post";
-@import "widgets/post-controls";
 @import "widgets/embedded-posts";
+@import "widgets/header";
+@import "widgets/post-controls";
+@import "widgets/post";
+@import "widgets/quick-access-panel";
 @import "widgets/select-kit";
 @import "widgets/topic-timeline";
 @import "widgets/user-menu";
-@import "widgets/quick-access-panel";
 
 // Re-apply foundation styles with different variables to overwrite rules
 
