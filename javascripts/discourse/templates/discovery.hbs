@@ -5,9 +5,11 @@
   <div class="container">
     {{discourse-banner user=currentUser banner=site.banner}}
   </div>
-  {{#if category}}
-    {{outlet "navigation-bar"}}
-  {{/if}}
+  <div class="list-controls">
+    <div class="container">
+      {{outlet "navigation-bar"}}
+    </div>
+  </div>
   {{conditional-loading-spinner condition=loading}}
   <div class="container list-container {{if loading "hidden"}}">
     <div class="row">

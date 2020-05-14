@@ -11,6 +11,9 @@ body {
 }
 
 .list-controls {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+
   .select-kit.categories-admin-dropdown,
   .select-kit.tags-admin-dropdown,
   .select-kit.category-notifications-button,
@@ -18,18 +21,6 @@ body {
   .navigation-container {
     display: flex;
     align-items: center;
-  }
-
-  #navigation-bar {
-    margin-right: auto;
-  }
-
-  ol.category-breadcrumb {
-    margin-bottom: 0;
-  }
-
-  ol.category-breadcrumb li {
-    margin-right: 0;
   }
 
   #create-topic,
@@ -56,19 +47,9 @@ body {
     margin: 0;
   }
 
-  .navigation-container > * {
-    margin-bottom: 0;
-  }
-
   .nav,
   .btn {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  .category-navigation {
-    display: flex;
-    align-items: center;
-    width: 100%;
   }
 }

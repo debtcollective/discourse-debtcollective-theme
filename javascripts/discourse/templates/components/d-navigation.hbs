@@ -3,9 +3,16 @@
   category=category
   noSubcategories=noSubcategories
 }}
-<p class="category-description">
-  {{category.description}}
-</p>
+{{#if isLatestPage}}
+  <p class="page-description">
+    In this section you will find everything that is happening right now within the community
+  </p>
+{{/if}}
+{{#if category}}
+  <p class="category-description">
+    {{category.description}}
+  </p>
+{{/if}}
 {{navigation-bar navItems=navItems filterMode=filterMode category=category}}
 <div class="category-actions">
   {{#if showCategoryAdmin}}

@@ -1,10 +1,39 @@
-.category-navigation {
+.category-navigation,
+.dc-navigation-container {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
   position: relative;
+  width: 100%;
+}
 
+.dc-navigation-container {
+  .category-breadcrumb {
+    flex: 1;
+    float: none;
+    min-width: 100%;
+  }
+
+  .category-actions {
+    position: absolute;
+    top: 0.25rem;
+    right: 0;
+  }
+
+  .page-description {
+    flex: 1;
+    float: none;
+    margin: 0 0 1rem;
+    min-width: 100%;
+  }
+
+  // Avoid to show the link to catefories that will make the user go to the homepage
+  a[href="/categories"] {
+    display: none;
+  }
+}
+
+.category-navigation {
   .category-description {
     margin-top: 0;
   }
@@ -18,7 +47,7 @@
 
   .category-actions {
     position: absolute;
-    top: 0;
+    top: 0.25rem;
     right: 0;
   }
 
@@ -30,6 +59,7 @@
 }
 
 ol.category-breadcrumb {
+  float: none;
   margin: 0;
 
   .select-kit.combo-box .select-kit-header {
