@@ -41,11 +41,13 @@ export default Component.extend({
   },
 
   _ensureVisibleElements() {
+    const { pathname: currentPage } = window.location;
     const visibleElementsClass = ".show-more-visible-true";
+    const blacklistedPages = ["/latest"];
     const hasVisibleElements =
       this.element.querySelectorAll(visibleElementsClass).length > 0;
 
-    if (hasVisibleElements) return;
+    if (hasVisibleElements && !blacklistedPages.includes(currentPage)) return;
 
     this.toggleExpanded();
   }

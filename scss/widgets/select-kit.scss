@@ -5,3 +5,7 @@
   border: 0.0625rem solid $gray-300;
   padding: 0.5rem 0.75rem;
 }
+
+.select-kit.single-select.is-expanded .select-kit-header {
+  outline: auto 5px -webkit-focus-ring-color;
+}

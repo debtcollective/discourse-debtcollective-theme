@@ -1,0 +1,16 @@
+{{#d-section
+  bodyClass="navigation-topics"
+  class="navigation-container"
+  scrollTop="false"
+}}
+  {{! We need to add a extra wrapper to being able to target this with CSS }}
+  {{! Trying to customise with navigation-container won't take effect }}
+  <div class="dc-navigation-container">
+    {{d-navigation
+      filterMode=filterMode
+      canCreateTopic=canCreateTopic
+      hasDraft=draft
+      createTopic=(route-action "createTopic")
+    }}
+  </div>
+{{/d-section}}
