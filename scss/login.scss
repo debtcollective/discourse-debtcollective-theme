@@ -32,7 +32,7 @@
   .modal-body,
   #credentials {
     flex-direction: column;
-    padding: 15px 0 0;
+    padding: 0;
   }
 
   .modal-body {
@@ -43,6 +43,48 @@
 
   .modal-header {
     border-bottom: none;
+
+    .title {
+      text-align: center;
+      width: 100%;
+    }
+
+    .modal-close {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+    }
+  }
+
+  .modal-inner-container {
+    position: relative;
+  }
+
+  // dc-logo is rendered inside the modal
+  // we put it on top of the modal with css
+  .dc-logo {
+    position: absolute;
+    top: -95px; // 80px logo height + 15px padding
+    text-align: center;
+    width: 100%;
+
+    img {
+      height: 80px;
+    }
+  }
+
+  // Login button container
+  .auth-footer {
+    border-top: none;
+    padding: 0 24px;
+    width: 100%;
+
+    #login-button {
+      width: 100%;
+      text-align: center;
+      // same value as the .btn class
+      min-height: 40px;
+    }
   }
 }
 

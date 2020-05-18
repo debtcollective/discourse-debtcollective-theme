@@ -1,3 +1,7 @@
+<div class="dc-logo">
+  {{mount-widget widget="home-logo" args=args}}
+</div>
+
 {{#login-modal screenX=lastX screenY=lastY loginName=loginName loginPassword=loginPassword secondFactorToken=secondFactorToken action=(action "login")}}
   {{plugin-outlet name="login-before-modal-body" tagName=""}}
 
@@ -46,6 +50,24 @@
         {{/second-factor-form}}
       </form>
     {{/if}}
+
+    <div class="auth-footer">
+      {{#if canLoginLocal}}
+        {{#unless showSecurityKey }}
+          {{d-button
+            action=(action "login")
+            id="login-button"
+            form="login-form"
+            icon="unlock"
+            label=loginButtonLabel
+            disabled=loginDisabled
+            class="btn btn-large btn-primary"}}
+        {{/unless}}
+      {{/if}}
+
+      {{conditional-loading-spinner condition=showSpinner size="small"}}
+    </div>
+
     {{#if showLoginButtons}}
       <div class="auth-social">
         <div class="auth-divider">
@@ -65,30 +87,7 @@
     {{/if}}
   {{/d-modal-body}}
 
-  <div class="modal-footer">
-    {{#if canLoginLocal}}
-      {{#unless showSecurityKey }}
-        {{d-button
-          action=(action "login")
-          id="login-button"
-          form="login-form"
-          icon="unlock"
-          label=loginButtonLabel
-          disabled=loginDisabled
-          class="btn btn-large btn-primary"}}
-      {{/unless}}
 
-      {{#if showSignupLink}}
-        {{d-button
-          class="btn-large"
-          id="new-account-link"
-          action=(action "createAccount")
-          label="create_account.title"}}
-      {{/if}}
-    {{/if}}
-
-    {{conditional-loading-spinner condition=showSpinner size="small"}}
-  </div>
 
   {{plugin-outlet name="login-after-modal-footer" tagName=""}}
 
