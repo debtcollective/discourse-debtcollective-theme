@@ -6,6 +6,8 @@
 }
 
 .nav.nav-pills {
+  display: flex;
+
   > li {
     float: none;
     margin: 0;
