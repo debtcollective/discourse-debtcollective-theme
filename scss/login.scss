@@ -1,0 +1,89 @@
+.discourse-no-touch #login-form {
+  margin: 0 auto;
+}
+
+.login-modal.in:before {
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  background: $background-gradient;
+  position: fixed;
+  z-index: -1;
+  animation: none;
+}
+
+.create-account.in .modal-inner-container,
+.login-modal.in .modal-inner-container {
+  animation: none;
+  width: 440px;
+}
+
+#credentials tr {
+  display: flex;
+  flex-direction: column;
+}
+
+// Modal customizations
+.modal-inner-container {
+  box-shadow: $card-box-shadow;
+}
+
+.d-modal.login-modal {
+  .modal-body,
+  #credentials {
+    flex-direction: column;
+    padding: 15px 0 0;
+  }
+
+  .modal-body {
+    form {
+      width: 100%;
+    }
+  }
+
+  .modal-header {
+    border-bottom: none;
+  }
+}
+
+// this is the section with the social buttons
+.auth-social {
+  width: 100%;
+  padding-bottom: 2rem;
+
+  .auth-social-buttons {
+    #login-buttons {
+      /*       flex-direction: row;
+      justify-content: space-between; */
+
+      &:not(.hidden) {
+        button {
+          &:first-of-type {
+            margin-top: 0;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .auth-divider {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    height: 0px;
+
+    hr {
+      margin: 0;
+    }
+
+    small {
+      position: relative;
+      background: white;
+      padding: 0 1rem;
+      top: -12px;
+    }
+  }
+}
