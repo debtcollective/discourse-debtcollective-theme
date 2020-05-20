@@ -20,7 +20,8 @@ export default {
             id: "dc-popup",
             hero: "We've got a new look! What do you think?",
             class: "hydrated",
-            url: "/"
+            url:
+              "https://community.debtcollective.org/t/user-experience-feedback-new-theme/4110"
           },
           `Noticed the new layout for the Debt Collective Community platform? Implementing this took a
               lot of time and effort and we want to make sure the new system works for you.
