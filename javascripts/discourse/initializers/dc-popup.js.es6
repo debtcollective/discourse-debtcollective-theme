@@ -1,4 +1,5 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+import loadScript from "discourse/lib/load-script";
 
 let popupEnabled = false;
 
@@ -9,9 +10,8 @@ export default {
       api.onAppEvent("page:changed", () => {
         if (popupEnabled) return;
 
-        addScript(
-          "https://unpkg.com/@debtcollective/dc-popup-component@0.0.1/dist/popup-component/popup-component.js",
-          { defer: "", crossorigin: "anonymous" }
+        loadScript(
+          "https://unpkg.com/@debtcollective/dc-popup-component@0.0.1/dist/popup-component/popup-component.js"
         );
 
         addWebComponent(
@@ -43,16 +43,4 @@ function addWebComponent(tag, attrs, content) {
   component.textContent = content;
 
   document.body.appendChild(component);
-}
-
-function addScript(src, attrs) {
-  var script = document.createElement("script");
-
-  script.setAttribute("src", src);
-
-  Object.keys(attrs).forEach(key => {
-    script.setAttribute(key, attrs[key]);
-  });
-
-  document.body.appendChild(script);
 }
