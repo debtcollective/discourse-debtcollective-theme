@@ -19,6 +19,9 @@ en:
         You will be able to meet other people in your situation to share information and learn how to fight back together against creditors and collectors."
       others: 
         title: "Others categories"
+    popup:
+      title: "We've got a new look! What do you think?"
+      description: Noticed the new layout for the Debt Collective Community platform? Implementing this took a lot of time and effort and we want to make sure the new system works for you. So, please let us know what is working well and what you may want to see done better!
   notifications:
     tooltip:
       regular:

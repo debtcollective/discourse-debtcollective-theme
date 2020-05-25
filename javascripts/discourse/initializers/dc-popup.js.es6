@@ -18,14 +18,11 @@ export default {
           "dc-popup",
           {
             id: "dc-popup",
-            hero: "We've got a new look! What do you think?",
+            hero: I18n.t(themePrefix("dc.popup.title")),
             class: "hydrated",
-            url:
-              "https://community.debtcollective.org/t/user-experience-feedback-new-theme/4110"
+            url: settings.popup_url
           },
-          `Noticed the new layout for the Debt Collective Community platform? Implementing this took a
-              lot of time and effort and we want to make sure the new system works for you.
-              So, please let us know what is working well and what you may want to see done better!`
+          I18n.t(themePrefix("dc.popup.description"))
         );
 
         popupEnabled = true;
