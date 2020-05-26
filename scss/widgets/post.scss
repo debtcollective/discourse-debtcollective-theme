@@ -11,11 +11,20 @@
   }
 
   .post-infos {
-    align-items: flex-start;
+    align-items: flex-end;
     flex-direction: column;
     position: absolute;
     right: 0;
     top: 0;
+
+    > * {
+      margin-right: 0;
+      margin-bottom: 0.25rem;
+    }
+
+    .post-date {
+      font-size: 0.75rem;
+    }
   }
 
   .regular.contents {
