@@ -12,18 +12,26 @@
 
   .post-infos {
     align-items: flex-end;
-    flex-direction: column;
+    flex-direction: row;
     position: absolute;
     right: 0;
     top: 0;
 
     > * {
-      margin-right: 0;
-      margin-bottom: 0.25rem;
+      margin: 0 0 0 0.5rem;
     }
 
-    .post-date {
-      font-size: 0.75rem;
+    @include media-breakpoint-up(md) {
+      flex-direction: column;
+
+      > * {
+        margin-right: 0;
+        margin-bottom: 0.25rem;
+      }
+
+      .post-date {
+        font-size: 0.75rem;
+      }
     }
   }
 
