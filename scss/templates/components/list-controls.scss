@@ -4,8 +4,9 @@ body {
   }
 
   &.navigation-categories {
-    .list-controls {
-      display: none;
+    .list-controls .category-breadcrumb,
+    .list-controls #navigation-bar {
+      visibility: hidden;
     }
   }
 }
