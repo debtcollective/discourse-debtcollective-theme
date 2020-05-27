@@ -45,6 +45,10 @@
     position: absolute;
     top: 0.25rem;
     right: 0;
+
+    .notifications-button .d-icon-caret-down {
+      display: none;
+    }
   }
 
   .category-notifications-button > button.dropdown-select-box-header {
