@@ -1,11 +1,21 @@
-:root .select-kit.combo-box .combo-box-header,
-:root .select-kit.combo-box .select-kit-header {
+%input-base {
   background: white;
   border-radius: $border-radius;
   border: 0.0625rem solid $gray-300;
   padding: 0.5rem 0.75rem;
 }
 
+// Select Kit
+:root .select-kit.combo-box .combo-box-header,
+:root .select-kit.combo-box .select-kit-header {
+  @extend %input-base;
+}
+
 .select-kit.single-select.is-expanded .select-kit-header {
   outline: auto 5px -webkit-focus-ring-color;
+}
+
+// Inputs
+input.ember-text-field {
+  @extend %input-base;
 }
