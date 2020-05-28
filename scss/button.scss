@@ -49,3 +49,9 @@
   font-size: $btn-font-size-lg;
   padding: $btn-padding-y-lg $btn-padding-x-lg;
 }
+
+// Auth social buttons and email button and email button
+.btn.btn-social,
+.btn.login-with-email-button {
+  height: 40px;
+}
