@@ -5,7 +5,7 @@
 {{#login-modal screenX=lastX screenY=lastY loginName=loginName loginPassword=loginPassword secondFactorToken=secondFactorToken action=(action "login")}}
   {{plugin-outlet name="login-before-modal-body" tagName=""}}
 
-  {{#d-modal-body title="login.title" class=modalBodyClasses}}
+  {{#d-modal-body title="login.title" class=modalBodyClasses dismissable=false showCloseButton=true}}
     {{#if canLoginLocal}}
       <form id="login-form" method="post">
         <div id="credentials" class={{credentialsClass}}>
@@ -50,20 +50,20 @@
     {{/if}}
 
     <div class="auth-footer">
-      {{#if canLoginLocal}}
-        {{#unless showSecurityKey }}
-          {{d-button
-            action=(action "login")
-            id="login-button"
-            form="login-form"
-            icon="unlock"
-            label=loginButtonLabel
-            disabled=loginDisabled
-            class="btn btn-primary btn-lg"}}
-        {{/unless}}
-      {{/if}}
+        {{#if canLoginLocal}}
+          {{#unless showSecurityKey }}
+            {{d-button
+              action=(action "login")
+              id="login-button"
+              form="login-form"
+              icon="unlock"
+              label=loginButtonLabel
+              disabled=loginDisabled
+              class="btn btn-primary btn-lg"}}
+          {{/unless}}
+        {{/if}}
 
-      {{conditional-loading-spinner condition=showSpinner size="large"}}
+        {{conditional-loading-spinner condition=showSpinner size="large"}}
     </div>
 
     {{#if showLoginButtons}}
