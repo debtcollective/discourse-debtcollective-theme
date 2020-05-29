@@ -18,6 +18,7 @@
   animation: none;
 }
 
+.d-modal.create-account,
 .d-modal.login-modal {
   .modal-body,
   #credentials {
@@ -118,45 +119,44 @@
       top: 0;
     }
   }
-}
+  // this is the section with the social buttons
+  .auth-social {
+    width: 100%;
+    padding-bottom: 1.5rem;
 
-// this is the section with the social buttons
-.auth-social {
-  width: 100%;
-  padding-bottom: 1.5rem;
+    .auth-social-buttons {
+      #login-buttons {
+        &:not(.hidden) {
+          button {
+            margin: 0.25rem 0;
 
-  .auth-social-buttons {
-    #login-buttons {
-      &:not(.hidden) {
-        button {
-          margin: 0.25rem 0;
-
-          &:first-of-type {
-            margin-top: 0;
-          }
-          &:last-of-type {
-            margin-bottom: 0;
+            &:first-of-type {
+              margin-top: 0;
+            }
+            &:last-of-type {
+              margin-bottom: 0;
+            }
           }
         }
       }
     }
-  }
 
-  .auth-divider {
-    width: 100%;
-    text-align: center;
-    margin: 1.5rem 0;
-    height: 0px;
+    .auth-divider {
+      width: 100%;
+      text-align: center;
+      margin: 1.5rem 0;
+      height: 0px;
 
-    hr {
-      margin: 0;
-    }
+      hr {
+        margin: 0;
+      }
 
-    small {
-      position: relative;
-      background: white;
-      padding: 0 1rem;
-      top: -12px;
+      small {
+        position: relative;
+        background: white;
+        padding: 0 1rem;
+        top: -12px;
+      }
     }
   }
 }
