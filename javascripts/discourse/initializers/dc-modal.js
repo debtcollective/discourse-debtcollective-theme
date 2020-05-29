@@ -47,6 +47,12 @@ export default {
           } else {
             this.set("showCloseButton", false);
           }
+
+          if ("showLogo" in data) {
+            this.set("showLogo", data.showLogo);
+          } else {
+            this.set("showLogo", false);
+          }
         }
       });
     });

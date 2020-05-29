@@ -39,7 +39,8 @@ export default {
               "subtitle",
               "rawSubtitle",
               "dismissable",
-              "showCloseButton"
+              "showCloseButton",
+              "showLogo"
             )
           );
         }

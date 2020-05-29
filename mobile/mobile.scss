@@ -101,19 +101,6 @@ ol.category-breadcrumb .select-kit.combo-box .select-kit-header {
     padding: 0;
   }
 
-  // dc-logo is rendered inside the modal
-  // we put it on top of the modal with css
-  .dc-logo {
-    position: absolute;
-    top: -60px; // 50px logo height + 10px padding
-    text-align: center;
-    pointer-events: none;
-
-    img {
-      height: 50px;
-    }
-  }
-
   #login-buttons:not(.hidden) {
     flex-direction: column;
 

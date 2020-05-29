@@ -18,27 +18,45 @@
   animation: none;
 }
 
-.create-account.in .modal-inner-container,
-.login-modal.in .modal-inner-container {
-  animation: none;
-  width: 440px;
-}
-
-#credentials tr {
-  display: flex;
-  flex-direction: column;
-}
-
-// Modal customizations
-.modal-inner-container {
-  box-shadow: $card-box-shadow;
-}
-
 .d-modal.login-modal {
   .modal-body,
   #credentials {
+    display: flex;
     flex-direction: column;
     padding: 0;
+  }
+
+  // style to show the logo correctly at the top of the modal
+  .modal-middle-container {
+    &--logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .dc-logo {
+      padding: 1rem 0;
+
+      img {
+        height: 66px;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding: 0.5rem 0;
+
+        img {
+          height: 47px;
+        }
+      }
+    }
+  }
+
+  .modal-inner-container {
+    animation: none;
+    width: 440px;
+    box-shadow: $card-box-shadow;
+    position: relative;
   }
 
   .modal-body {
@@ -57,6 +75,7 @@
   }
 
   .modal-header {
+    padding: 10px 0 0;
     border-bottom: none;
 
     .title {
@@ -68,23 +87,6 @@
       position: fixed;
       top: 15px;
       right: 15px;
-    }
-  }
-
-  .modal-inner-container {
-    position: relative;
-  }
-
-  // dc-logo is rendered inside the modal
-  // we put it on top of the modal with css
-  .dc-logo {
-    position: absolute;
-    top: -95px; // 80px logo height + 15px padding
-    text-align: center;
-    width: 100%;
-
-    img {
-      height: 80px;
     }
   }
 

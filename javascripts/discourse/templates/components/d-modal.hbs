@@ -1,5 +1,9 @@
 <div class="modal-outer-container">
-  <div class="modal-middle-container">
+  <div class="modal-middle-container {{if showLogo 'modal-middle-container--logo'}}">
+    {{#if showLogo}}
+      {{mount-widget widget="home-logo" args=args class="dc-logo"}}
+    {{/if}}
+
     <div class="modal-inner-container">
       <div class="modal-header">
         {{#if shouldShowCloseButton}}
