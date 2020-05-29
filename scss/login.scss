@@ -17,7 +17,7 @@
     display: flex;
     overflow: visible;
     flex: 1;
-    max-height: 100% !important;
+    max-height: none;
 
     &:after,
     &:before {
@@ -26,6 +26,7 @@
 
     form {
       padding: 0 24px;
+      max-height: none;
     }
   }
 
@@ -76,39 +77,41 @@
         }
       }
     }
-  }
 
-  .modal-inner-container {
-    animation: none;
-    width: 440px;
-    box-shadow: $card-box-shadow;
-    position: relative;
-  }
+    .modal-inner-container {
+      animation: none;
+      width: 440px;
+      box-shadow: $card-box-shadow;
+      position: relative;
 
-  .modal-header {
-    padding: 10px 0 0;
-    border-bottom: none;
+      .modal-header {
+        padding: 10px 0 0;
+        border-bottom: none;
 
-    .title {
-      text-align: center;
-      width: 100%;
-    }
+        .title {
+          text-align: center;
+          width: 100%;
+        }
 
-    .modal-close {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-    }
-  }
+        .modal-close {
+          position: fixed;
+          top: 15px;
+          right: 15px;
+        }
+      }
 
-  .modal-body {
-    .forgot-password {
-      padding-top: 0.5rem;
-      justify-content: flex-end;
-    }
+      .modal-body {
+        max-height: none !important;
 
-    #forgot-password-link {
-      float: right;
+        .forgot-password {
+          padding-top: 0.5rem;
+          justify-content: flex-end;
+        }
+
+        #forgot-password-link {
+          float: right;
+        }
+      }
     }
   }
 
