@@ -1,3 +1,9 @@
+body.modal-open {
+  #main-outlet {
+    min-height: 100vh;
+  }
+}
+
 .d-modal.create-account,
 .d-modal.login-modal {
   position: absolute;
@@ -63,6 +69,8 @@
 
   // style to show the logo correctly at the top of the modal
   .modal-middle-container {
+    height: auto;
+
     &--logo {
       display: flex;
       align-items: center;
@@ -130,13 +138,6 @@
     padding: 0 24px;
     position: relative;
     width: 100%;
-
-    #login-button {
-      width: 100%;
-      text-align: center;
-      // same value as the .btn class
-      min-height: 40px;
-    }
 
     // spinner to appear on top of button
     .loading-container {
