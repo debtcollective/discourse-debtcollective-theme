@@ -1,25 +1,50 @@
-.discourse-no-touch #login-form {
-  margin: 0 auto;
-}
-
-#login-form {
-  td {
-    padding-right: 0;
-  }
-}
-
-.login-modal.in:before {
-  content: "";
-  height: 100vh;
-  width: 100vw;
-  background: $background-gradient;
-  position: fixed;
-  z-index: -1;
-  animation: none;
-}
-
 .d-modal.create-account,
 .d-modal.login-modal {
+  // Background
+  &:before {
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    background: $background-gradient;
+    position: fixed;
+    z-index: -1;
+    animation: none;
+  }
+
+  // Signup form
+  .login-form {
+    position: relative;
+    display: flex;
+    overflow: visible;
+    flex: 1;
+    max-height: 100% !important;
+
+    &:after,
+    &:before {
+      display: none;
+    }
+
+    form {
+      padding: 0 24px;
+    }
+  }
+
+  // Login form
+  #login-form {
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+
+    td {
+      padding-right: 0;
+    }
+  }
+
+  .have-an-account {
+    padding: 0 24px;
+    width: 100%;
+  }
+
   .modal-body,
   #credentials {
     display: flex;
@@ -32,7 +57,7 @@
     &--logo {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex-direction: column;
     }
 
@@ -60,21 +85,6 @@
     position: relative;
   }
 
-  .modal-body {
-    form {
-      width: 100%;
-    }
-
-    .forgot-password {
-      padding-top: 0.5rem;
-      justify-content: flex-end;
-    }
-
-    #forgot-password-link {
-      float: right;
-    }
-  }
-
   .modal-header {
     padding: 10px 0 0;
     border-bottom: none;
@@ -88,6 +98,17 @@
       position: fixed;
       top: 15px;
       right: 15px;
+    }
+  }
+
+  .modal-body {
+    .forgot-password {
+      padding-top: 0.5rem;
+      justify-content: flex-end;
+    }
+
+    #forgot-password-link {
+      float: right;
     }
   }
 
@@ -126,6 +147,8 @@
 
     .auth-social-buttons {
       #login-buttons {
+        padding-top: 0;
+
         &:not(.hidden) {
           button {
             margin: 0.25rem 0;

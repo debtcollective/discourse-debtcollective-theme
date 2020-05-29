@@ -1,11 +1,13 @@
 {{#create-account email=accountEmail disabled=submitDisabled action=(action "createAccount")}}
   {{#unless complete}}
     {{plugin-outlet name="create-account-before-modal-body"}}
-    {{#d-modal-body title="create_account.title" class=(concat (if hasAtLeastOneLoginButton "has-alt-auth") " " (if userFields "has-user-fields"))  dismissable=false showCloseButton=true showLogo=true}}
 
-      {{#unless hasAuthOptions}}
-        {{login-buttons externalLogin=(action "externalLogin")}}
-      {{/unless}}
+    {{#d-modal-body title="create_account.title" class=(concat (if hasAtLeastOneLoginButton "has-alt-auth") " " (if userFields "has-user-fields"))  dismissable=false showCloseButton=true showLogo=true}}
+      <div class="have-an-account">
+        <p>
+          Already have an account? <a href id="login-link" {{action "showLogin"}}>{{i18n "log_in"}}</a>
+        </p>
+      </div>
 
       {{#if showCreateForm}}
         <div class="login-form">
@@ -127,27 +129,36 @@
           </form>
         </div>
       {{/if}}
+
+      {{#unless hasAuthOptions}}
+        <div class="auth-social">
+          <div class="auth-divider">
+            <hr />
+            <small>
+              Or continue with
+            </small>
+          </div>
+          <div class="auth-social-buttons">
+            {{login-buttons externalLogin=(action "externalLogin")}}
+          </div>
+        </div>
+      {{/unless}}
+
+      {{#if showCreateForm}}
+        <div class="modal-footer">
+          {{d-button
+            class="btn btn-primary btn-lg"
+            action=(action "createAccount")
+            disabled=submitDisabled
+            label="create_account.title"
+          }}
+
+          <div class="disclaimer">{{html-safe disclaimerHtml}}</div>
+        </div>
+
+        {{plugin-outlet name="create-account-after-modal-footer" tagName=""}}
+      {{/if}}
     {{/d-modal-body}}
 
-    {{#if showCreateForm}}
-      <div class="modal-footer">
-        {{d-button
-          class="btn-large btn-primary"
-          action=(action "createAccount")
-          disabled=submitDisabled
-          label="create_account.title"
-        }}
-
-        {{#conditional-loading-spinner condition=formSubmitted size="small"}}
-          {{#d-button class="btn-large" id="login-link" action=(route-action "showLogin")}}
-            {{i18n "log_in"}}
-          {{/d-button}}
-        {{/conditional-loading-spinner}}
-
-        <div class="disclaimer">{{html-safe disclaimerHtml}}</div>
-      </div>
-
-      {{plugin-outlet name="create-account-after-modal-footer" tagName=""}}
-    {{/if}}
   {{/unless}}
 {{/create-account}}

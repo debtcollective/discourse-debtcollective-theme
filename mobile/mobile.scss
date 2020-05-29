@@ -90,15 +90,20 @@ ol.category-breadcrumb .select-kit.combo-box .select-kit-header {
   }
 }
 
+// Login and Signup modals
+.d-modal.create-account,
 .d-modal.login-modal {
   .modal-inner-container {
     max-width: 100vw;
-    padding: 0 1rem;
     overflow: visible;
   }
 
-  .auth-footer {
-    padding: 0;
+  .login-form form,
+  #login-form,
+  .have-an-account,
+  .auth-footer,
+  .auth-social {
+    padding: 0 0.5rem;
   }
 
   #login-buttons:not(.hidden) {

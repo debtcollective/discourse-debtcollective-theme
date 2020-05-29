@@ -3,9 +3,9 @@
 
   {{#d-modal-body title="login.title" class=modalBodyClasses dismissable=false showCloseButton=true showLogo=true}}
     {{#if showSignupLink}}
-      <div>
+      <div class="have-an-account">
         <p>
-          Don't have an account? <a href id="new-account-link" {{action "createAccount"}}>{{i18n "create_account.title"}}</a>
+          Need an account? <a href id="new-account-link" {{action "createAccount"}}>{{i18n "create_account.title"}}</a>
         </p>
       </div>
     {{/if}}
