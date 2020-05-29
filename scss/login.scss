@@ -1,5 +1,13 @@
 .d-modal.create-account,
 .d-modal.login-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1300;
+  overflow: auto;
+
   // Background
   &:before {
     content: "";
