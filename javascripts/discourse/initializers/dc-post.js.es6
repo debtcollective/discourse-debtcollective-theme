@@ -56,7 +56,7 @@ export default {
         html(attrs) {
           const html = this._super(attrs);
 
-          return h("div.dc-topic-avatar", html);
+          return h("div.dc-topic-avatar.user-image", html);
         }
       });
 
