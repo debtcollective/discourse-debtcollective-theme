@@ -6,7 +6,7 @@
     <p>
       {{{theme-i18n "dc.categories.currentEfforts.description"}}}
     </p>
-    <div class="dc-row">
+    <div class="dc-row mt-4">
       {{#each currentEfforts as |t|}}
         <div class="dc-col-sm-4">
           {{dc-topic-list-item-small topic=t}}
@@ -33,7 +33,7 @@
     <p>
       {{{theme-i18n "dc.categories.collectives.description"}}}
     </p>
-    <div class="dc-row">
+    <div class="dc-row mt-4">
       {{#each collectives as |c|}}
         <div class="dc-col-sm-6">
           {{dc-category-card category=c}}
@@ -47,7 +47,7 @@
     <h2 class="dc-heading mt-4 mb-2">
       {{theme-i18n "dc.categories.others.title"}}
     </h2>
-    <div class="dc-row">
+    <div class="dc-row mt-4">
       {{#each nonCollectives as |c|}}
         <div class="dc-col-sm-6">
           {{dc-category-card category=c}}
