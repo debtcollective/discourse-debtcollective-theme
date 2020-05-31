@@ -8,6 +8,7 @@ body.modal-open {
   max-height: none !important;
 }
 
+.d-modal.forgot-password-modal,
 .d-modal.create-account,
 .d-modal.login-modal {
   position: absolute;
@@ -54,7 +55,8 @@ body.modal-open {
     }
   }
 
-  // Login form
+  // Login and reset password forms
+  .forgot-password-modal-form,
   #login-form {
     margin: 0 auto;
     padding: 0 24px;
@@ -62,6 +64,15 @@ body.modal-open {
 
     td {
       padding-right: 0;
+    }
+  }
+
+  // reset password form
+  .forgot-password-modal-form {
+    padding-bottom: 1rem;
+
+    input {
+      width: 100%;
     }
   }
 
@@ -106,7 +117,8 @@ body.modal-open {
 
     .modal-inner-container {
       animation: none;
-      width: 440px;
+      max-width: 440px;
+      width: 100%;
       box-shadow: $card-box-shadow;
       position: relative;
 
