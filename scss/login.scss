@@ -4,6 +4,10 @@ body.modal-open {
   }
 }
 
+#discourse-modal .create-account .modal-body {
+  max-height: none !important;
+}
+
 .d-modal.create-account,
 .d-modal.login-modal {
   position: absolute;
@@ -31,7 +35,6 @@ body.modal-open {
     display: flex;
     overflow: visible;
     flex: 1;
-    max-height: none;
 
     &:after,
     &:before {
@@ -39,8 +42,15 @@ body.modal-open {
     }
 
     form {
+      width: 100%;
       padding: 0 24px;
       max-height: none;
+
+      td {
+        padding: 0;
+        width: 100%;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -113,6 +123,7 @@ body.modal-open {
           position: fixed;
           top: 15px;
           right: 15px;
+          z-index: z("max");
         }
       }
 
