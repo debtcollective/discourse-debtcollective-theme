@@ -17,7 +17,6 @@ body.modal-open {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1300;
   overflow: auto;
 
   // Background
@@ -45,7 +44,7 @@ body.modal-open {
 
     form {
       width: 100%;
-      padding: 0 24px;
+      padding: 0 1.5rem;
       max-height: none;
 
       table {
@@ -64,7 +63,7 @@ body.modal-open {
   .forgot-password-modal-form,
   #login-form {
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 1.5rem;
     width: 100%;
 
     td {
@@ -82,7 +81,7 @@ body.modal-open {
   }
 
   .have-an-account {
-    padding: 0 24px;
+    padding: 0 1.5rem;
     width: 100%;
   }
 
@@ -144,6 +143,8 @@ body.modal-open {
         }
       }
 
+      // We are using !important because Discourse uses !imporant too
+      // https://github.com/discourse/discourse/blob/master/app/assets/stylesheets/mobile/login.scss#L147
       .modal-body {
         max-height: none !important;
 
@@ -163,7 +164,7 @@ body.modal-open {
   .auth-footer {
     border-top: none;
     margin-top: 0.5rem;
-    padding: 0 24px;
+    padding: 0 1.5rem;
     position: relative;
     width: 100%;
 
