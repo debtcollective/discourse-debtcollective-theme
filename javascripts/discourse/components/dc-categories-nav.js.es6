@@ -13,7 +13,22 @@ export default Component.extend({
     return categories;
   }),
 
+  didInsertElement() {
+    this._super(...arguments);
+    this._bindEvents();
+  },
+
   init() {
     this._super(...arguments);
+  },
+
+  _bindEvents() {
+    $(window).scroll(() => {
+      if ($(window).scrollTop() > 0) {
+        this.$(this.element).addClass("animated");
+      } else {
+        this.$(this.element).removeClass("animated");
+      }
+    });
   }
 });
