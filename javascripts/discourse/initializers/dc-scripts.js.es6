@@ -1,5 +1,4 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
-import loadScript from "discourse/lib/load-script";
 
 let scriptsLoaded = false;
 
@@ -10,7 +9,15 @@ export default {
       api.onAppEvent("page:changed", () => {
         if (scriptsLoaded) return;
 
-        loadScript("https://makerbadge.s3.amazonaws.com/blmbadge.js").then(
+        addScript(
+          "script",
+          {
+            src:
+              "https://cdn.jsdelivr.net/gh/GraemeFulton/blm-badge/blmbadge.min.js",
+            crossorigin: "anonymous",
+            integrity:
+              "sha384-RldkbFlAPGpy9ZeGqbY6NuAsZlKyumFmaR1ybYiiN9EvhrTpiSzQ9fwyTk3ieWFG"
+          },
           () => {
             BLMBadge.init({
               layout: 1,
@@ -28,6 +35,20 @@ export default {
     });
   }
 };
+
+function addScript(tag, attrs, callback) {
+  var script = document.createElement(tag);
+
+  Object.keys(attrs).forEach(key => {
+    script.setAttribute(key, attrs[key]);
+  });
+
+  script.onload = function afterScriptLoaded() {
+    callback();
+  };
+
+  document.body.appendChild(script);
+}
 
 function addWebComponent(tag, attrs, content) {
   var component = document.createElement(tag);
