@@ -1,6 +1,6 @@
 extend_content_security_policy:
   type: list
-  default: "script_src: https://unpkg.com/@debtcollective/"
+  default: "script_src: https://unpkg.com/@debtcollective/|script_src: https://makerbadge.s3.amazonaws.com/blmbadge.js"
 header_categories:
   type: list
   default: ""
