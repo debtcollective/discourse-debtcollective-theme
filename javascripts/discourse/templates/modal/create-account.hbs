@@ -122,7 +122,10 @@
             {{#if userFields}}
               <div class="user-fields">
                 {{#each userFields as |f|}}
-                  {{user-field field=f.field value=f.value}}
+                  {{! only show required fields at signup }}
+                  {{#if f.field.required }}
+                    {{user-field field=f.field value=f.value}}
+                  {{/if}}
                 {{/each}}
               </div>
             {{/if}}
