@@ -24,7 +24,8 @@ export default {
               theme: "dark",
               promoText: "Send a donation " + String.fromCodePoint(0x2192),
               promoLink: "https://minnesotafreedomfund.org/",
-              message: "To be silent is to be complicit. Black lives matter.",
+              message:
+                "As we fight against racial oppression we must remember that extrajudical killing is only one way this system disproportionately targets Black people.\nTogether we stand up for a system free of predatory debt and focused on racial, and economic justice.\nTo be silent is to be complicit. Black lives matter.",
               title: "#BlackLivesMatter"
             });
           }
