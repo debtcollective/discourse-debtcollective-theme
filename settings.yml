@@ -1,6 +1,6 @@
 extend_content_security_policy:
   type: list
-  default: "script_src: https://unpkg.com/@debtcollective/"
+  default: "script_src: https://unpkg.com/@debtcollective/|script_src: https://cdn.jsdelivr.net/gh/GraemeFulton/blm-badge/blmbadge.min.js"
 header_categories:
   type: list
   default: ""
