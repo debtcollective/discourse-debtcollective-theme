@@ -1,6 +1,20 @@
-{{! https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/templates/components/topic-list-item.hbs }}
-{{! 
-  Overwrite this file is needed to bypass issue with raw templates 
-  https://meta.discourse.org/t/unable-to-replace-topic-list-item-raw-hbs-topic-list-item-hbr-on-mobile/141395/3?u=duranmla
-}}
-{{raw "list/dc-topic-card" topic=topic bulkSelectEnabled=bulkSelectEnabled}}
+{{! https://github.com/discourse/discourse/tree/master/app/assets/javascripts/discourse/app/templates/components/topic-list-item.hbs }}
+{{#if bulkSelectEnabled}}
+  <div
+    class="dc-topic dc-card"
+    style="border-top-color: #{{topic.category.color}};"
+  >
+    <div class="dc-topic-bulk-select">
+      <input type="checkbox" class="bulk-select" />
+    </div>
+    {{dc-topic-card-content topic=topic}}
+  </div>
+{{else}}
+  <a
+    class="dc-topic dc-card"
+    href={{topic.lastUnreadUrl}}
+    style="border-top-color: #{{topic.category.color}};"
+  >
+    {{dc-topic-card-content topic=topic}}
+  </a>
+{{/if}}
