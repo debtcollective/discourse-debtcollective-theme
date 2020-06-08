@@ -1,0 +1,226 @@
+body.modal-open {
+  #main-outlet {
+    min-height: 100vh;
+  }
+}
+
+#discourse-modal .create-account .modal-body {
+  max-height: none !important;
+}
+
+.d-modal.forgot-password-modal,
+.d-modal.create-account,
+.d-modal.create-account-modal,
+.d-modal.login-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+
+  // Background
+  &:before {
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    background: $background-gradient;
+    position: fixed;
+    z-index: -1;
+    animation: none;
+  }
+
+  // Signup form
+  .login-form {
+    position: relative;
+    display: flex;
+    overflow: visible;
+    flex: 1;
+
+    &:after,
+    &:before {
+      display: none;
+    }
+
+    form {
+      width: 100%;
+      padding: 0 1.5rem;
+      max-height: none;
+
+      table {
+        width: 100%;
+
+        td {
+          padding: 0;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  // Login and reset password forms
+  .forgot-password-modal-form,
+  #login-form {
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+
+    td {
+      padding-right: 0;
+    }
+  }
+
+  // reset password form
+  .forgot-password-modal-form {
+    padding-bottom: 1rem;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .have-an-account {
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+
+  .modal-body,
+  #credentials {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  // style to show the logo correctly at the top of the modal
+  .modal-middle-container {
+    height: auto;
+
+    &--logo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
+
+    .dc-logo {
+      padding: 1rem 0;
+
+      img {
+        height: 66px;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding: 0.5rem 0;
+
+        img {
+          height: 47px;
+        }
+      }
+    }
+
+    .modal-inner-container {
+      animation: none;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: $card-box-shadow;
+      position: relative;
+
+      .modal-header {
+        padding: 10px 0 0;
+        border-bottom: none;
+
+        .title {
+          text-align: center;
+          width: 100%;
+        }
+
+        .modal-close {
+          position: fixed;
+          top: 15px;
+          right: 15px;
+          z-index: z("max");
+        }
+      }
+
+      // We are using !important because Discourse uses !imporant too
+      // https://github.com/discourse/discourse/blob/master/app/assets/stylesheets/mobile/login.scss#L147
+      .modal-body {
+        max-height: none !important;
+
+        .forgot-password {
+          padding-top: 0.5rem;
+          justify-content: flex-end;
+        }
+
+        #forgot-password-link {
+          float: right;
+        }
+      }
+    }
+  }
+
+  // Login button container
+  .auth-footer {
+    border-top: none;
+    margin-top: 0.5rem;
+    padding: 0 1.5rem;
+    position: relative;
+    width: 100%;
+
+    // spinner to appear on top of button
+    .loading-container {
+      align-items: center;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      left: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  // this is the section with the social buttons
+  .auth-social {
+    width: 100%;
+    padding-bottom: 1.5rem;
+
+    .auth-social-buttons {
+      #login-buttons {
+        padding-top: 0;
+
+        &:not(.hidden) {
+          button {
+            margin: 0.25rem 0;
+
+            &:first-of-type {
+              margin-top: 0;
+            }
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .auth-divider {
+      width: 100%;
+      text-align: center;
+      margin: 1.5rem 0;
+      height: 0px;
+
+      hr {
+        margin: 0;
+      }
+
+      small {
+        position: relative;
+        background: white;
+        padding: 0 1rem;
+        top: -12px;
+      }
+    }
+  }
+}

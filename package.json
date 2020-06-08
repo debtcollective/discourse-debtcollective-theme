@@ -23,7 +23,27 @@
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ]
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "chore",
+          "ci",
+          "dev",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test",
+          "build"
+        ]
+      ]
+    }
   },
   "prettier": {},
   "lint-staged": {

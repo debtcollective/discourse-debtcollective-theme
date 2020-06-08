@@ -11,6 +11,7 @@
 @import "type";
 @import "card";
 @import "pill";
+@import "forms";
 @import "utils";
 
 @import "connectors/categories-nav";
@@ -35,12 +36,12 @@
 @import "widgets/post-controls";
 @import "widgets/post";
 @import "widgets/quick-access-panel";
-@import "widgets/select-kit";
 @import "widgets/topic-timeline";
 @import "widgets/user-menu";
 
-// Re-apply foundation styles with different variables to overwrite rules
+@import "login";
 
+// Re-apply foundation styles with different variables to overwrite rules
 // https://github.com/discourse/discourse/blob/master/app/assets/stylesheets/common/foundation/base.scss
 $tertiary: $red;
 $primary: $body-color;
