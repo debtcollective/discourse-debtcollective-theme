@@ -1,4 +1,5 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+import { on } from "discourse-common/utils/decorators";
 import computed from "discourse-common/utils/decorators";
 
 export default {
@@ -6,6 +7,31 @@ export default {
   initialize() {
     withPluginApi("0.8", api => {
       api.modifyClass("component:d-modal", {
+        /**
+         * There is no way to prevent scrolling without affect the current
+         * scroll position. Thus we add JS in order to prevent the scroll
+         * but save the position for usage after close modal
+         */
+        @on("didInsertElement")
+        keepScrollPosition() {
+          this.appEvents.on("modal:body-shown", this, "_saveScrollPosition");
+        },
+
+        _saveScrollPosition() {
+          this._scrollPosition = $(document).scrollTop();
+          $("body").css({ overflow: "hidden", height: "100%" });
+          this.appEvents.on(
+            "modal:body-dismissed",
+            this,
+            "_restoreScrollPosition"
+          );
+        },
+
+        _restoreScrollPosition() {
+          $("body").css({ overflow: "initial", height: "auto" });
+          $(document).scrollTop(this._scrollPosition);
+        },
+
         @computed("dismissable", "showCloseButton")
         shouldShowCloseButton(dismissable, showCloseButton) {
           return showCloseButton || dismissable;
