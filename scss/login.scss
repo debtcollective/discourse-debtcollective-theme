@@ -8,6 +8,11 @@ body.modal-open {
   max-height: none !important;
 }
 
+.modal-inner-container {
+  // Reflect to the user there is no more content to show
+  margin-bottom: 5rem;
+}
+
 .d-modal.forgot-password-modal,
 .d-modal.create-account,
 .d-modal.create-account-modal,
