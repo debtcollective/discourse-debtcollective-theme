@@ -1,6 +1,6 @@
 body.modal-open {
   #main-outlet {
-    min-height: 100vh;
+    visibility: hidden;
   }
 }
 
@@ -12,7 +12,7 @@ body.modal-open {
 .d-modal.create-account,
 .d-modal.create-account-modal,
 .d-modal.login-modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
