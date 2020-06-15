@@ -197,6 +197,12 @@ body.modal-open {
         padding-top: 0;
 
         &:not(.hidden) {
+          .btn {
+            @extend .btn-lg;
+            border-radius: 0.625rem;
+            height: auto;
+          }
+
           button {
             margin: 0.25rem 0;
 
