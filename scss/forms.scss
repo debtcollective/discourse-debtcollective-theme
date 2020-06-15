@@ -19,3 +19,26 @@
 input.ember-text-field {
   @extend %input-base;
 }
+
+:root body form,
+:root body .d-modal form {
+  .label,
+  table td.label {
+    padding-bottom: 0.25rem;
+  }
+
+  .user-field label {
+    margin-top: 0;
+  }
+
+  .input,
+  .user-field {
+    margin-top: 1.25rem;
+  }
+
+  .instructions {
+    line-height: 1;
+    margin-top: 0.25rem;
+    font-size: $font-size-xs;
+  }
+}

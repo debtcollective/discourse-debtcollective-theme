@@ -1,6 +1,12 @@
 body {
-  // Usage of variables yield error on SCSS compiler
-  background: linear-gradient(180deg, #dbf8ff 0%, #fcfbf7 88.74%);
+  height: 100%;
+
+  // Up to some extend #main is the actual "body" of the page
+  #main {
+    // Usage of variables yield error on SCSS compiler
+    background: linear-gradient(180deg, #dbf8ff 0%, #fcfbf7 88.74%);
+    min-height: 100%;
+  }
 }
 
 // Container we use is neither fluid or typical container from bootstrap. Instead, is a fluid with a max-width

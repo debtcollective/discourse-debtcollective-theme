@@ -1,6 +1,6 @@
 body.modal-open {
   #main-outlet {
-    min-height: 100vh;
+    visibility: hidden;
   }
 }
 
@@ -8,11 +8,23 @@ body.modal-open {
   max-height: none !important;
 }
 
+.modal-inner-container {
+  // Reflect to the user there is no more content to show
+  margin-bottom: 5rem;
+}
+
+.login-modal #login-buttons:not(.hidden),
+.create-account #login-buttons:not(.hidden) {
+  // Overcome odd width: 102% and negative margin from core code
+  width: 100%;
+  margin: 0;
+}
+
 .d-modal.forgot-password-modal,
 .d-modal.create-account,
 .d-modal.create-account-modal,
 .d-modal.login-modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -41,20 +53,30 @@ body.modal-open {
     &:before {
       display: none;
     }
+  }
 
-    form {
+  form,
+  .login-form form {
+    width: 100%;
+    padding: 0;
+    max-height: none;
+
+    table {
       width: 100%;
-      padding: 0 1.5rem;
-      max-height: none;
 
-      table {
+      td {
+        padding: 0;
         width: 100%;
+        margin: 0 auto;
+      }
 
-        td {
-          padding: 0;
-          width: 100%;
-          margin: 0 auto;
-        }
+      tr:first-child {
+        margin-top: 0;
+      }
+
+      tr.input td label {
+        margin: 0;
+        max-width: 100%;
       }
     }
   }
@@ -63,7 +85,7 @@ body.modal-open {
   .forgot-password-modal-form,
   #login-form {
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0;
     width: 100%;
 
     td {
@@ -81,7 +103,7 @@ body.modal-open {
   }
 
   .have-an-account {
-    padding: 0 1.5rem;
+    padding: 0;
     width: 100%;
   }
 
@@ -104,6 +126,7 @@ body.modal-open {
     }
 
     .dc-logo {
+      margin: 3rem 0;
       padding: 1rem 0;
 
       img {
@@ -111,6 +134,7 @@ body.modal-open {
       }
 
       @include media-breakpoint-down(md) {
+        margin: 1.5rem 0;
         padding: 0.5rem 0;
 
         img {
@@ -121,13 +145,16 @@ body.modal-open {
 
     .modal-inner-container {
       animation: none;
-      max-width: 440px;
-      width: 100%;
+      width: 440px;
+      max-height: none;
+      max-width: 90%;
+      max-width: calc(100% - #{$grid-gutter-width});
       box-shadow: $card-box-shadow;
+      padding: $grid-gutter-width $grid-gutter-width/2;
       position: relative;
 
       .modal-header {
-        padding: 10px 0 0;
+        padding: 0;
         border-bottom: none;
 
         .title {
@@ -148,13 +175,12 @@ body.modal-open {
       .modal-body {
         max-height: none !important;
 
-        .forgot-password {
-          padding-top: 0.5rem;
-          justify-content: flex-end;
-        }
-
         #forgot-password-link {
-          float: right;
+          display: inline-block;
+          margin-top: 0.25rem;
+          margin-bottom: 1rem;
+          font-size: $font-size-sm;
+          border-bottom: 1px dotted #6f7782;
         }
       }
     }
@@ -164,7 +190,7 @@ body.modal-open {
   .auth-footer {
     border-top: none;
     margin-top: 0.5rem;
-    padding: 0 1.5rem;
+    padding: 0;
     position: relative;
     width: 100%;
 
@@ -188,9 +214,15 @@ body.modal-open {
 
     .auth-social-buttons {
       #login-buttons {
-        padding-top: 0;
+        padding: 0;
 
         &:not(.hidden) {
+          .btn {
+            @extend .btn-lg;
+            border-radius: 0.625rem;
+            height: auto;
+          }
+
           button {
             margin: 0.25rem 0;
 
@@ -223,4 +255,13 @@ body.modal-open {
       }
     }
   }
+
+  .disclaimer {
+    font-size: $font-size-sm;
+  }
+}
+
+.login-form .tip:not(:empty),
+.login-form .tip:empty + td {
+  min-height: 0;
 }
