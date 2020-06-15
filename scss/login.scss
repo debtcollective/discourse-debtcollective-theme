@@ -55,6 +55,10 @@ body.modal-open {
           width: 100%;
           margin: 0 auto;
         }
+
+        tr:first-child {
+          margin-top: 0;
+        }
       }
     }
   }
@@ -104,6 +108,7 @@ body.modal-open {
     }
 
     .dc-logo {
+      margin: 3rem 0;
       padding: 1rem 0;
 
       img {
@@ -111,6 +116,7 @@ body.modal-open {
       }
 
       @include media-breakpoint-down(md) {
+        margin: 0;
         padding: 0.5rem 0;
 
         img {
@@ -223,4 +229,9 @@ body.modal-open {
       }
     }
   }
+}
+
+.login-form .tip:not(:empty),
+.login-form .tip:empty + td {
+  min-height: 0;
 }
