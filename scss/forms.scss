@@ -42,3 +42,15 @@ input.ember-text-field {
     font-size: $font-size-xs;
   }
 }
+
+// User fields inputs
+.user-field.error {
+  &,
+  input {
+    color: $danger !important;
+  }
+
+  input {
+    border-color: $danger !important;
+  }
+}

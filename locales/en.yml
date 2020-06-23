@@ -1,4 +1,11 @@
 en:
+  admin_js:
+    admin:
+      user_fields:
+        field_types:
+          phone-number: "US - Phone Number"
+          zip-code: "US - Zip Code"
+          state: "US - State"
   dc:
     hero:
       heading: "Organize to end <strike>debt</strike>."
@@ -11,13 +18,13 @@ en:
     categories:
       currentEfforts:
         title: "Current efforts"
-        description: "We strive to make accessible to you all the efforts that are happening right now around the debt collective organization. 
+        description: "We strive to make accessible to you all the efforts that are happening right now around the debt collective organization.
         Below you can find some of those. Keep exploring the community to find out more"
-      collectives: 
+      collectives:
         title: "Our Collectives"
         description: "When you join the Debt Collective you will be placed into a group based on your debt type. We call these groups <strong>collectives</strong>.
         You will be able to meet other people in your situation to share information and learn how to fight back together against creditors and collectors."
-      others: 
+      others:
         title: "Others categories"
     popup:
       title: "We've got a new look! What do you think?"
