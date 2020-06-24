@@ -1,0 +1,12 @@
+%navigation-link {
+  &,
+  &:visited,
+  &:active {
+    transition: color ease 0.216s;
+    color: $body-color;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}

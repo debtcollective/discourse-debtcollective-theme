@@ -62,3 +62,15 @@
     right: auto;
   }
 }
+
+// Custom header links
+.dc-header-links {
+  display: flex;
+  margin-right: 1rem;
+
+  .dc-header-link {
+    @extend %navigation-link;
+    font-weight: $font-weight-bold;
+    margin-right: 1rem;
+  }
+}
