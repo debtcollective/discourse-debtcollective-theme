@@ -1,6 +1,6 @@
 $dc-header-box-shadow: "0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.25)";
 $dc-categories-border: "0.0625rem solid #ebe7dc";
-$dc-categories-height: 4rem;
+$dc-categories-height: 3rem;
 
 #main-outlet {
   // We need to increase the separation between content and header due to categories-nav
@@ -70,7 +70,7 @@ $dc-categories-height: 4rem;
     display: flex;
     font-size: $font-size-xs;
     font-weight: $font-weight-bold;
-    height: $dc-categories-height * 0.625;
+    height: $dc-categories-height * 0.75;
     padding: 0 $grid-gutter-width/2;
     text-transform: uppercase;
     white-space: nowrap;
@@ -80,7 +80,6 @@ $dc-categories-height: 4rem;
     }
 
     @include media-breakpoint-up(lg) {
-      font-size: $font-size-base;
       height: $dc-categories-height;
     }
   }
