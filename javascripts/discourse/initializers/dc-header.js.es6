@@ -133,7 +133,7 @@ export default {
           return h("a.dc-header-link", { href }, text);
         });
 
-        return helper.h("nav.dc-header-links", links);
+        return helper.h("nav.dc-header-links.d-none.d-md-block", links);
       });
     });
   }

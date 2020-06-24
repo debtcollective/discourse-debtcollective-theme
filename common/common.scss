@@ -16,6 +16,7 @@
 @import "nav";
 
 @import "connectors/categories-nav";
+@import "connectors/dc-menu";
 @import "connectors/hero";
 
 @import "templates/components/categories-only";
@@ -35,6 +36,7 @@
 
 @import "widgets/embedded-posts";
 @import "widgets/header";
+@import "widgets/dc-logo";
 @import "widgets/post-controls";
 @import "widgets/post";
 @import "widgets/quick-access-panel";
