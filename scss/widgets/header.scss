@@ -2,6 +2,11 @@
   background: $beige;
   height: $header-height;
   margin-bottom: 0;
+
+  .wrap {
+    max-width: none;
+    width: 100%;
+  }
 }
 
 .d-header .panel {
