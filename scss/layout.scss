@@ -1,10 +1,10 @@
 body {
-  height: 100%;
+  // Usage of variables yield error on SCSS compiler
+  background: linear-gradient(180deg, #dbf8ff 0%, #fcfbf7 88.74%);
 
   // Up to some extend #main is the actual "body" of the page
+  &,
   #main {
-    // Usage of variables yield error on SCSS compiler
-    background: linear-gradient(180deg, #dbf8ff 0%, #fcfbf7 88.74%);
     min-height: 100%;
   }
 }
