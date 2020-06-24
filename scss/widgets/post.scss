@@ -62,6 +62,10 @@
   }
 }
 
+.topic-post nav.post-controls .actions button.reply .d-icon {
+  color: #ffffff;
+}
+
 // Make extra emphasis to overcome guest styles
 .dc-topic-post.dc-topic-post {
   $padding-top: $spacer * 1.25;
