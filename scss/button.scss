@@ -12,6 +12,12 @@
   border-radius: 0.625rem;
 }
 
+.btn-text {
+  border-radius: 0;
+  border: none;
+  background: transparent;
+}
+
 .btn-default,
 .widget-button {
   border-radius: $border-radius;
