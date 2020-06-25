@@ -7,6 +7,6 @@ export default Component.extend({
 
   @action
   closeMenu() {
-    $("#dc-menu").removeClass("expanded");
+    $("body").removeClass("dc-menu-open");
   }
 });

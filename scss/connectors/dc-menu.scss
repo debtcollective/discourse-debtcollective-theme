@@ -1,3 +1,8 @@
+body.dc-menu-open {
+  overflow: hidden;
+  height: 100%;
+}
+
 #dc-menu {
   position: fixed;
   top: 0;
@@ -6,7 +11,7 @@
   width: 100vw;
   z-index: 10000;
 
-  &.expanded {
+  body.dc-menu-open & {
     left: 0;
 
     .dc-header-cloak {

@@ -29,7 +29,7 @@ createWidget("dc-widget-logo", {
   },
 
   click() {
-    $("#dc-menu").addClass("expanded");
+    $("body").addClass("dc-menu-open");
   }
 });
 
