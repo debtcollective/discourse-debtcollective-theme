@@ -51,6 +51,21 @@
   }
 }
 
+.topic-post.moderator {
+  article {
+    background-color: dark-light-choose($highlight-low, $highlight-medium);
+  }
+
+  .regular > .cooked {
+    padding: 0;
+    background: none;
+  }
+}
+
+.topic-post nav.post-controls .actions button.reply .d-icon {
+  color: #ffffff;
+}
+
 // Make extra emphasis to overcome guest styles
 .dc-topic-post.dc-topic-post {
   $padding-top: $spacer * 1.25;
