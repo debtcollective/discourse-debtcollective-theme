@@ -123,6 +123,14 @@ body.modal-open {
       align-items: center;
       justify-content: flex-start;
       flex-direction: column;
+
+      .dc-logo-widget {
+        display: none !important;
+      }
+
+      .title > a {
+        display: block !important;
+      }
     }
 
     .dc-logo {
