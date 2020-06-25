@@ -30,6 +30,7 @@ body.dc-menu-open {
   width: 75%;
   transform: translate3d(-100%, 0, 0);
   transition: transform ease 0.216s;
+  overflow-y: auto;
 
   .dc-menu-content-header {
     align-items: center;
@@ -66,4 +67,44 @@ body.dc-menu-open {
   left: 0;
   display: none;
   touch-action: pan-y pinch-zoom;
+}
+
+.dc-menu-card {
+  align-items: center;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12),
+    0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
+  display: flex;
+  height: 8.5rem;
+  justify-content: center;
+  width: 100%;
+  transition: all 0.216s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  a,
+  a:visited,
+  a:active {
+    color: $body-color;
+  }
+
+  &--community {
+    background: $yellow;
+  }
+
+  &--blog {
+    background: $green;
+  }
+
+  &--tools {
+    background: $purple;
+  }
+
+  &--membership {
+    background: $blue;
+  }
+}
+
+.dc-menu-content {
+  .dc-menu-card {
+    margin-top: 1rem;
+  }
 }
