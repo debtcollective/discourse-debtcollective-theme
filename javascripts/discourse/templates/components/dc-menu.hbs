@@ -1,19 +1,19 @@
 <div class="dc-header-cloak" {{on "click" this.closeMenu}}></div>
 <div class="dc-menu-content">
   <header class="dc-menu-content-header">
+    <img
+      class="dc-menu-logo"
+      src="{{siteSettings.site_logo_url}}"
+      alt="{{siteSettings.title}}"
+    />
     <button
       class="btn-text"
       aria-label="close menu"
       {{on "click" this.closeMenu}}
     >
-      <img
-        class="dc-menu-logo"
-        src="{{siteSettings.site_logo_url}}"
-        alt="{{siteSettings.title}}"
-      />
+      <div class="material-icons" aria-label="close menu">
+        close
+      </div>
     </button>
-    <div class="material-icons" aria-label="close menu">
-      close
-    </div>
   </header>
 </div>

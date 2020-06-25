@@ -35,13 +35,20 @@
   }
 
   .dc-menu-content-header .btn-text {
-    padding: 0;
-    width: 50%;
+    align-items: center;
+    background: rgba(57, 57, 57, 0.07);
+    border-radius: 50%;
+    display: flex;
+    padding: 0.5rem;
+
+    .material-icons {
+      font-size: $font-size-base;
+    }
   }
 }
 
 .dc-menu-logo {
-  max-width: 100%;
+  width: 50%;
 }
 
 .dc-header-cloak {
