@@ -37,10 +37,10 @@ body.dc-menu-open {
     border-bottom: 0.0625rem solid #e8e8e8;
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem;
+    padding: 1.5rem $container-padding-x;
   }
 
-  .dc-menu-content-header .btn-transparent {
+  .dc-menu-content-header .btn-close {
     align-items: center;
     background: rgba(57, 57, 57, 0.07);
     border-radius: 50%;
