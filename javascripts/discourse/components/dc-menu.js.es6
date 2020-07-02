@@ -5,6 +5,7 @@ import { action, computed } from "@ember/object";
 
 export default Component.extend({
   elementId: "dc-menu",
+  classNames: ["dc-menu-container"],
 
   homepageURL: computed(function() {
     return settings.logo_href || Discourse.getURL("/");
