@@ -6,9 +6,13 @@ body {
   font-size: 2rem;
 }
 
-.dc-display {
-  font-size: 5rem;
+.dc-text-monospace {
   font-family: $font-family-monospace;
+}
+
+.dc-display {
+  @extend .dc-text-monospace;
+  font-size: 5rem;
 }
 
 @mixin dc-text-light($size: inherit) {
@@ -29,8 +33,16 @@ body {
   color: $primary;
 }
 
+.dc-text-lg {
+  font-size: $font-size-lg;
+}
+
 .dc-text-small {
   font-size: $font-size-sm;
+}
+
+.dc-text-xs {
+  font-size: $font-size-xs;
 }
 
 .dc-inline-icons {

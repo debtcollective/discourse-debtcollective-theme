@@ -2,6 +2,11 @@
   background: $beige;
   height: $header-height;
   margin-bottom: 0;
+
+  .wrap {
+    max-width: none;
+    width: 100%;
+  }
 }
 
 .d-header .panel {
@@ -55,5 +60,16 @@
   .badge-notification {
     left: -2px;
     right: auto;
+  }
+}
+
+.dc-custom-headers-links {
+  display: flex;
+  margin-right: 1rem;
+
+  .dc-header-link {
+    @extend %navigation-link;
+    font-weight: $font-weight-bold;
+    margin-right: 1rem;
   }
 }

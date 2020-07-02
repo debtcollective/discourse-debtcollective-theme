@@ -1,19 +1,21 @@
-{{#if currentEfforts}}
-  <div class="dc-categories-container">
-    <h2 class="dc-heading mt-4 mb-2">
-      {{theme-i18n "dc.categories.currentEfforts.title"}}
-    </h2>
-    <p>
-      {{{theme-i18n "dc.categories.currentEfforts.description"}}}
-    </p>
-    <div class="dc-row mt-4">
-      {{#each currentEfforts as |t|}}
-        <div class="dc-col-sm-4">
-          {{dc-topic-list-item-small topic=t}}
-        </div>
-      {{/each}}
+{{#if themeSettings.show_current_efforts}}
+  {{#if currentEfforts}}
+    <div class="dc-categories-container">
+      <h2 class="dc-heading mt-4 mb-2">
+        {{theme-i18n "dc.categories.currentEfforts.title"}}
+      </h2>
+      <p>
+        {{{theme-i18n "dc.categories.currentEfforts.description"}}}
+      </p>
+      <div class="dc-row mt-4">
+        {{#each currentEfforts as |t|}}
+          <div class="dc-col-sm-4">
+            {{dc-topic-list-item-small topic=t}}
+          </div>
+        {{/each}}
+      </div>
     </div>
-  </div>
+  {{/if}}
 {{/if}}
 {{#if collectives}}
   <div class="dc-categories-container">

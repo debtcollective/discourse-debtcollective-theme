@@ -121,6 +121,20 @@ export default {
           return html;
         }
       });
+
+      api.decorateWidget("header-icons:before", helper => {
+        const values = [
+          "Dispute Tools, https://tools.debtcollective.org/",
+          "Power Report, https://powerreport.debtcollective.org/",
+          "Donate, https://membership.debtcollective.org/"
+        ];
+        const links = values.map(entry => {
+          const [text, href] = entry.split(",").map(str => str.trim());
+          return h("a.dc-header-link", { href }, text);
+        });
+
+        return helper.h("nav.dc-custom-headers-links.d-none.d-md-block", links);
+      });
     });
   }
 };

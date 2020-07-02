@@ -118,3 +118,8 @@ ol.category-breadcrumb .select-kit.combo-box .select-kit-header {
     }
   }
 }
+
+.d-header.d-header .built-in-logo {
+  // we instead have the dc-widget-logo for menu
+  display: none;
+}

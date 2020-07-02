@@ -13,8 +13,10 @@
 @import "pill";
 @import "forms";
 @import "utils";
+@import "nav";
 
 @import "connectors/categories-nav";
+@import "connectors/dc-menu";
 @import "connectors/hero";
 
 @import "templates/components/categories-only";
@@ -27,6 +29,7 @@
 @import "templates/composer";
 @import "templates/topic";
 @import "templates/user";
+@import "templates/preferences";
 
 @import "templates/list/dc-topic-author";
 @import "templates/list/dc-topic-card";
@@ -34,6 +37,7 @@
 
 @import "widgets/embedded-posts";
 @import "widgets/header";
+@import "widgets/dc-logo";
 @import "widgets/post-controls";
 @import "widgets/post";
 @import "widgets/quick-access-panel";
