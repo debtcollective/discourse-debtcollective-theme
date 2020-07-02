@@ -125,11 +125,11 @@ body.modal-open {
       flex-direction: column;
 
       .dc-logo-widget {
-        display: none !important;
+        display: none;
       }
 
-      .title > a {
-        display: block !important;
+      .built-in-logo {
+        display: block;
       }
     }
 

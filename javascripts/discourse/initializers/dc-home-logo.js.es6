@@ -5,7 +5,7 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 
 createWidget("dc-widget-logo", {
   buildKey: () => "dc-widget-logo-key",
-  tagName: "div.dc-logo-widget.d-flex.d-md-none",
+  tagName: "div.dc-logo-widget",
 
   html(attrs, state) {
     const logoSmallUrl = this.siteSettings.site_logo_small_url || "";
@@ -49,7 +49,7 @@ export default {
               attributes: {
                 href: this.href(),
                 "data-auto-route": true,
-                class: "d-none d-md-block"
+                class: "built-in-logo"
               }
             },
             this.logo()
