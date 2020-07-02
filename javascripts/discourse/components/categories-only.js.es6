@@ -16,6 +16,6 @@ export default Component.extend({
 
   @discourseComputed("topics")
   currentEfforts(topics) {
-    return (topics && topics.filter(topic => topic.pinned)) || [];
+    return (topics && topics.filter(topic => topic.pinned_globally)) || [];
   }
 });
