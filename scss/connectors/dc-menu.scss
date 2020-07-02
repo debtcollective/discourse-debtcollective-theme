@@ -32,6 +32,10 @@ body.dc-menu-open {
   transition: transform ease 0.216s;
   overflow-y: auto;
 
+  .dc-menu-card {
+    margin-top: 1rem;
+  }
+
   .dc-menu-content-header {
     align-items: center;
     border-bottom: 0.0625rem solid #e8e8e8;
@@ -100,11 +104,5 @@ body.dc-menu-open {
 
   &--membership {
     background: $blue;
-  }
-}
-
-.dc-menu-content {
-  .dc-menu-card {
-    margin-top: 1rem;
   }
 }
