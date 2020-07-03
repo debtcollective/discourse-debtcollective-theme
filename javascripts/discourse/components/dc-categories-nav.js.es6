@@ -13,6 +13,14 @@ export default Component.extend({
     return categories;
   }),
 
+  customLinks: computed(function() {
+    const links = settings.header_categories_custom_links.split("|");
+    return links.map(entry => {
+      const [text, url] = entry.split(",");
+      return { text: text.trim(), url: url.trim() };
+    });
+  }),
+
   didInsertElement() {
     this._super(...arguments);
     this._bindEvents();

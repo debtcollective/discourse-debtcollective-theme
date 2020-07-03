@@ -7,5 +7,12 @@
         </a>
       </li>
     {{/each}}
+    {{#each customLinks as |link|}}
+      <li>
+        <a href={{link.url}}>
+          {{link.text}}
+        </a>
+      </li>
+    {{/each}}
   </ul>
 </div>
