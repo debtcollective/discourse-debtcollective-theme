@@ -16,8 +16,9 @@ export default Component.extend({
   customLinks: computed(function() {
     const links = settings.header_categories_custom_links.split("|");
     return links.map(entry => {
-      const [text, url] = entry.split(",");
-      return { text: text.trim(), url: url.trim() };
+      const [text, url] = entry.split(",").map(str => str.trim());
+
+      return { text, url };
     });
   }),
 
