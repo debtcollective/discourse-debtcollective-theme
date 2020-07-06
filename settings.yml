@@ -7,6 +7,11 @@ header_categories:
   list_type: category
   description:
     en: A list of categories to render below the header. Defaults to off.
+header_categories_custom_links:
+  type: list
+  default: ""
+  description:
+    en: "A list of links to render alongside header categories with format: text,url"
 show_hero:
   type: bool
   default: true
