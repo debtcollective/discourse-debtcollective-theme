@@ -15,12 +15,27 @@ export default Component.extend({
 
   customLinks: computed(function() {
     const links = settings.header_categories_custom_links.split("|");
-    return links.map(entry => {
-      const [text, url] = entry.split(",").map(str => str.trim());
+
+    const linkItems = links.map(entry => {
+      // Invalidate emty entries
+      if (!entry.trim()) return null;
+
+      const parsedEntry = entry.split(",");
+      // Invalidate entries that doesn't split into expected items to avoid unexpected output
+      if (parsedEntry.length !== 2) return null;
+
+      const [text, url] = parsedEntry.map(str => str.trim());
+
+      // Invalidate empty text or empty url entries
+      if (!text || !url) return null;
+
       const target = this._getAnchorTag(url);
 
       return { text, url, target };
     });
+
+    // return only those items that were valid
+    return linkItems.filter(Boolean);
   }),
 
   didInsertElement() {
