@@ -1,10 +1,11 @@
 $dc-header-box-shadow: "0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.25)";
 $dc-categories-border: "0.0625rem solid #ebe7dc";
-$dc-categories-height: 3rem;
+$dc-categories-height-base: 4rem;
+$dc-categories-height-base-sm: $dc-categories-height-base * 0.875;
 
 #main-outlet {
   // We need to increase the separation between content and header due to categories-nav
-  padding-top: $header-height + $dc-categories-height + $spacer;
+  padding-top: $header-height + $dc-categories-height-base + $spacer;
 
   @if $header-categories == "" {
     padding-top: $header-height + $spacer;
@@ -68,9 +69,9 @@ $dc-categories-height: 3rem;
     align-items: center;
     border-left: unquote($dc-categories-border);
     display: flex;
-    font-size: $font-size-xs;
+    font-size: $font-size-sm;
     font-weight: $font-weight-bold;
-    height: $dc-categories-height * 0.75;
+    height: $dc-categories-height-base-sm;
     padding: 0 $grid-gutter-width/2;
     text-transform: uppercase;
     white-space: nowrap;
@@ -80,7 +81,8 @@ $dc-categories-height: 3rem;
     }
 
     @include media-breakpoint-up(lg) {
-      height: $dc-categories-height;
+      font-size: $font-size-base;
+      height: $dc-categories-height-base;
     }
   }
 }
