@@ -35,7 +35,7 @@ export default Component.extend({
     });
 
     // return only those items that were valid
-    return linkItems.filter(item => item !== null);
+    return linkItems.filter(Boolean);
   }),
 
   didInsertElement() {
