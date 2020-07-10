@@ -84,9 +84,7 @@ body.dc-menu-open {
   width: 100%;
   transition: all 0.216s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-  a,
-  a:visited,
-  a:active {
+  span {
     color: $body-color;
   }
 
