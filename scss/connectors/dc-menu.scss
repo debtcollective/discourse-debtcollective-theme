@@ -51,7 +51,7 @@ body.dc-menu-open {
     display: flex;
     padding: 0.5rem;
 
-    .material-icons {
+    &.material-icons {
       font-size: $font-size-base;
     }
   }
@@ -84,9 +84,9 @@ body.dc-menu-open {
   width: 100%;
   transition: all 0.216s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-  a,
-  a:visited,
-  a:active {
+  &,
+  &:visited,
+  &:active {
     color: $body-color;
   }
 
