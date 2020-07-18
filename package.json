@@ -67,5 +67,7 @@
       "pre-commit": "lint-staged"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
 }
