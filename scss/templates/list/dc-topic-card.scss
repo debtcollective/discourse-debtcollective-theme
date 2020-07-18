@@ -30,6 +30,12 @@
   }
 }
 
+.dc-topic-card-content .topic-post-badges {
+  position: absolute;
+  top: $grid-gutter-width / 4;
+  right: $grid-gutter-width / 4;
+}
+
 .has-excerpt .dc-topic.dc-card {
   .dc-card__text {
     margin-top: $spacer * 0.75;

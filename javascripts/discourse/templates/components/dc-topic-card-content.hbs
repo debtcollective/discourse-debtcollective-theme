@@ -1,4 +1,9 @@
 <div class="dc-row h-100">
+  {{topic-post-badges
+    newPosts=topic.totalUnread
+    unseen=topic.unseen
+    url=topic.lastUnreadUrl
+  }}
   <div class="dc-col avatar-col">
     <div class="mr-2">
       {{raw "list/dc-topic-author" posters=topic.featuredUsers}}
