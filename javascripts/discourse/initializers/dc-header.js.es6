@@ -95,23 +95,23 @@ export default {
           );
 
           // add messages icon with count
-          const unreadPMs = user.get("unread_private_messages");
+          const unreadPriority = user.get("unread_high_priority_notifications");
 
           html.push(
             h(
               "li.header-dropdown-toggle#inbox",
               h("a", { href: `${user.path}/messages` }, [
                 h("div.icon.btn-flat.material-icons", "email"),
-                unreadPMs
+                unreadPriority
                   ? h(
                       "span.badge-notification.unread-private-messages",
                       {
                         title: I18n.t(
-                          themePrefix("notifications.tooltip.message"),
-                          { count: unreadPMs }
+                          themePrefix("notifications.tooltip.high_priority"),
+                          { count: unreadPriority }
                         )
                       },
-                      unreadPMs
+                      unreadPriority
                     )
                   : null
               ])
