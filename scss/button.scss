@@ -25,7 +25,8 @@
 
 .btn-action,
 .btn-primary,
-.widget-button.reply {
+.widget-button.reply,
+.dismiss-notifications.btn {
   @extend %action-button;
 }
 
