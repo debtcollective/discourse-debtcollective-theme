@@ -19,4 +19,4 @@ workflows:
       - update_theme:
           filters:
             branches:
-              only: develop
+              only: development
