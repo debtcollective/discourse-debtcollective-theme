@@ -11,7 +11,7 @@ export default {
         if (popupEnabled) return;
 
         loadScript(
-          "https://unpkg.com/@debtcollective/dc-popup-component@0.0.1/dist/popup-component/popup-component.js"
+          "https://unpkg.com/@debtcollective/dc-popup-component@latest/dist/popup-component/popup-component.js"
         );
 
         addWebComponent(
