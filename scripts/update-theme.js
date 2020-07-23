@@ -16,7 +16,10 @@ function updateTheme(themeId, baseUrl, apiKey, apiUsername) {
   })
     .then(response => response.json())
     .then(() => console.log("Theme updated successfully 🚀"))
-    .catch(error => console.error(error));
+    .catch(error => {
+      console.error(error);
+      process.exit(1);
+    });
 }
 
 updateTheme(

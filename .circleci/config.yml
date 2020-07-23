@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  update_theme:
+    docker:
+      - image: circleci/node:12.18.1
+    steps:
+      - checkout
+      - run:
+          name: install node fetch
+          command: npm install node-fetch
+      - run:
+          name: Update community theme
+          command: node scripts/update-theme.js
+
+workflows:
+  version: 2
+  pipeline:
+    jobs:
+      - update_theme:
+          filters:
+            branches:
+              only: develop
