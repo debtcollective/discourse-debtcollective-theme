@@ -17,6 +17,18 @@
   margin-bottom: 0;
 }
 
+#reply-control .title-and-category {
+  > * {
+    margin-bottom: 0.5rem !important;
+    // For the sake of simplicity adjust to the known height of surround inputs
+    height: 2.3125rem !important;
+  }
+
+  .select-kit.combo-box.mini-tag-chooser .select-kit-header {
+    height: 100% !important;
+  }
+}
+
 #reply-control .name {
   display: inherit;
 }
@@ -27,6 +39,7 @@
   margin-bottom: $spacer/2;
 }
 
+.composer-fields .composer-controls-location .location-label button.no-text,
 .composer-fields .composer-controls-event .event-label button.no-text {
   @extend %composer-input-controls;
   padding: 0;
