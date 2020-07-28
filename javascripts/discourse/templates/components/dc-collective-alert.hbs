@@ -1,0 +1,13 @@
+{{#unless hidden}}
+<div class="row">
+  <div class="alert alert-info alert-collective-alert">
+    <span>
+      {{{message}}}
+    </span>
+    {{d-button action=(action "join")
+    class="btn-primary"
+    label="discourse_debtcollective_collectives.join"
+    disabled=disabled}}
+  </div>
+</div>
+{{/unless}}
