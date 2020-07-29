@@ -120,6 +120,42 @@
     margin: 0 0 ($spacer * 0.5) 0;
     line-height: 1;
   }
+
+  .dc-topic-info {
+    margin-bottom: 0.5rem;
+
+    .dc-topic-category,
+    .dc-topic-tag {
+      color: $gray-800;
+      margin-right: 0.5rem;
+      display: inline-block;
+    }
+
+    .dc-topic-category {
+      font-size: $font-size-sm;
+
+      span {
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-right: 0.35rem;
+      }
+    }
+
+    .dc-topic-tag {
+      font-size: $font-size-xs;
+      border-radius: 0.25rem;
+      border: 1px solid $gray-400;
+      padding: 0.25rem 0.65rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      .dc-topic-category {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
 }
 
 .topic-post + .topic-post {
