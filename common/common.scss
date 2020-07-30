@@ -35,11 +35,12 @@
 @import "templates/list/dc-topic-card";
 @import "templates/list/visited-line";
 
+@import "widgets/dc-collectives-alert";
+@import "widgets/dc-logo";
 @import "widgets/embedded-posts";
 @import "widgets/header";
-@import "widgets/dc-logo";
-@import "widgets/post-controls";
 @import "widgets/post";
+@import "widgets/post-controls";
 @import "widgets/quick-access-panel";
 @import "widgets/topic-timeline";
 @import "widgets/user-menu";
