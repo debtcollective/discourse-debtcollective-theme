@@ -9,3 +9,87 @@
 .user-messages-page .dc-topic-card-content.already-seen {
   opacity: 0.5;
 }
+
+.user-nav {
+  overflow-x: scroll;
+  min-height: 3rem;
+
+  li > a {
+    font-size: 1rem;
+    border-width: 0.125rem;
+
+    &.active,
+    &:hover {
+      color: $blue !important;
+      border-bottom-color: $blue !important;
+    }
+  }
+}
+
+.stats-section {
+  .stats-title {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li,
+  .linked-stat {
+    margin: 0;
+    padding: 0;
+    margin: 0 1.5rem 1.5rem 0;
+
+    > a {
+      padding: 0 !important;
+    }
+  }
+
+  .user-stat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 10rem;
+    height: 7.5rem;
+    background-color: $blue;
+    border-radius: 0.25rem;
+
+    .number,
+    .label,
+    .value {
+      color: $white;
+    }
+
+    .number,
+    .value {
+      font-size: 2.25rem;
+    }
+
+    .label {
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 0.75rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0.75rem;
+    }
+
+    li,
+    .linked-stat {
+      margin: 0;
+    }
+
+    .user-stat {
+      width: 100%;
+    }
+  }
+}
