@@ -59,14 +59,18 @@
                     </label>
                   </td>
                 </tr>
-                {{#if usernameRequired}}
-                  <tr class="input">
-                    <td class="label">
-                      <label for="new-account-username">
-                        {{i18n "user.username.title"}}
-                      </label>
-                    </td>
-                    <td>
+                <tr class="input">
+                  <td class="label">
+                    <label for="new-account-username">
+                      {{i18n "user.username.title"}}
+                    </label>
+                  </td>
+                  <td>
+                    {{#if usernameDisabled}}
+                      <span class="value">
+                        {{accountUsername}}
+                      </span>
+                    {{else}}
                       {{input
                         value=accountUsername
                         id="new-account-username"
@@ -74,21 +78,21 @@
                         maxlength=maxUsernameLength
                         autocomplete="discourse"
                       }}
-                    </td>
-                  </tr>
-                  <tr class="instructions">
-                    <td></td>
-                    {{input-tip
-                      validation=usernameValidation
-                      id="username-validation"
-                    }}
-                    <td>
-                      <label>
-                        {{i18n "user.username.instructions"}}
-                      </label>
-                    </td>
-                  </tr>
-                {{/if}}
+                    {{/if}}
+                  </td>
+                </tr>
+                <tr class="instructions">
+                  <td></td>
+                  {{input-tip
+                    validation=usernameValidation
+                    id="username-validation"
+                  }}
+                  <td>
+                    <label>
+                      {{i18n "user.username.instructions"}}
+                    </label>
+                  </td>
+                </tr>
                 {{#if fullnameRequired}}
                   <tr class="input">
                     <td class="label">
