@@ -10,28 +10,38 @@ export default createWidget("dc-topic-title", {
     const categorySlug = attrs.category.slug;
     const categoryColor = attrs.category.color;
 
-    return h('a.dc-topic-category', {
-      attributes: {
-        href: `/c/${categorySlug}`
-      }
-    }, [
-      h('span', {
-        style: {
-          background: `#${categoryColor}`
+    return h(
+      "a.dc-topic-category",
+      {
+        attributes: {
+          href: `/c/${categorySlug}`
         }
-      }),
-      categoryName
-    ]);
+      },
+      [
+        h("span", {
+          style: {
+            background: `#${categoryColor}`
+          }
+        }),
+        categoryName
+      ]
+    );
   },
 
   buildTopicTags(attrs) {
-    const tags = attrs.tags;
+    const tags = attrs.tags || [];
 
-    return tags.map(tag => h('a.dc-topic-tag', {
-      attributes: {
-        href: `/tag/${tag}`
-      }
-    }, tag));
+    return tags.map(tag =>
+      h(
+        "a.dc-topic-tag",
+        {
+          attributes: {
+            href: `/tag/${tag}`
+          }
+        },
+        tag
+      )
+    );
   },
 
   buildTopicInfo(attrs) {
@@ -41,7 +51,7 @@ export default createWidget("dc-topic-title", {
   html(attrs, state) {
     return [
       h("h1.fancy-title", replaceEmoji(attrs.title)),
-      h("div.dc-topic-info", this.buildTopicInfo(attrs)),
-    ]
+      h("div.dc-topic-info", this.buildTopicInfo(attrs))
+    ];
   }
 });
