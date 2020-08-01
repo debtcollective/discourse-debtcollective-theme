@@ -62,8 +62,6 @@ export default {
             return loginError(options.suspended_message, "error");
           }
 
-          debugger;
-
           if (options.authenticated) {
             const ssoDestinationUrl = $.cookie("sso_destination_url");
             const destinationUrl =

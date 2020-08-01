@@ -93,3 +93,108 @@
     }
   }
 }
+
+.user-main .about {
+  box-shadow: $card-box-shadow;
+}
+
+.user-main .about .controls {
+  > ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+
+    > li {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin: 0 0 1rem;
+      }
+
+      &:first-child {
+        margin-top: 1.5rem;
+
+        .btn {
+          background-color: $green;
+          color: $beige;
+        }
+      }
+    }
+  }
+
+  .btn {
+    align-items: center;
+    background-color: transparent;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid $blue;
+    color: $blue;
+    display: flex;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: 2.5rem;
+    justify-content: center;
+
+    .d-icon {
+      display: none;
+    }
+
+    &:hover {
+      background-color: $blue;
+      color: $beige;
+    }
+  }
+  // This is the only way to hide the Collapse/Expand button
+  a[href=""] {
+    display: none;
+  }
+
+  @include media-breakpoint-up(sm) {
+    > ul {
+      flex-direction: row;
+
+      > li:not(:last-child) {
+        margin-right: 3.5rem;
+      }
+
+      li:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.user-main .about.has-background .user-profile-image {
+  height: 12.5rem;
+}
+
+.user-main .about .secondary {
+  display: none;
+}
+
+.user-main .about.has-background .details,
+.user-main .about.no-background .details {
+  padding: 1.5rem 3rem;
+
+  img.avatar {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+
+  .primary .primary-textual {
+    padding-left: 0;
+
+    .bio {
+      max-height: none;
+
+      p {
+        margin: 1.5rem 0 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .primary .primary-textual {
+      padding-left: 7.75rem;
+    }
+  }
+}
