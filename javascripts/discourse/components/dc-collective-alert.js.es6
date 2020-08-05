@@ -11,7 +11,7 @@ export default Ember.Component.extend({
 
   @computed("joined")
   message(joined) {
-    let message = I18n.t("discourse_debtcollective_collectives.alert");
+    let message = I18n.t(themePrefix("dc.alert.description"));
 
     if (joined) {
       message = I18n.t("discourse_debtcollective_collectives.joined");
