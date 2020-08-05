@@ -1,13 +1,15 @@
 {{#unless hidden}}
 <div class="row">
   <div class="alert alert-info alert-collective-alert">
+    <button class="dc-alert-btn" {{action "join"}}>
+      <span class="material-icons">
+        group_add
+      </span>
+      {{theme-i18n "dc.alert.title"}}
+    </button>
     <span>
       {{{message}}}
     </span>
-    {{d-button action=(action "join")
-    class="btn-primary"
-    label="discourse_debtcollective_collectives.join"
-    disabled=disabled}}
   </div>
 </div>
 {{/unless}}

@@ -29,6 +29,9 @@ en:
     popup:
       title: "We've got a new look! What do you think?"
       description: Noticed the new layout for the Debt Collective Community platform? Implementing this took a lot of time and effort and we want to make sure the new system works for you. So, please let us know what is working well and what you may want to see done better!
+    alert:
+      title: "Join collective"
+      description: "You need to join this collective before posting"
   notifications:
     tooltip:
       regular:
