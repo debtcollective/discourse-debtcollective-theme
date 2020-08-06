@@ -1,5 +1,23 @@
 .user-content {
   background: transparent;
+
+  .d-icon-heart {
+    color: $gray-100;
+  }
+
+  .top-section {
+    margin-bottom: 2rem;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .top-section {
+      margin-bottom: 3rem;
+
+      &:first-child {
+        margin-bottom: 1rem;
+      }
+    }
+  }
 }
 
 .user-content-wrapper .show-mores {
@@ -22,74 +40,6 @@
     &:hover {
       color: $blue !important;
       border-bottom-color: $blue !important;
-    }
-  }
-}
-
-.stats-section {
-  .stats-title {
-    display: none;
-  }
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  li,
-  .linked-stat {
-    margin: 0;
-    padding: 0;
-    margin: 0 1.5rem 1.5rem 0;
-
-    > a {
-      padding: 0 !important;
-    }
-  }
-
-  .user-stat {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 10rem;
-    height: 7.5rem;
-    background-color: $blue;
-    border-radius: 0.25rem;
-
-    .number,
-    .label,
-    .value {
-      color: $white;
-    }
-
-    .number,
-    .value {
-      font-size: 2.25rem;
-    }
-
-    .label {
-      font-size: 0.75rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-top: 0.75rem;
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    ul {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 0.75rem;
-    }
-
-    li,
-    .linked-stat {
-      margin: 0;
-    }
-
-    .user-stat {
-      width: 100%;
     }
   }
 }
@@ -195,6 +145,191 @@
   @include media-breakpoint-up(sm) {
     .primary .primary-textual {
       padding-left: 7.75rem;
+    }
+  }
+}
+
+.stats-section {
+  .stats-title {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li,
+  .linked-stat {
+    margin: 0;
+    padding: 0;
+    margin: 0 1.5rem 1.5rem 0;
+
+    > a {
+      padding: 0 !important;
+    }
+  }
+
+  .user-stat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 10rem;
+    height: 7.5rem;
+    background-color: $blue;
+    border-radius: 0.25rem;
+
+    .number,
+    .label,
+    .value {
+      color: $white;
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    .number,
+    .value {
+      font-size: 2.25rem;
+      font-family: "Roboto", $font-family-sans-serif;
+    }
+
+    .label {
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 0.75rem;
+
+      .d-icon-heart {
+        display: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0.75rem;
+    }
+
+    li,
+    .linked-stat {
+      margin: 0;
+    }
+
+    .user-stat {
+      width: 100%;
+    }
+  }
+}
+
+.most-liked-section,
+.top-replies-section {
+  display: grid;
+  grid-gap: 2.4375rem;
+  grid-template-columns: 1fr;
+
+  .stats-title {
+    text-transform: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    color: $gray-100;
+  }
+
+  .top-sub-section,
+  .summary-user-list {
+    width: 100%;
+    margin-bottom: 0;
+
+    > div > ul > li,
+    > ul > li {
+      height: auto;
+      border-bottom: 0.0625rem solid $gray-ligth;
+      border-left: none;
+
+      &:not(:last-child) {
+        margin: 0 0 0.78125rem;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.most-liked-section .summary-user-list {
+  > div > ul > li {
+    .user-info {
+      margin-bottom: 0;
+
+      .user-image {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        .user-image-inner a img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .user-detail {
+        display: flex;
+        float: none;
+        height: 2.5rem;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        width: 80%;
+
+        .name {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.top-replies-section {
+  .stats-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .top-sub-section ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3.25rem;
+    margin-bottom: 0.8rem;
+
+    a {
+      order: 1;
+      max-width: 85%;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 0.875rem;
+      line-height: 1.0625rem;
+      color: $gray-100;
+    }
+
+    .topic-info {
+      order: 2;
+    }
+
+    br {
+      display: none;
     }
   }
 }
