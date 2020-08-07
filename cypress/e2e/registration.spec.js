@@ -19,5 +19,6 @@ describe("registration", () => {
 
     // Verify the account has been created and sent activation email;
     cy.findByText(/sent.*activation mail/i).should("be.visible");
+    cy.url().should("eq", `${Cypress.config().baseUrl}/u/account-created`);
   });
 });
