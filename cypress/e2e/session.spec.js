@@ -1,15 +1,20 @@
+import { buildUser } from "../support/generate";
+
 describe("signup", () => {
-  beforeEach(() => {
-    cy.visit("/");
-  });
-
   it("allows the creation of new users", () => {
-    cy.get(".sign-up-button").as("btnSignup");
-    cy.get("@btnSignup").click();
+    const user = buildUser();
 
-    cy.get("form").as("form");
-    cy.contains("email")
-      .click()
-      .type("debtbot@debtcollective.org");
+    cy.visit("/");
+
+    cy.findByText(/sign up/i).click();
+
+    // Fill up signup form
+    cy.findByLabelText(/email/i).type(user.email);
+    cy.findByLabelText(/username/i).type(user.username);
+    cy.findByLabelText(/^name$/i).type(user.name);
+    cy.findByLabelText(/password/i).type(user.password);
+    cy.findByLabelText(/zip code/i).type(user.zipCode);
+    cy.findByLabelText(/phone number/i).type(user.phoneNumber);
+    cy.findByRole("button", { name: /create.*account/i }).click();
   });
 });
