@@ -16,5 +16,8 @@ describe("signup", () => {
     cy.findByLabelText(/zip code/i).type(user.zipCode);
     cy.findByLabelText(/phone number/i).type(user.phoneNumber);
     cy.findByRole("button", { name: /create.*account/i }).click();
+
+    // Verify the account has been created and sent activation email;
+    cy.findByText(/sent.*activation mail/i).should("be.visible");
   });
 });
