@@ -1,6 +1,6 @@
 import { buildUser } from "../support/generate";
 
-describe("signup", () => {
+describe("registration", () => {
   it("allows the creation of new users", () => {
     const user = buildUser();
 
