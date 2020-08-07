@@ -2,5 +2,7 @@ node_modules
 .discourse-site
 HELP
 .DS_Store
-/cypress/integration/examples
-/cypress/fixtures/example.json
+cypress/integration/examples
+cypress/fixtures/example.json
+cypress/videos
+cypress/screenshots
