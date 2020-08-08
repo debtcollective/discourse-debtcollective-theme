@@ -63,3 +63,25 @@
     cursor: not-allowed;
   }
 }
+
+@mixin user-profile-btn {
+  align-items: center;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid $blue;
+  color: $blue;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: 2.5rem;
+  justify-content: center;
+
+  .d-icon {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $blue !important;
+    color: $beige;
+  }
+}
