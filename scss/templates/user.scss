@@ -73,25 +73,7 @@
   }
 
   .btn {
-    align-items: center;
-    background-color: transparent;
-    border-radius: 0.25rem;
-    border: 0.0625rem solid $blue;
-    color: $blue;
-    display: flex;
-    font-size: 0.875rem;
-    font-weight: bold;
-    height: 2.5rem;
-    justify-content: center;
-
-    .d-icon {
-      display: none;
-    }
-
-    &:hover {
-      background-color: $blue;
-      color: $beige;
-    }
+    @include user-profile-btn;
   }
   // This is the only way to hide the Collapse/Expand button
   a[href=""] {
@@ -331,5 +313,104 @@
     br {
       display: none;
     }
+  }
+}
+// User Navigation
+.user-secondary-navigation {
+  .new-private-message {
+    @include user-profile-btn;
+    width: 9rem;
+    margin-bottom: 1rem;
+  }
+
+  .nav-stacked {
+    li {
+      margin-bottom: 1.4375rem;
+
+      a {
+        color: $gray-100;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      a.active {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.user-content-wrapper .user-additional-controls button {
+  @include user-profile-btn;
+  width: 9rem;
+
+  @include media-breakpoint-up(sm) {
+    margin-left: 0.8125rem;
+  }
+}
+
+// Notifications section
+.notification-history .notification {
+  box-shadow: $card-box-shadow;
+  padding: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  &,
+  &.unread {
+    background: $beige;
+  }
+
+  li a {
+    position: relative;
+
+    .d-icon {
+      color: $gray;
+      margin: 1.5rem;
+      width: 1.125rem;
+      height: 1rem;
+    }
+
+    div {
+      height: 100%;
+      padding: 0 1.5rem;
+      color: $blue;
+
+      span {
+        &:first-child {
+          color: $gray;
+        }
+
+        &:last-child {
+          color: $blue;
+          margin-left: 0.25rem;
+        }
+      }
+
+      // This is creates a border between the icon and the text
+      &::before {
+        content: "";
+        width: 0.0625rem;
+        background-color: $gray-ligth-100;
+        position: absolute;
+        left: 4rem;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  .time {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    color: $gray-200;
+    padding-right: 1.5rem;
+    margin-right: 0;
   }
 }
