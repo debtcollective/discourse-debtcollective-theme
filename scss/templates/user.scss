@@ -414,3 +414,66 @@
     margin-right: 0;
   }
 }
+
+// User Badges
+.user-content.user-badges-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  grid-gap: $grid-gutter-width;
+}
+
+.user-content.user-badges-list .badge-card {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+
+  .badge-contents {
+    padding: 0;
+    min-height: 7rem;
+    box-sizing: border-box;
+
+    .badge-icon {
+      width: 6.6875rem;
+      position: relative;
+
+      a {
+        width: auto;
+      }
+
+      .d-icon {
+        color: $blue !important;
+      }
+
+      &::after {
+        content: "";
+        width: 0.0625rem;
+        background-color: $gray-ligth-100;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .badge-info-item {
+      h3 {
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        color: $gray-200;
+      }
+
+      .badge-summary {
+        a {
+          color: $blue;
+        }
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 0.8rem;
+        line-height: 0.9375rem;
+        color: $gray-200;
+      }
+    }
+  }
+}
