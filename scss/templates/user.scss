@@ -29,7 +29,7 @@
 }
 
 .user-nav {
-  overflow-x: scroll;
+  overflow: hidden;
   min-height: 3rem;
 
   li > a {
