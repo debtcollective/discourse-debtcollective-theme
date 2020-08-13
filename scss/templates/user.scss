@@ -29,17 +29,20 @@
 }
 
 .user-nav {
-  overflow: hidden;
-  min-height: 3rem;
+  border-bottom: 0.125rem solid $gray-ligth;
+  display: flex;
+  flex: 1;
+  margin: 0;
 
   li > a {
     font-size: 1rem;
     border-width: 0.125rem;
+    border: 0.125rem solid transparent;
 
     &.active,
     &:hover {
-      color: $blue !important;
-      border-bottom-color: $blue !important;
+      color: $red !important;
+      border-bottom-color: $red !important;
     }
   }
 }
@@ -52,7 +55,7 @@
   > ul {
     display: flex;
     flex-direction: column;
-    margin-left: 0;
+    margin: 0;
 
     > li {
       margin: 0;
@@ -62,7 +65,7 @@
       }
 
       &:first-child {
-        margin-top: 1.5rem;
+        margin-top: 1rem;
 
         .btn {
           background-color: $green;
@@ -73,7 +76,13 @@
   }
 
   .btn {
-    @include user-profile-btn;
+    @extend .btn-default;
+    @extend .btn-lg;
+    margin: 0;
+
+    .d-icon {
+      display: none;
+    }
   }
   // This is the only way to hide the Collapse/Expand button
   a[href=""] {
@@ -84,12 +93,11 @@
     > ul {
       flex-direction: row;
 
-      > li:not(:last-child) {
-        margin-right: 3.5rem;
-      }
-
+      li,
+      li:not(:last-child),
       li:first-child {
-        margin-top: 0;
+        margin: 0;
+        margin-left: 0.635rem;
       }
     }
   }
@@ -105,7 +113,8 @@
 
 .user-main .about.has-background .details,
 .user-main .about.no-background .details {
-  padding: 1.5rem 3rem;
+  padding: $grid-gutter-width / 2;
+  display: flex;
 
   img.avatar {
     width: 6.25rem;
@@ -113,8 +122,6 @@
   }
 
   .primary .primary-textual {
-    padding-left: 0;
-
     .bio {
       max-height: none;
 
@@ -125,8 +132,15 @@
   }
 
   @include media-breakpoint-up(sm) {
-    .primary .primary-textual {
-      padding-left: 7.75rem;
+    .primary {
+      display: flex;
+      position: relative;
+
+      .controls {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
     }
   }
 }
@@ -253,31 +267,36 @@
 }
 
 .most-liked-section .summary-user-list {
-  > div > ul > li {
-    .user-info {
-      margin-bottom: 0;
+  > div > ul {
+    max-width: 100%;
 
-      .user-image {
-        width: 2.5rem;
-        height: 2.5rem;
+    > li {
+      .user-info {
+        margin-bottom: 0;
 
-        .user-image-inner a img {
-          width: 100%;
-          height: 100%;
+        .user-image {
+          width: 2.5rem;
+          height: 2.5rem;
+
+          .user-image-inner a img {
+            width: 100%;
+            height: 100%;
+          }
         }
-      }
 
-      .user-detail {
-        display: flex;
-        float: none;
-        height: 2.5rem;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-        width: 80%;
+        .user-detail {
+          display: flex;
+          float: none;
+          height: 2.5rem;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0;
+          width: auto;
+          margin: 0;
 
-        .name {
-          display: none;
+          .name {
+            display: none;
+          }
         }
       }
     }
@@ -289,38 +308,44 @@
     margin-bottom: 1.5rem;
   }
 
-  .top-sub-section ul li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 3.25rem;
-    margin-bottom: 0.8rem;
+  .top-sub-section ul {
+    max-width: 100%;
 
-    a {
-      order: 1;
-      max-width: 85%;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 0.875rem;
-      line-height: 1.0625rem;
-      color: $gray-100;
-    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 3.25rem;
+      margin-bottom: 0.8rem;
 
-    .topic-info {
-      order: 2;
-    }
+      a {
+        order: 1;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 0.875rem;
+        line-height: 1.0625rem;
+        color: $gray-100;
+      }
 
-    br {
-      display: none;
+      .topic-info {
+        order: 2;
+      }
+
+      br {
+        display: none;
+      }
     }
   }
 }
 // User Navigation
 .user-secondary-navigation {
   .new-private-message {
-    @include user-profile-btn;
-    width: 9rem;
+    @extend .btn-default;
     margin-bottom: 1rem;
+
+    .d-icon {
+      display: none;
+    }
   }
 
   .nav-stacked {
@@ -335,18 +360,25 @@
         line-height: 1.375rem;
         padding-top: 0;
         padding-bottom: 0;
+
+        .d-icon {
+          display: none;
+        }
       }
 
       a.active {
-        color: $blue;
+        color: $red;
       }
     }
   }
 }
 
 .user-content-wrapper .user-additional-controls button {
-  @include user-profile-btn;
-  width: 9rem;
+  @extend .btn-default;
+
+  .d-icon {
+    display: none;
+  }
 
   @include media-breakpoint-up(sm) {
     margin-left: 0.8125rem;
@@ -357,14 +389,14 @@
 .notification-history .notification {
   box-shadow: $card-box-shadow;
   padding: 0;
+  background: $beige;
 
   &:not(:last-child) {
     margin-bottom: 0.75rem;
   }
 
-  &,
   &.unread {
-    background: $beige;
+    background-color: rgba($blue, 0.3);
   }
 
   li a {
@@ -380,7 +412,7 @@
     div {
       height: 100%;
       padding: 0 1.5rem;
-      color: $blue;
+      color: $red;
 
       span {
         &:first-child {
@@ -388,7 +420,7 @@
         }
 
         &:last-child {
-          color: $blue;
+          color: $red;
           margin-left: 0.25rem;
         }
       }
@@ -441,7 +473,7 @@
       }
 
       .d-icon {
-        color: $blue !important;
+        color: $red !important;
       }
 
       &::after {
@@ -465,7 +497,7 @@
 
       .badge-summary {
         a {
-          color: $blue;
+          color: $red;
         }
 
         font-style: normal;
