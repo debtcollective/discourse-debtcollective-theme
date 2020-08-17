@@ -23,6 +23,20 @@ cd /path/to/folder_containing_debtcollective-theme
 discourse_theme watch debtcollective-theme
 ```
 
+### Testing
+
+Due to limitations of discourse technology we choose to drive our code using [crypress.io](https://www.cypress.io/) in order to make the test run you need to:
+
+```bash
+cp cypress.sample.json cypress.env.json
+```
+
+Create an API key for an admin user and fill the `cypress.env.json` with the username and the api key as the template suggests
+
+```bash
+yarn run test:e2e:dev
+```
+
 ### VSCode
 
 There are a few covenient plugins you may want to add if you are using VSCode. [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode), [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint), [Stylefmt](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-stylefmt) those in order to make sure you have automatic fix over the code.
