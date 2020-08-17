@@ -45,7 +45,17 @@ export default createWidget("dc-topic-title", {
   },
 
   buildTopicInfo(attrs) {
-    return [this.buildCategory(attrs), this.buildTopicTags(attrs)];
+    const topicInfo = [];
+
+    if (attrs.category) {
+      topicInfo.push(this.buildCategory(attrs));
+    }
+
+    if (attrs.tags) {
+      topicInfo.push(this.buildTopicTags(attrs));
+    }
+
+    return topicInfo;
   },
 
   html(attrs, state) {

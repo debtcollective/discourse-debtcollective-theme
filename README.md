@@ -89,20 +89,6 @@ Create an API key for an admin user and fill the `cypress.env.json` with the use
 yarn run test:e2e:dev
 ```
 
-### Testing
-
-Due to limitations of discourse technology we choose to drive our code using [crypress.io](https://www.cypress.io/) in order to make the test run you need to:
-
-```bash
-cp cypress.sample.json cypress.env.json
-```
-
-Create an API key for an admin user and fill the `cypress.env.json` with the username and the api key as the template suggests
-
-```bash
-yarn run test:e2e:dev
-```
-
 ## Customization
 
 This theme expect the community to have set **Categories only** as a homepage, you can achieve that by running setup wizard again visiting `http://localhost:3000/wizard` (for local discourse)
