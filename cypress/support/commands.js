@@ -6,10 +6,24 @@ const authHeaders = {
   "Content-Type": "application/json"
 };
 
-Cypress.Commands.add("createUser", (overrides, userId) => {
-  const user = buildUser(overrides);
+/**
+ * Given a valid user id perform a request to activate it
+ * typically to avoid the need of email verification
+ */
+const activateUser = userId => {
+  return cy.request({
+    url: `/admin/users/${userId}/activate`,
+    method: "PUT",
+    headers: authHeaders
+  });
+};
 
-  cy.request({
+/**
+ * Given a valid user object creates a new
+ * entry for a user that then needs to be activated
+ */
+const createUser = user => {
+  return cy.request({
     url: `/users`,
     method: "POST",
     body: {
@@ -24,12 +38,53 @@ Cypress.Commands.add("createUser", (overrides, userId) => {
       }
     },
     headers: authHeaders
-  }).then(response => {
-    cy.request({
-      url: `/admin/users/${response.body.user_id}/activate`,
-      method: "PUT",
-      headers: authHeaders
-    }).then(({ success }) => ({ ...user }));
+  });
+};
+
+Cypress.Commands.add("createUser", overrides => {
+  const user = buildUser(overrides);
+
+  createUser(user).then(response => {
+    activateUser.then(({ success }) => ({ ...user }));
+  });
+});
+
+Cypress.Commands.add("loginUser", overrides => {
+  const user = buildUser(overrides);
+
+  // Needed in order to perform a login request
+  const getCSRF = () => {
+    return cy.request({
+      url: `/session/csrf`,
+      credentials: "include",
+      headers: {
+        Accept: "application/json"
+      }
+    });
+  };
+
+  createUser(user).then(response => {
+    activateUser(response.body.user_id).then(() => {
+      // Ask for CSRF token
+      getCSRF().then(response => {
+        const csrfToken = response.body.csrf;
+
+        cy.request({
+          url: `/session`,
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "X-CSRF-Token": csrfToken
+          },
+          body: {
+            login: user.email,
+            password: user.password
+          }
+        }).then(() => {
+          return user;
+        });
+      });
+    });
   });
 });
 
