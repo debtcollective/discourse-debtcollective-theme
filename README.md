@@ -47,6 +47,7 @@ You can install themes using a Github repository. After install a theme, you can
 
 ```bash
 yarn install
+bundle install # install discourse theme cli
 ```
 
 The overall information can be found at
