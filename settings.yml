@@ -21,6 +21,9 @@ show_current_efforts:
 logo_href:
   type: string
   default: ""
+popup_enabled:
+  type: bool
+  default: false
 popup_url:
   description:
     en: Define the URL that user will redirect to when click the popup (use full url from browser bar)

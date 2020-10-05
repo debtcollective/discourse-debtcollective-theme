@@ -7,6 +7,8 @@ export default {
   name: "dc-popup",
   initialize() {
     withPluginApi("0.8", api => {
+      if (!settings.popup_enabled) return;
+
       api.onAppEvent("page:changed", () => {
         if (popupEnabled) return;
 
