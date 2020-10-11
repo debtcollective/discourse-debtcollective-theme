@@ -12,6 +12,9 @@ en:
       subheading: "Collectives to organize and take action with the help of our members."
       cta: "Learn more"
       cta_link: "https://community.debtcollective.org/t/member-guide-getting-started/2901"
+    header:
+      donate: "Donate"
+      log_in: "Member Login"
     show_more:
       expanded: "Show less topics"
       collapsed: "Show more topics"

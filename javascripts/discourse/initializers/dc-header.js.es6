@@ -27,6 +27,33 @@ export default {
         }
       });
 
+      api.reopenWidget("header-buttons", {
+        html(attrs) {
+          if (this.currentUser) {
+            return;
+          }
+
+          const buttons = [];
+
+          buttons.push(
+            this.attach("button", {
+              label: themePrefix("dc.header.log_in"),
+              className: "btn header-btn login-button",
+              action: "showLogin"
+            })
+          );
+          buttons.push(
+            this.attach("link", {
+              label: themePrefix("dc.header.donate"),
+              className: "btn header-btn donate-button",
+              href: "https://debtcollective.org/donate/"
+            })
+          );
+
+          return buttons;
+        }
+      });
+
       api.reopenWidget("user-menu", {
         defaultState() {
           const state = this._super();
@@ -126,10 +153,7 @@ export default {
         const values = [
           "Join the Union, https://debtcollective.org/debt-union/, _blank",
           "Community, https://community.debtcollective.org/, _self",
-          "Store, https://teespring.com/stores/debt-collective, _blank",
-          "Events, https://community.debtcollective.org/calendar, _blank",
-          "Student Debt Strike, https://strike.debtcollective.org/, _blank",
-          "Dispute your debt, https://tools.debtcollective.org/, _blank"
+          "Store, https://teespring.com/stores/debt-collective, _blank"
         ];
         const links = values.map(entry => {
           const [text, href, target] = entry.split(",").map(str => str.trim());
