@@ -27,6 +27,33 @@ export default {
         }
       });
 
+      api.reopenWidget("header-buttons", {
+        html(attrs) {
+          if (this.currentUser) {
+            return;
+          }
+
+          const buttons = [];
+
+          buttons.push(
+            this.attach("button", {
+              label: themePrefix("dc.header.log_in"),
+              className: "btn header-btn login-button",
+              action: "showLogin"
+            })
+          );
+          buttons.push(
+            this.attach("link", {
+              label: themePrefix("dc.header.donate"),
+              className: "btn header-btn donate-button",
+              href: "https://debtcollective.org/donate/"
+            })
+          );
+
+          return buttons;
+        }
+      });
+
       api.reopenWidget("user-menu", {
         defaultState() {
           const state = this._super();
@@ -124,13 +151,13 @@ export default {
 
       api.decorateWidget("header-icons:before", helper => {
         const values = [
-          "Dispute Tools, https://tools.debtcollective.org/",
-          "Power Report, https://powerreport.debtcollective.org/",
-          "Donate, https://membership.debtcollective.org/"
+          "Join the Union, https://debtcollective.org/debt-union/, _blank",
+          "Community, https://community.debtcollective.org/, _self",
+          "Store, https://teespring.com/stores/debt-collective, _blank"
         ];
         const links = values.map(entry => {
-          const [text, href] = entry.split(",").map(str => str.trim());
-          return h("a.dc-header-link", { href }, text);
+          const [text, href, target] = entry.split(",").map(str => str.trim());
+          return h("a.dc-header-link", { href, target }, text);
         });
 
         return helper.h("nav.dc-custom-headers-links.d-none.d-md-block", links);

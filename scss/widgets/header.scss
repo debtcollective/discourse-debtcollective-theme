@@ -1,3 +1,13 @@
+.header-btn {
+  align-items: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  // Discourse applies by default a padding rule: padding: 6px 10px;
+  padding: 0.75rem 1rem !important;
+}
+
 .d-header {
   background: $beige;
   height: $header-height;
@@ -12,23 +22,57 @@
 .d-header .panel {
   display: flex;
 
-  .d-header-icons {
-    order: 2;
+  // These are some styles applied by discourse, by default the display is "table"
+  &.clearfix::before,
+  &.clearfix::after {
+    display: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    flex: auto;
+    justify-content: space-between;
+    margin-left: 1rem;
+    width: 100%;
   }
 }
 
 .d-header .header-buttons {
+  align-items: initial;
+  flex-shrink: 0;
+  margin-top: 0;
   order: 3;
-  margin: 0 0 0 0.5rem;
+
+  .login-button {
+    background: transparent;
+    border: 0.0625rem solid $gray;
+    color: $gray;
+    transition: background 0.216s ease 0s, color 0.216s ease 0s;
+
+    &:hover {
+      background-color: $beige-200;
+    }
+  }
+
+  .donate-button {
+    background-color: $red;
+    color: $white;
+    margin-left: 0.4375rem;
+
+    &:hover {
+      background: $scarlet;
+    }
+  }
 }
 
 .d-header.with-user .header-buttons {
   order: 2;
 }
 
-.d-header-icons {
+.d-header .d-header-icons {
   align-items: center;
   display: flex;
+  width: 100%;
+  justify-content: space-between;
 
   li {
     order: 1;
@@ -65,11 +109,20 @@
 
 .dc-custom-headers-links {
   display: flex;
-  margin-right: 1rem;
+}
 
-  .dc-header-link {
-    @extend %navigation-link;
-    font-weight: $font-weight-bold;
-    margin-right: 1rem;
+.dc-header-link {
+  @extend %navigation-link;
+  font-weight: $font-weight-bold;
+  margin-right: 1rem;
+}
+
+.d-header.with-user .d-header-icons {
+  position: relative;
+  justify-content: flex-end;
+
+  .dc-custom-headers-links {
+    position: absolute;
+    left: 0;
   }
 }
