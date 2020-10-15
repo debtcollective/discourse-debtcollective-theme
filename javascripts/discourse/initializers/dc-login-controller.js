@@ -1,3 +1,4 @@
+import getURL from "discourse-common/lib/get-url";
 import I18n from "I18n";
 import EmberObject from "@ember/object";
 import { next } from "@ember/runloop";
@@ -78,10 +79,8 @@ export default {
               // redirect client to the original URL
               $.removeCookie("destination_url");
               window.location.href = destinationUrl;
-            } else if (
-              window.location.pathname === Discourse.getURL("/login")
-            ) {
-              window.location = Discourse.getURL("/");
+            } else if (window.location.pathname === getURL("/login")) {
+              window.location = getURL("/");
             } else {
               window.location.reload();
             }

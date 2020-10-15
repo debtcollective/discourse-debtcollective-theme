@@ -1,3 +1,4 @@
+import getURL from "discourse-common/lib/get-url";
 import discourseComputed from "discourse-common/utils/decorators";
 import DiscourseURL from "discourse/lib/url";
 import Component from "@ember/component";
@@ -8,7 +9,7 @@ export default Component.extend({
   classNames: ["dc-menu-container"],
 
   homepageURL: computed(function() {
-    return settings.logo_href || Discourse.getURL("/");
+    return settings.logo_href || getURL("/");
   }),
 
   @action

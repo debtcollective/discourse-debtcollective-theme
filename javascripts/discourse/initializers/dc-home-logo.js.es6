@@ -1,3 +1,4 @@
+import getURL from "discourse-common/lib/get-url";
 import hbs from "discourse/widgets/hbs-compiler";
 import { h } from "virtual-dom";
 import { createWidget } from "discourse/widgets/widget";
@@ -16,7 +17,7 @@ createWidget("dc-widget-logo", {
         h("img#site-logo.logo-small", {
           key: "logo-small",
           attributes: {
-            src: Discourse.getURL(logoSmallUrl),
+            src: getURL(logoSmallUrl),
             width: 36,
             alt: title
           }
@@ -39,7 +40,7 @@ export default {
     withPluginApi("0.8", api => {
       api.reopenWidget("home-logo", {
         settings: {
-          href: settings.logo_href || Discourse.getURL("/")
+          href: settings.logo_href || getURL("/")
         },
         html() {
           // https://github.com/discourse/discourse/blob/master/app/assets/javascripts/discourse/app/widgets/home-logo.js
