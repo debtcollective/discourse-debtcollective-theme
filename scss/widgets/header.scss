@@ -115,6 +115,10 @@
   @extend %navigation-link;
   font-weight: $font-weight-bold;
   margin-right: 1rem;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 
 .d-header.with-user .d-header-icons {
@@ -125,4 +129,9 @@
     position: absolute;
     left: 0;
   }
+}
+
+// Hide the custom header links when the user scrolls in a topic
+.extra-info-wrapper + .panel .dc-custom-headers-links {
+  visibility: hidden;
 }
