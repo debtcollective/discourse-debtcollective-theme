@@ -1,4 +1,5 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+import loadScript from "discourse/lib/load-script";
 import { h } from "virtual-dom";
 
 export default {
@@ -19,6 +20,13 @@ export default {
           $(searchButton)
             .addClass("material-icons")
             .html("search");
+        },
+        didInsertElement() {
+          this._super();
+          // TODO: whenever the dc-dropdown-component is available use that instead
+          loadScript(
+            "https://unpkg.com/@debtcollective/dc-header-component@1.5.0/dist/header/header.js"
+          );
         },
         afterRender() {
           this._super();
@@ -160,7 +168,32 @@ export default {
           return h("a.dc-header-link", { href, target }, text);
         });
 
-        return helper.h("nav.dc-custom-headers-links.d-none.d-md-block", links);
+        return helper.h(
+          "nav#dc-header-links.dc-custom-headers-links.d-none.d-md-block",
+          [
+            links,
+            h("dc-dropdown#dc-take-action-link", {
+              label: "Take Action!",
+              items: JSON.stringify([
+                {
+                  text: "Events",
+                  href: "https://community.debtcollective.org/calendar",
+                  target: "_blank"
+                },
+                {
+                  text: "Student Debt Strike",
+                  href: "https://strike.debtcollective.org/",
+                  target: "_blank"
+                },
+                {
+                  text: "Dispute Your Debt",
+                  href: "https://tools.debtcollective.org/",
+                  target: "_blank"
+                }
+              ])
+            })
+          ]
+        );
       });
     });
   }
