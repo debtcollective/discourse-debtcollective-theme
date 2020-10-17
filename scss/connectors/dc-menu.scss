@@ -76,3 +76,37 @@ body.dc-menu-open {
   display: none;
   touch-action: pan-y pinch-zoom;
 }
+
+.dc-collapser {
+  summary {
+    display: flex;
+    align-items: center;
+  }
+
+  summary::before {
+    display: none;
+  }
+
+  summary::after {
+    font-family: "Material Icons";
+    font-size: 1.5rem;
+    content: "\e5cf";
+  }
+
+  &[open] summary::after {
+    font-family: "Material Icons";
+    font-size: 1.5rem;
+    content: "\e5ce";
+  }
+
+  .dc-collapser-link {
+    &:first-of-type {
+      margin-top: 0.75rem;
+    }
+
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $disabled-text-color;
+  }
+}

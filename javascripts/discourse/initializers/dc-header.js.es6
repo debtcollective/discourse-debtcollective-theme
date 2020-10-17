@@ -178,7 +178,7 @@ export default {
                 {
                   text: "Events",
                   href: "https://community.debtcollective.org/calendar",
-                  target: "_blank"
+                  target: "_self"
                 },
                 {
                   text: "Student Debt Strike",
