@@ -48,7 +48,7 @@ export default {
             "a",
             {
               attributes: {
-                href: this.href(),
+                href: "https://debtcollective.org/",
                 "data-auto-route": true,
                 class: "built-in-logo"
               }
