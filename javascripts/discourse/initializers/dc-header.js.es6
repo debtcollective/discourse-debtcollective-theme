@@ -1,5 +1,4 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
-import loadScript from "discourse/lib/load-script";
 import { h } from "virtual-dom";
 
 export default {
@@ -23,9 +22,8 @@ export default {
         },
         didInsertElement() {
           this._super();
-          // TODO: whenever the dc-dropdown-component is available use that instead
-          loadScript(
-            "https://unpkg.com/@debtcollective/dc-header-component@1.5.0/dist/header/header.js"
+          loadStencilScript(
+            "https://unpkg.com/@debtcollective/dc-dropdown-component@1.6.3/dist/dropdown-component/dropdown-component.esm.js"
           );
         },
         afterRender() {
@@ -198,3 +196,15 @@ export default {
     });
   }
 };
+
+function loadStencilScript(src) {
+  var scriptModule = document.createElement("script");
+  scriptModule.setAttribute("type", "module");
+  scriptModule.setAttribute("src", src);
+  document.head.appendChild(scriptModule);
+
+  var scriptNoModule = document.createElement("script");
+  scriptNoModule.setAttribute("nomodule", "");
+  scriptNoModule.setAttribute("src", src);
+  document.head.appendChild(scriptNoModule);
+}
