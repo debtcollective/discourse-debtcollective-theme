@@ -1,6 +1,6 @@
 $dc-header-box-shadow: "0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.25)";
 $dc-categories-border: "0.0625rem solid #ebe7dc";
-$dc-categories-height-base: 4rem;
+$dc-categories-height-base: 3rem;
 $dc-categories-height-base-sm: $dc-categories-height-base * 0.875;
 
 #main-outlet {
@@ -81,7 +81,6 @@ $dc-categories-height-base-sm: $dc-categories-height-base * 0.875;
     }
 
     @include media-breakpoint-up(lg) {
-      font-size: $font-size-base;
       height: $dc-categories-height-base;
     }
   }
