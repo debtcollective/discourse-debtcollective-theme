@@ -23,6 +23,11 @@ body {
     align-items: center;
   }
 
+  .navigation-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   #create-topic,
   .btn {
     order: 1;
