@@ -6,12 +6,31 @@
     background-position: center;
     background-size: cover;
     display: flex;
-    height: 20rem;
-    margin-bottom: 5rem;
+    height: 11rem;
+    margin-bottom: 3rem;
 
     .category-logo {
       margin-top: auto;
-      margin-bottom: -4rem;
+      margin-bottom: -2rem;
+    }
+
+    .aspect-image {
+      --max-height: 4.5rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &.with-background {
+      height: 22.5rem;
+      margin-bottom: 5rem;
+
+      .category-logo {
+        margin-bottom: -4rem;
+      }
+
+      .aspect-image {
+        --max-height: 9rem;
+      }
     }
   }
 }
