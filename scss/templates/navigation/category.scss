@@ -1,6 +1,19 @@
 .category-heading {
   margin-bottom: 2rem;
   width: 100%;
+
+  &.with-background {
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 20rem;
+    margin-bottom: 5rem;
+
+    .category-logo {
+      margin-top: auto;
+      margin-bottom: -4rem;
+    }
+  }
 }
 
 // Avoid to tweak template to hide description
