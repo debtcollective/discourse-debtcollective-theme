@@ -23,7 +23,7 @@ export default {
         didInsertElement() {
           this._super();
           loadStencilScript(
-            "https://unpkg.com/@debtcollective/dc-dropdown-component@1.6.3/dist/dropdown-component/dropdown-component.esm.js"
+            "https://unpkg.com/@debtcollective/dc-dropdown-component@latest/dist/dropdown-component/dropdown-component.esm.js"
           );
         },
         afterRender() {
