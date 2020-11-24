@@ -1,5 +1,6 @@
 body {
-  background: $background-gradient;
+  // !important to disable the 'Category Background Image' feature
+  background: $background-gradient !important;
 
   // Up to some extend #main is the actual "body" of the page
   &,
