@@ -23,8 +23,8 @@ en:
         title: "Current efforts"
         description: "We strive to make accessible to you all the efforts that are happening right now around the debt collective organization.
         Below you can find some of those. Keep exploring the community to find out more"
-      others:
-        title: "Others categories"
+      categories:
+        title: "Categories"
     popup:
       title: "We've got a new look! What do you think?"
       description: Noticed the new layout for the Debt Collective Community platform? Implementing this took a lot of time and effort and we want to make sure the new system works for you. So, please let us know what is working well and what you may want to see done better!
