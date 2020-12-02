@@ -9,11 +9,6 @@ export default Component.extend({
   currentEfforts: [],
 
   @discourseComputed("categories")
-  collectives(categories) {
-    return categories.filter(category => category.tdc_is_collective);
-  },
-
-  @discourseComputed("categories")
   nonCollectives(categories) {
     return categories.filter(category => !category.tdc_is_collective);
   },

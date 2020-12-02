@@ -17,33 +17,6 @@
     </div>
   {{/if}}
 {{/if}}
-{{#if collectives}}
-  <div class="dc-categories-container">
-    <div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-      <h2 class="dc-heading m-0">
-        {{theme-i18n "dc.categories.collectives.title"}}
-      </h2>
-      <div class="category-actions">
-        {{#if showCategoryAdmin}}
-          {{categories-admin-dropdown
-            onChange=(action "selectCategoryAdminDropdownAction")
-            options=(hash triggerOnChangeOnTab=false)
-          }}
-        {{/if}}
-      </div>
-    </div>
-    <p>
-      {{{theme-i18n "dc.categories.collectives.description"}}}
-    </p>
-    <div class="dc-row mt-4">
-      {{#each collectives as |c|}}
-        <div class="dc-col-sm-6">
-          {{dc-category-card category=c}}
-        </div>
-      {{/each}}
-    </div>
-  </div>
-{{/if}}
 {{#if nonCollectives}}
   <div class="dc-categories-container">
     <h2 class="dc-heading mt-4 mb-2">
