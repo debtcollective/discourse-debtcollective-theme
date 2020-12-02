@@ -5,6 +5,9 @@
 >
   <div class="dc-card__content">
     <h2 class="dc-card__title dc-clamp-2">
+      {{#if category.read_restricted}}
+        {{d-icon "lock"}}
+      {{/if}}
       {{category.name}}
     </h2>
     <div class="dc-card__text dc-clamp-2">
