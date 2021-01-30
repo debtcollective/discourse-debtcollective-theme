@@ -14,16 +14,14 @@
         }}
       {{/if}}
     </section>
-  {{else}}
+  {{else if category.uploaded_logo.url}}
     <section class="category-heading">
-      {{#if category.uploaded_logo.url}}
-        {{cdn-img
-          src=category.uploaded_logo.url
-          class="category-logo"
-          width=category.uploaded_logo.width
-          height=category.uploaded_logo.height
-        }}
-      {{/if}}
+      {{cdn-img
+        src=category.uploaded_logo.url
+        class="category-logo"
+        width=category.uploaded_logo.width
+        height=category.uploaded_logo.height
+      }}
     </section>
   {{/if}}
   <div class="category-navigation">
