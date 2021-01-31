@@ -1,0 +1,32 @@
+<div class="mb-4">
+  <a class="sidebar-link" href="/categories">
+    All categories
+  </a>
+</div>
+<ul class="list-unstyled">
+  {{#each categories as |c|}}
+    {{! Avoid to iterate if this category is a subcategory }}
+    {{#unless c.parentCategory}}
+      <li class="list-item">
+        <a id="sidebar-link-{{c.id}}" href="{{c.url}}">
+          {{#if c.read_restricted}}
+            {{d-icon "lock"}}
+          {{/if}}
+          {{c.name}}
+        </a>
+        {{#if c.subcategories}}
+          <ul class="ml-4 list-unstyled">
+            {{#each c.subcategories as |sc|}}
+              <a id="sidebar-link-{{sc.id}}" href="{{sc.url}}">
+                {{#if sc.read_restricted}}
+                  {{d-icon "lock"}}
+                {{/if}}
+                {{sc.name}}
+              </a>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>

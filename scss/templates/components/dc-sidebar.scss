@@ -1,0 +1,20 @@
+.dc-sidebar {
+  &,
+  .sidebar-link,
+  .list-item a {
+    color: $gray-100;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-lg;
+  }
+
+  .sidebar-link,
+  .list-item a {
+    transition: all 0.216s linear;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
