@@ -11,12 +11,23 @@ export default Component.extend({
     return this.site.get("categoriesList");
   }),
 
-  init() {
+  didInsertElement() {
     this._super(...arguments);
+    this.appEvents.on("page:changed", this, "_setInitialActiveCategoryId");
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+    this.appEvents.off("page:changed", this, "_setInitialActiveCategoryId");
+  },
+
+  _setInitialActiveCategoryId() {
+    // Ensure the router transition finished to get up-to-date url reference
     const { router } = Ember.getOwner(this).lookup("controller:application");
-    const { category } = router.currentRoute
-      ? router.currentRoute.attributes
-      : { category: null };
+    const category =
+      router.currentRoute &&
+      router.currentRoute.attributes &&
+      router.currentRoute.attributes.category;
     this.set("activeCategoryId", category && category.id);
   },
 
