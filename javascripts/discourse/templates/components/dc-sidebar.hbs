@@ -8,7 +8,12 @@
     {{! Avoid to iterate if this category is a subcategory }}
     {{#unless c.parentCategory}}
       <li class="list-item">
-        <a id="sidebar-link-{{c.id}}" href="{{c.url}}">
+        <a
+          id="sidebar-link-{{c.id}}"
+          class="dynamic-hover-color"
+          style="color: #{{c.color}};"
+          href="{{c.url}}"
+        >
           {{#if c.read_restricted}}
             {{d-icon "lock"}}
           {{/if}}
@@ -17,7 +22,12 @@
         {{#if c.subcategories}}
           <ul class="ml-4 list-unstyled">
             {{#each c.subcategories as |sc|}}
-              <a id="sidebar-link-{{sc.id}}" href="{{sc.url}}">
+              <a
+                id="sidebar-link-{{sc.id}}"
+                class="dynamic-hover-color"
+                style="color: #{{sc.color}};"
+                href="{{sc.url}}"
+              >
                 {{#if sc.read_restricted}}
                   {{d-icon "lock"}}
                 {{/if}}

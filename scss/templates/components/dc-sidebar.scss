@@ -1,8 +1,10 @@
 .dc-sidebar {
+  color: $gray-100;
+
   &,
   .sidebar-link,
   .list-item a {
-    color: $gray-100;
+    color: inherit;
     font-size: $font-size-base;
     font-weight: $font-weight-bold;
     line-height: $line-height-lg;
@@ -12,9 +14,18 @@
   .list-item a {
     transition: all 0.216s linear;
     text-decoration: none;
-
-    &:hover {
-      color: $primary;
-    }
   }
+
+  .list-item a:hover {
+    color: inherit;
+  }
+
+  .sidebar-link:hover {
+    color: $primary;
+  }
+}
+
+.dynamic-hover-color:not(:hover) {
+  // Allows to get hover color from inline style
+  color: inherit !important;
 }
