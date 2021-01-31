@@ -20,12 +20,13 @@
     color: inherit;
   }
 
+  .sidebar-link.active,
   .sidebar-link:hover {
     color: $primary;
   }
 }
 
-.dynamic-hover-color:not(:hover) {
+.list-item:not(.active) > .dynamic-hover-color:not(:hover) {
   // Allows to get hover color from inline style
   color: inherit !important;
 }
