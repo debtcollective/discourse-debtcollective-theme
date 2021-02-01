@@ -2,7 +2,7 @@
   color: $gray-100;
 
   &,
-  .sidebar-link,
+  .sidebar-raw-link,
   .list-item a {
     color: inherit;
     font-size: $font-size-base;
@@ -10,7 +10,7 @@
     line-height: $line-height-lg;
   }
 
-  .sidebar-link,
+  .sidebar-raw-link,
   .list-item a {
     transition: all 0.216s linear;
     text-decoration: none;
@@ -20,13 +20,14 @@
     color: inherit;
   }
 
-  .sidebar-link.active,
-  .sidebar-link:hover {
+  .sidebar-raw-link.active,
+  .sidebar-raw-link:hover {
     color: $primary;
   }
 }
 
-.list-item:not(.active) > .dynamic-hover-color:not(:hover) {
+// Specificity matter so we don't affect deep nested sidebar-link
+.list-item:not(.active) > .sidebar-link > .dynamic-hover-color:not(:hover) {
   // Allows to get hover color from inline style
   color: inherit !important;
 }

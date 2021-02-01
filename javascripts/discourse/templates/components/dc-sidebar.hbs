@@ -1,8 +1,8 @@
 <div class="mb-4">
   <a
-    class="sidebar-link {{unless activeCategoryId "active"}}"
+    class="sidebar-raw-link {{unless activeCategoryId "active"}}"
     href="/categories"
-    {{action "setActiveCategoryId" null}}
+    {{action "handleClickLink" null}}
   >
     All categories
   </a>
@@ -12,18 +12,7 @@
     {{! Avoid to iterate if this category is a subcategory }}
     {{#unless category.parentCategory}}
       {{#dc-sidebar-item category=category currentCategoryId=activeCategoryId}}
-        <a
-          id="sidebar-link-{{category.id}}"
-          class="dynamic-hover-color"
-          style="color: #{{category.color}};"
-          href="{{category.url}}"
-          {{action "setActiveCategoryId" category.id}}
-        >
-          {{#if category.read_restricted}}
-            {{d-icon "lock"}}
-          {{/if}}
-          {{category.name}}
-        </a>
+        {{dc-sidebar-link category=category onClick=(action "handleClickLink")}}
         {{#if category.subcategories}}
           <ul class="ml-4 list-unstyled list-nested">
             {{#each category.subcategories as |subcategory|}}
@@ -31,18 +20,10 @@
                 category=subcategory
                 currentCategoryId=activeCategoryId
               }}
-                <a
-                  id="sidebar-link-{{subcategory.id}}"
-                  class="dynamic-hover-color"
-                  style="color: #{{subcategory.color}};"
-                  href="{{subcategory.url}}"
-                  {{action "setActiveCategoryId" subcategory.id}}
-                >
-                  {{#if subcategory.read_restricted}}
-                    {{d-icon "lock"}}
-                  {{/if}}
-                  {{subcategory.name}}
-                </a>
+                {{dc-sidebar-link
+                  category=subcategory
+                  onClick=(action "handleClickLink")
+                }}
               {{/dc-sidebar-item}}
             {{/each}}
           </ul>
