@@ -24,6 +24,10 @@
   .sidebar-raw-link:hover {
     color: $primary;
   }
+
+  .list-nested:not(.expanded) {
+    display: none;
+  }
 }
 
 // Specificity matter so we don't affect deep nested sidebar-link

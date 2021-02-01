@@ -14,7 +14,10 @@
       {{#dc-sidebar-item category=category currentCategoryId=activeCategoryId}}
         {{dc-sidebar-link category=category onClick=(action "handleClickLink")}}
         {{#if category.subcategories}}
-          <ul class="ml-4 list-unstyled list-nested">
+          {{#dc-sidebar-subcategories
+            category=category
+            currentCategoryId=activeCategoryId
+          }}
             {{#each category.subcategories as |subcategory|}}
               {{#dc-sidebar-item
                 category=subcategory
@@ -26,7 +29,7 @@
                 }}
               {{/dc-sidebar-item}}
             {{/each}}
-          </ul>
+          {{/dc-sidebar-subcategories}}
         {{/if}}
       {{/dc-sidebar-item}}
     {{/unless}}
