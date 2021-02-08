@@ -24,7 +24,10 @@
       }}
     </section>
   {{/if}}
-  <div class="category-navigation">
+  <div
+    class="category-navigation
+      {{if themeSettings.show_sidebar "dc-sidebar-visible"}}"
+  >
     {{d-navigation
       category=category
       filterMode=filterMode

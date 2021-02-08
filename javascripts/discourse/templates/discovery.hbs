@@ -7,12 +7,14 @@
   </div>
   <div class="container">
     <div class="dc-row">
-      <div class="dc-col-lg-4">
-        <div class="d-none d-lg-flex h-100">
-          {{dc-sidebar}}
+      {{#if themeSettings.show_sidebar}}
+        <div class="dc-col-lg-4">
+          <div class="d-none d-lg-flex h-100">
+            {{dc-sidebar}}
+          </div>
         </div>
-      </div>
-      <div class="dc-col-lg-8">
+      {{/if}}
+      <div class="dc-col {{if themeSettings.show_sidebar "dc-col-lg-8"}}">
         <div class="list-controls">
           <div class="container">
             {{outlet "navigation-bar"}}

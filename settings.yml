@@ -15,15 +15,28 @@ header_categories_custom_links:
 show_hero:
   type: bool
   default: true
+  description:
+    en: "Show message banner on community homepage"
 show_current_efforts:
   type: bool
   default: false
+  description:
+    en: "make visible pinned topics over 'all categories' page"
+show_sidebar:
+  type: bool
+  default: false
+  description:
+    en: "enable possibility to show sidebar navigation for large screens"
 logo_href:
   type: string
   default: ""
+  description:
+    en: "Edit url which the logo should map to"
 popup_enabled:
   type: bool
   default: false
+  description:
+    en: "Show small element on bottom right to display a given message"
 popup_url:
   description:
     en: Define the URL that user will redirect to when click the popup (use full url from browser bar)

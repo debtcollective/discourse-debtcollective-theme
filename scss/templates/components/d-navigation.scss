@@ -53,9 +53,8 @@
 
   @include media-breakpoint-up(lg) {
     // Allow to keep the expected space while avoiding clash due to sidebar
-    .category-breadcrumb {
-      opacity: 0;
-      pointer-events: none;
+    &.dc-sidebar-visible .category-breadcrumb {
+      visibility: hidden;
     }
   }
 }
