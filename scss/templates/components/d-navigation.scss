@@ -16,7 +16,7 @@
 
   .category-actions {
     position: absolute;
-    top: 0.25rem;
+    top: 0.5rem;
     right: 0;
   }
 
@@ -53,8 +53,9 @@
 
   @include media-breakpoint-up(lg) {
     // Allow to keep the expected space while avoiding clash due to sidebar
-    &.dc-sidebar-visible .category-breadcrumb {
-      visibility: hidden;
+    &.dc-sidebar-visible .category-actions {
+      top: unset;
+      bottom: 0.5rem;
     }
   }
 }
