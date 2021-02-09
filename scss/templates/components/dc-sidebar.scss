@@ -1,6 +1,7 @@
 .dc-sidebar {
   color: $gray-100;
   position: fixed;
+  width: inherit;
 
   &,
   .sidebar-raw-link,
@@ -29,6 +30,10 @@
   .list-nested:not(.expanded) {
     display: none;
   }
+}
+
+.dc-sidebar-hack-width .dc-sidebar {
+  max-width: 255px;
 }
 
 // Specificity matter so we don't affect deep nested sidebar-link

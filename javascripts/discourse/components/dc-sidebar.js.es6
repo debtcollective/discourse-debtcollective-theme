@@ -4,7 +4,7 @@ import { computed } from "@ember/object";
 export default Component.extend({
   tagName: "nav",
   elementId: "dc-sidebar",
-  classNames: ["dc-sidebar d-flex flex-column w-100"],
+  classNames: ["dc-sidebar d-flex flex-column"],
   activeCategoryId: null,
 
   categories: computed(function() {

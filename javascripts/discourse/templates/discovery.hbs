@@ -8,13 +8,13 @@
   <div class="container">
     <div class="dc-row">
       {{#if themeSettings.show_sidebar}}
-        <div class="dc-col-lg-4">
+        <div class="dc-col-lg-3 dc-sidebar-hack-width">
           <div class="d-none d-lg-flex h-100">
             {{dc-sidebar}}
           </div>
         </div>
       {{/if}}
-      <div class="dc-col {{if themeSettings.show_sidebar "dc-col-lg-8"}}">
+      <div class="dc-col {{if themeSettings.show_sidebar "dc-col-lg-9"}}">
         <div class="list-controls">
           <div class="container">
             {{outlet "navigation-bar"}}
