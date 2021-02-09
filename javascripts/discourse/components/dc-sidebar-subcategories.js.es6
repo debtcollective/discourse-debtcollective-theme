@@ -17,12 +17,14 @@ export default Component.extend({
   },
 
   _computeAttrs() {
-    // Avoid to do any comparation unless there is value
-    if (!this.currentCategoryId) return;
-
     this.set(
       "isExpanded",
-      this.category.id === this.currentCategoryId || this._expandBySubcategory()
+      // Active category match this element category
+      this.category.id === this.currentCategoryId ||
+        // A subcategory of this parent has been clicked
+        this._expandBySubcategory() ||
+        // There is no current category
+        !!this.currentCategoryId
     );
   },
 
