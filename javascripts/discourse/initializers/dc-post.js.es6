@@ -12,7 +12,7 @@ function transformWithCallbacks(post) {
 export default {
   name: "dc-post",
   initialize() {
-    withPluginApi("0.8", (api) => {
+    withPluginApi("0.8", api => {
       api.modifyClass("component:scrolling-post-stream", {
         buildArgs() {
           // Add topicData as extra property to pass down
@@ -27,7 +27,7 @@ export default {
             "searchService",
             "showReadIndicator"
           );
-        },
+        }
       });
 
       api.reopenWidget("post", {
@@ -41,23 +41,23 @@ export default {
           return this.attach(
             "post-article",
             Object.assign({}, attrs, {
-              topicData: this.parentWidget.attrs.topicData,
+              topicData: this.parentWidget.attrs.topicData
             })
           );
-        },
+        }
       });
 
       api.reopenWidget("post-avatar", {
         tagName: "div.dc-col-1.d-none.d-lg-block",
         settings: {
           size: "extra_large",
-          displayPosterName: false,
+          displayPosterName: false
         },
         html(attrs) {
           const html = this._super(attrs);
 
           return h("div.dc-topic-avatar.user-image", html);
-        },
+        }
       });
 
       api.reopenWidget("post-body", {
@@ -65,18 +65,13 @@ export default {
         html(attrs) {
           attrs.showTopicMap = false;
           const html = this._super(attrs);
-          const result = [h("div.dc-topic-body", html)];
 
-          if (attrs.topicData?.archetype === "private_message") {
-            result.push(this.attach("topic-map", attrs));
-          }
-
-          return result;
-        },
+          return h("div.dc-topic-body", html);
+        }
       });
 
       api.reopenWidget("embedded-post", {
-        tagName: "div.dc-embedded-post",
+        tagName: "div.dc-embedded-post"
       });
 
       api.reopenWidget("post-article", {
@@ -84,7 +79,7 @@ export default {
           const state = this._super();
           return Object.assign(state, {
             expandedFirstPost: false,
-            repliesBelow: [],
+            repliesBelow: []
           });
         },
         buildClasses(attrs) {
@@ -104,7 +99,7 @@ export default {
         html(attrs, state) {
           let html = this._super(attrs, state);
           const extraState = {
-            state: { repliesShown: !!state.repliesBelow.length },
+            state: { repliesShown: !!state.repliesBelow.length }
           };
 
           const postMenu = this.attach("post-menu", attrs, extraState);
@@ -112,10 +107,10 @@ export default {
           html.push(h("div.row.post-menu-row", h("div.dc-col", postMenu)));
 
           if (state.repliesAbove.length) {
-            const replies = state.repliesAbove.map((p) => {
+            const replies = state.repliesAbove.map(p => {
               return this.attach("embedded-post", p, {
                 model: this.store.createRecord("post", p),
-                state: { above: true },
+                state: { above: true }
               });
             });
 
@@ -125,9 +120,9 @@ export default {
                 icon: "chevron-down",
                 action: "toggleReplyAbove",
                 actionParam: "true",
-                className: "btn collapse-down",
+                className: "btn collapse-down"
               }),
-              replies,
+              replies
             ]);
 
             html.unshift(
@@ -139,9 +134,9 @@ export default {
           }
 
           if (state.repliesBelow.length) {
-            const replies = state.repliesBelow.map((p) => {
+            const replies = state.repliesBelow.map(p => {
               return this.attach("embedded-post", p, {
-                model: this.store.createRecord("post", p),
+                model: this.store.createRecord("post", p)
               });
             });
 
@@ -152,8 +147,8 @@ export default {
                 icon: "chevron-up",
                 action: "toggleRepliesBelow",
                 actionParam: "true",
-                className: "btn collapse-up",
-              }),
+                className: "btn collapse-up"
+              })
             ]);
 
             html.push(
@@ -181,26 +176,26 @@ export default {
           const topicUrl = post ? post.get("topic.url") : null;
           return this.store
             .find("post-reply", { postId: this.attrs.id })
-            .then((posts) => {
-              this.state.repliesBelow = posts.map((p) => {
+            .then(posts => {
+              this.state.repliesBelow = posts.map(p => {
                 p.shareUrl = `${topicUrl}/${p.post_number}`;
                 return transformWithCallbacks(p);
               });
             });
-        },
+        }
       });
 
       api.reopenWidget("post-contents", {
         html(attrs, state) {
           let html = this._super(attrs, state);
-          const postMenuIndex = html.findIndex((widget) => {
+          const postMenuIndex = html.findIndex(widget => {
             if (!widget) return;
             widget.key && widget.key.includes("post-menu");
           });
           const postMenu = html.splice(postMenuIndex, 1);
 
           return html;
-        },
+        }
       });
 
       api.reopenWidget("post-meta-data", {
@@ -212,8 +207,8 @@ export default {
           }
 
           return html;
-        },
+        }
       });
     });
-  },
+  }
 };
