@@ -158,7 +158,7 @@ export default {
       api.decorateWidget("header-icons:before", helper => {
         const values = [
           "Join the Union, https://debtcollective.org/debt-union/, _blank",
-          "Community, https://community.debtcollective.org/, _self",
+          "Community, /",
           "Store, https://teespring.com/stores/debt-collective, _blank"
         ];
         const links = values.map(entry => {
@@ -175,8 +175,7 @@ export default {
               items: JSON.stringify([
                 {
                   text: "Events",
-                  href: "https://community.debtcollective.org/calendar",
-                  target: "_self"
+                  href: "/calendar"
                 },
                 {
                   text: "Student Debt Strike",

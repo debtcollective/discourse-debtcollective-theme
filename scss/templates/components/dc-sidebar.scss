@@ -1,0 +1,43 @@
+.dc-sidebar {
+  color: $gray-100;
+  position: fixed;
+  width: inherit;
+
+  &,
+  .sidebar-raw-link,
+  .list-item a {
+    color: inherit;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-lg;
+  }
+
+  .sidebar-raw-link,
+  .list-item a {
+    transition: all 0.216s linear;
+    text-decoration: none;
+  }
+
+  .list-item a:hover {
+    color: inherit;
+  }
+
+  .sidebar-raw-link.active,
+  .sidebar-raw-link:hover {
+    color: $primary;
+  }
+
+  .list-nested:not(.expanded) {
+    display: none;
+  }
+}
+
+.dc-sidebar-hack-width .dc-sidebar {
+  max-width: 255px;
+}
+
+// Specificity matter so we don't affect deep nested sidebar-link
+.list-item:not(.active) > .sidebar-link > .dynamic-hover-color:not(:hover) {
+  // Allows to get hover color from inline style
+  color: inherit !important;
+}

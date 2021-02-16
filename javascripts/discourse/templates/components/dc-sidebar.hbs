@@ -1,0 +1,37 @@
+<div class="mb-4">
+  <a
+    class="sidebar-raw-link {{unless activeCategoryId "active"}}"
+    href="/categories"
+    {{action "handleClickLink" null}}
+  >
+    All categories
+  </a>
+</div>
+<ul class="list-unstyled">
+  {{#each categories as |category|}}
+    {{! Avoid to iterate if this category is a subcategory }}
+    {{#unless category.parentCategory}}
+      {{#dc-sidebar-item category=category currentCategoryId=activeCategoryId}}
+        {{dc-sidebar-link category=category onClick=(action "handleClickLink")}}
+        {{#if category.subcategories}}
+          {{#dc-sidebar-subcategories
+            category=category
+            currentCategoryId=activeCategoryId
+          }}
+            {{#each category.subcategories as |subcategory|}}
+              {{#dc-sidebar-item
+                category=subcategory
+                currentCategoryId=activeCategoryId
+              }}
+                {{dc-sidebar-link
+                  category=subcategory
+                  onClick=(action "handleClickLink")
+                }}
+              {{/dc-sidebar-item}}
+            {{/each}}
+          {{/dc-sidebar-subcategories}}
+        {{/if}}
+      {{/dc-sidebar-item}}
+    {{/unless}}
+  {{/each}}
+</ul>
