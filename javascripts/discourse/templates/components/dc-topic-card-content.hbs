@@ -12,27 +12,35 @@
   <div class="dc-col">
     <div class="d-flex flex-column justify-content-between h-100">
       <div class="dc-card__content">
-        <header class="dc-card__header">
-          <div>
-            <h2 class="dc-card__title dc-clamp-2">
-              {{{topic.fancyTitle}}}
-            </h2>
-            <div class="dc-card__meta dc-text-small">
-              {{#if topic.pinned}}
-                <p
-                  class="dc-info-pill mr-1"
-                  style="background-color: #{{topic.category.color}};"
-                >
-                  staff post
-                </p>
-              {{/if}}
-              <p class="dc-text-light">
-                {{#if topic.pinned}}
-                  ·
-                {{/if}}
-                {{dc-format-date topic.createdAt}}
+        <header
+          class="dc-card__header dc-card__header d-flex justify-content-center flex-column align-items-stretch"
+        >
+          <h2 class="dc-card__title dc-clamp-2 has-icon">
+            {{{topic.fancyTitle}}}
+            <div class="dc-card__meta">
+              <span class="material-icons">
+                comment
+              </span>
+              <p class="m-0 ml-1 dc-text-light">
+                {{topic.replyCount}}
               </p>
             </div>
+          </h2>
+          <div class="dc-card__meta dc-text-small">
+            {{#if topic.pinned}}
+              <p
+                class="dc-info-pill mr-1"
+                style="background-color: #{{topic.category.color}};"
+              >
+                staff post
+              </p>
+            {{/if}}
+            <p class="dc-text-light">
+              {{#if topic.pinned}}
+                ·
+              {{/if}}
+              {{dc-format-date topic.createdAt}}
+            </p>
           </div>
         </header>
         {{#if topic.hasExcerpt}}
@@ -40,18 +48,6 @@
             {{{dir-span topic.escapedExcerpt}}}
           </div>
         {{/if}}
-      </div>
-      <div class="dc-row">
-        <div class="dc-col">
-          <div class="dc-card__meta">
-            <span class="material-icons">
-              comment
-            </span>
-            <p class="m-0 ml-1 dc-text-light">
-              {{topic.replyCount}}
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
