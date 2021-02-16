@@ -3,7 +3,6 @@
   box-shadow: $card-box-shadow;
   border-top: 0.25rem solid transparent;
   display: flex;
-  height: $card-height;
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: 1.5rem;
@@ -47,6 +46,17 @@
     justify-content: space-between;
   }
 
+  &__title.has-icon {
+    position: relative;
+    padding-right: 4rem;
+
+    .dc-card__meta {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
   &__meta {
     display: flex;
     align-items: center;
@@ -57,6 +67,11 @@
       margin: 0;
     }
   }
+}
+
+.dc-category.dc-card {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .icons-line {
