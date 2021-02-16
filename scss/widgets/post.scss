@@ -45,10 +45,11 @@
       }
     }
   }
+}
 
-  .topic-map {
-    margin-left: 0;
-  }
+.topic-map {
+  margin: 0;
+  margin-top: 0.25rem;
 }
 
 .topic-post.moderator {
@@ -169,7 +170,7 @@
 }
 
 .post-menu-row {
-  margin-top: $spacer * 3;
+  margin-top: $spacer * 2;
   border-top: 0.0625rem solid $gray-300;
 }
 
