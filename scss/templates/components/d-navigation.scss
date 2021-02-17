@@ -87,8 +87,9 @@ ol.category-breadcrumb {
     align-items: center;
     display: flex;
 
-    .badge-category {
-      color: $gray;
+    .badge-category,
+    .d-icon {
+      color: $black;
     }
 
     .badge-category-bg {
