@@ -66,6 +66,13 @@
     p {
       margin: 0;
     }
+
+    .reply-icon {
+      font-size: $font-size-sm;
+      margin: 0;
+      position: relative;
+      top: $spacer * 0.125;
+    }
   }
 }
 

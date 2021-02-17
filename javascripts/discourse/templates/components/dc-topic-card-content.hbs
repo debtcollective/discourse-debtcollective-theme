@@ -27,20 +27,30 @@
             </div>
           </h2>
           <div class="dc-card__meta dc-text-small">
-            {{#if topic.pinned}}
-              <p
-                class="dc-info-pill mr-1"
-                style="background-color: #{{topic.category.color}};"
-              >
-                staff post
-              </p>
-            {{/if}}
+            <p class="mr-1">
+              <strong>
+                {{#if isUnreplied}}
+                  {{topicAuthor.displayName}}
+                {{else}}
+                  <small class="material-icons reply-icon">
+                    reply
+                  </small>
+                  {{lastRepliedAuthor.displayName}}
+                {{/if}}
+              </strong>
+            </p>
             <p class="dc-text-light">
-              {{#if topic.pinned}}
-                ·
+              {{#if isUnreplied}}
+                started
+                <span>
+                  {{dc-relative-date topic.createdAt}}
+                </span>
+              {{else}}
+                replied
+                <span>
+                  {{dc-relative-date topic.last_posted_at}}
+                </span>
               {{/if}}
-              started
-              {{dc-relative-date topic.createdAt}}
             </p>
           </div>
         </header>
