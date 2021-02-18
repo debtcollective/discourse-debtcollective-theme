@@ -1,0 +1,16 @@
+<div class="dc-card__meta">
+  <span class="material-icons">
+    comment
+  </span>
+  <p class="m-0 ml-1 dc-text-light">
+    {{topic.replyCount}}
+  </p>
+  {{#if topic.liked}}
+    <span class="material-icons m-0 ml-2">
+      favorite
+    </span>
+    <p class="m-0 ml-1 dc-text-light">
+      {{topic.like_count}}
+    </p>
+  {{/if}}
+</div>

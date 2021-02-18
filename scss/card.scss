@@ -48,7 +48,11 @@
 
   &__title.has-icon {
     position: relative;
-    padding-right: 4rem;
+
+    @include media-breakpoint-up(sm) {
+      // Enough space to likes and comments up to 9k both
+      padding-right: 10rem;
+    }
 
     .dc-card__meta {
       position: absolute;

@@ -17,17 +17,12 @@
         >
           <h2 class="dc-card__title dc-clamp-2 has-icon">
             {{{topic.fancyTitle}}}
-            <div class="dc-card__meta">
-              <span class="material-icons">
-                comment
-              </span>
-              <p class="m-0 ml-1 dc-text-light">
-                {{topic.replyCount}}
-              </p>
+            <div class="hidden d-sm-block">
+              {{dc-topic-engagement topic=topic}}
             </div>
           </h2>
           <div class="dc-card__meta dc-text-small">
-            <p class="mr-1">
+            <p class="dc-clamp-1">
               <strong>
                 {{#if isUnreplied}}
                   {{topicAuthor.displayName}}
@@ -38,19 +33,19 @@
                   {{lastRepliedAuthor.displayName}}
                 {{/if}}
               </strong>
-            </p>
-            <p class="dc-text-light">
-              {{#if isUnreplied}}
-                started
-                <span>
-                  {{dc-relative-date topic.createdAt}}
-                </span>
-              {{else}}
-                replied
-                <span>
-                  {{dc-relative-date topic.last_posted_at}}
-                </span>
-              {{/if}}
+              <span class="dc-text-light">
+                {{#if isUnreplied}}
+                  started
+                  <span>
+                    {{dc-relative-date topic.createdAt}}
+                  </span>
+                {{else}}
+                  replied
+                  <span>
+                    {{dc-relative-date topic.last_posted_at}}
+                  </span>
+                {{/if}}
+              </span>
             </p>
           </div>
         </header>
