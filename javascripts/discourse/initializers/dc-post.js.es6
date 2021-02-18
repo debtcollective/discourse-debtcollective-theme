@@ -67,8 +67,6 @@ export default {
           const html = this._super(attrs);
           const result = [h("div.dc-topic-body", html)];
 
-          debugger;
-
           if (attrs.firstPost && attrs.topicData?.isPrivateMessage) {
             result.push(this.attach("topic-map", attrs));
           }
