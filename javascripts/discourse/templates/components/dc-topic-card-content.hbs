@@ -16,6 +16,9 @@
           class="dc-card__header dc-card__header d-flex justify-content-center flex-column align-items-stretch"
         >
           <h2 class="dc-card__title dc-clamp-2 has-icon">
+            {{#if topic.pinned}}
+              {{d-icon "thumbtack"}}
+            {{/if}}
             {{{topic.fancyTitle}}}
             <div class="hidden d-sm-block">
               {{dc-topic-engagement topic=topic}}

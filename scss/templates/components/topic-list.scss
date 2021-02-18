@@ -4,3 +4,10 @@
   border-radius: 0;
   box-shadow: none;
 }
+
+.topic-list-icons .d-icon-thumbtack,
+.topic-list .d-icon-thumbtack,
+.latest-topic-list .d-icon-thumbtack,
+.top-topic-list .d-icon-thumbtack {
+  color: $black;
+}
