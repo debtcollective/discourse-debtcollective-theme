@@ -8,14 +8,19 @@
   .list-item a {
     color: inherit;
     font-size: $font-size-base;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-lg;
+    line-height: 2.25;
   }
 
   .sidebar-raw-link,
   .list-item a {
     transition: all 0.216s linear;
     text-decoration: none;
+  }
+
+  .sidebar-raw-link.active,
+  .sidebar-raw-link:hover,
+  .list-item a:hover {
+    font-weight: $font-weight-bold;
   }
 
   .list-item a:hover {
