@@ -51,3 +51,7 @@ nav.post-controls button.bookmark.bookmarked .d-icon,
 #topic-footer-buttons .select-kit .select-kit-header .selected-name .name {
   font-weight: $font-weight-bold;
 }
+
+.cooked img:not(.thumbnail) {
+  width: 100%;
+}

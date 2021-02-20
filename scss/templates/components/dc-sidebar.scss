@@ -25,7 +25,8 @@
 
   .sidebar-raw-link.active,
   .sidebar-raw-link:hover,
-  .list-item a:hover {
+  .list-item a:hover,
+  .list-item.active > .sidebar-link > a {
     font-weight: $font-weight-bold;
   }
 
