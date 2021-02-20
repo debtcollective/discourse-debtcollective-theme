@@ -2,12 +2,21 @@
   color: $gray-100;
   position: fixed;
   width: inherit;
-  // A fixed height is needed in order for the overflow to work as expected
-  height: 80vh;
-  height: calc(
-    100vh - #{$header-height + $dc-categories-height-base + $spacer}
-  );
-  overflow-y: auto;
+
+  .scrollable-area {
+    height: calc(
+      100vh - #{$header-height + $dc-categories-height-base + $spacer * 3}
+    );
+    overflow-y: auto;
+  }
+
+  > .list-unstyled > li:first-of-type {
+    margin-top: $spacer * 1.5;
+  }
+
+  > .list-unstyled > li:last-of-type {
+    margin-bottom: $spacer * 1.5;
+  }
 
   &,
   .sidebar-raw-link,
