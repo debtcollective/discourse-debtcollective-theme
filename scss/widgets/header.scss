@@ -135,3 +135,11 @@
 .extra-info-wrapper + .panel .dc-custom-headers-links {
   visibility: hidden;
 }
+
+.d-header .extra-info-wrapper {
+  width: 100%;
+}
+
+.d-header .extra-info-wrapper + .panel {
+  width: auto;
+}
