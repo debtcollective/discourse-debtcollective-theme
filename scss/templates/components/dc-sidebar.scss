@@ -2,6 +2,12 @@
   color: $gray-100;
   position: fixed;
   width: inherit;
+  // A fixed height is needed in order for the overflow to work as expected
+  height: 80vh;
+  height: calc(
+    100vh - #{$header-height + $dc-categories-height-base + $spacer}
+  );
+  overflow-y: auto;
 
   &,
   .sidebar-raw-link,
