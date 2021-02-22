@@ -12,46 +12,53 @@
   <div class="dc-col">
     <div class="d-flex flex-column justify-content-between h-100">
       <div class="dc-card__content">
-        <header class="dc-card__header">
-          <div>
-            <h2 class="dc-card__title dc-clamp-2">
-              {{{topic.fancyTitle}}}
-            </h2>
-            <div class="dc-card__meta dc-text-small">
-              {{#if topic.pinned}}
-                <p
-                  class="dc-info-pill mr-1"
-                  style="background-color: #{{topic.category.color}};"
-                >
-                  staff post
-                </p>
-              {{/if}}
-              <p class="dc-text-light">
-                {{#if topic.pinned}}
-                  ·
-                {{/if}}
-                {{dc-format-date topic.createdAt}}
-              </p>
+        <header
+          class="dc-card__header dc-card__header d-flex justify-content-center flex-column align-items-stretch"
+        >
+          <h2 class="dc-card__title dc-clamp-2 has-icon">
+            {{#if topic.pinned}}
+              {{d-icon "thumbtack"}}
+            {{/if}}
+            {{{topic.fancyTitle}}}
+            <div class="hidden d-sm-block">
+              {{dc-topic-engagement topic=topic}}
             </div>
-          </div>
-        </header>
-        {{#if topic.hasExcerpt}}
-          <div class="dc-card__text dc-clamp-1">
-            {{{dir-span topic.escapedExcerpt}}}
-          </div>
-        {{/if}}
-      </div>
-      <div class="dc-row">
-        <div class="dc-col">
-          <div class="dc-card__meta">
-            <span class="material-icons">
-              comment
-            </span>
-            <p class="m-0 ml-1 dc-text-light">
-              {{topic.replyCount}}
+          </h2>
+          <div class="dc-card__meta dc-text-small">
+            <p class="dc-clamp-1">
+              <strong>
+                {{#if isUnreplied}}
+                  {{topicAuthor.displayName}}
+                {{else}}
+                  <small class="material-icons reply-icon">
+                    reply
+                  </small>
+                  {{lastRepliedAuthor.displayName}}
+                {{/if}}
+              </strong>
+              <span class="dc-text-light">
+                {{#if isUnreplied}}
+                  started
+                  <span>
+                    {{dc-relative-date topic.createdAt}}
+                  </span>
+                {{else}}
+                  replied
+                  <span>
+                    {{dc-relative-date topic.last_posted_at}}
+                  </span>
+                {{/if}}
+              </span>
             </p>
           </div>
-        </div>
+        </header>
+        {{#if topic.pinned}}
+          {{#if topic.hasExcerpt}}
+            <div class="dc-card__text dc-clamp-2">
+              {{{dir-span topic.escapedExcerpt}}}
+            </div>
+          {{/if}}
+        {{/if}}
       </div>
     </div>
   </div>

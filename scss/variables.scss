@@ -28,7 +28,7 @@ $font-family-sans-serif: "Libre Franklin", sans-serif;
 $font-family-monospace: "More Gothic Bold", Impact, sans-serif;
 
 $font-size-base: 1rem;
-$font-size-lg: 1rem * 1.25;
+$font-size-lg: 1rem * 1.125;
 $font-size-xl: 1rem * 1.5;
 $font-size-sm: 1rem * 0.875;
 $font-size-xs: 1rem * 0.75;
@@ -61,8 +61,6 @@ $danger: #dc3545;
 $light: #f8f9fa;
 $dark: #3c3c3c;
 
-// As flex layout the height will affect vertical space
-$card-height: 13rem;
 $btn-action-color: $secondary;
 
 $header-height: 5rem;
