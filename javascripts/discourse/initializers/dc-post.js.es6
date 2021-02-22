@@ -2,6 +2,7 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 import { transformBasicPost } from "discourse/lib/transform-post";
 import { postTransformCallbacks } from "discourse/widgets/post-stream";
 import { h } from "virtual-dom";
+import DiscourseURL from "discourse/lib/url";
 
 function transformWithCallbacks(post) {
   let transformed = transformBasicPost(post);
