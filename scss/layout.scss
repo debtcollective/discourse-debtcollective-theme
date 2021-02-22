@@ -23,3 +23,8 @@ body {
 .categories-and-latest.categories-and-latest .column.categories {
   margin: 0;
 }
+
+// Make easier for development
+.create-topics-notice {
+  display: none;
+}

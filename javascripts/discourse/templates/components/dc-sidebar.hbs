@@ -1,4 +1,4 @@
-<div class="mb-4">
+<div class="m-0">
   <a
     class="sidebar-raw-link {{unless activeCategoryId "active"}}"
     href="/categories"
@@ -7,7 +7,7 @@
     All categories
   </a>
 </div>
-<ul class="list-unstyled">
+<ul class="list-unstyled scrollable-area">
   {{#each categories as |category|}}
     {{! Avoid to iterate if this category is a subcategory }}
     {{#unless category.parentCategory}}
