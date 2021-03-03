@@ -26,6 +26,8 @@
   {{/if}}
   <div
     class="category-navigation
+      {{unless category.uploaded_background.url "mt-4"}}
+
       {{if themeSettings.show_sidebar "dc-sidebar-visible"}}"
   >
     {{d-navigation

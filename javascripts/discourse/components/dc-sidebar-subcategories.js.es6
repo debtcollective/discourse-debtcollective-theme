@@ -22,15 +22,15 @@ export default Component.extend({
       // Active category match this element category
       this.category.id === this.currentCategoryId ||
         // A subcategory of this parent has been clicked
-        this._expandBySubcategory() ||
-        // There is no current category
-        !!this.currentCategoryId
+        this._expandBySubcategory()
     );
   },
 
   _expandBySubcategory() {
     return this.category.isParent
-      ? this.category.subcategories.find(c => c.id === this.currentCategoryId)
+      ? Boolean(
+          this.category.subcategories.find(c => c.id === this.currentCategoryId)
+        )
       : false;
   }
 });

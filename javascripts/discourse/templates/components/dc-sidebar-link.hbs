@@ -1,7 +1,7 @@
 {{! letting the component define the anchor tag will make things harder to use router }}
 <a
   id="sidebar-link-{{category.id}}"
-  class="dynamic-hover-color dc-clamp-1"
+  class="dynamic-hover-color sidebar-link-clamp"
   style="color: #{{category.color}};"
   href="{{category.url}}"
   {{action "handlOnClick" category.id}}
