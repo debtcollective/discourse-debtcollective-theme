@@ -62,3 +62,8 @@
   // Allows to get hover color from inline style
   color: inherit !important;
 }
+
+.sidebar-link-clamp {
+  // Solve issue on Safari browser when rendering long categories as line-height is no standard
+  @include clamp-text(1, true, 2.25em);
+}
