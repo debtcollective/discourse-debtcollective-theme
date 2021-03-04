@@ -13,6 +13,10 @@ body {
 .list-controls {
   margin-bottom: 1.5rem;
 
+  .btn {
+    font-size: $font-size-base;
+  }
+
   .select-kit.categories-admin-dropdown,
   .select-kit.tags-admin-dropdown,
   .select-kit.category-notifications-button,
