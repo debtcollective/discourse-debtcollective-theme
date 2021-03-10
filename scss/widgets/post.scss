@@ -53,7 +53,7 @@
 }
 
 .topic-post.moderator {
-  article {
+  > article {
     background-color: dark-light-choose($highlight-low, $highlight-medium);
   }
 
