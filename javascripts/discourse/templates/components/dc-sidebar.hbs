@@ -1,4 +1,11 @@
-<div class="m-0">
+<div class="sidebar-actions mb-3 mt-4">
+  {{d-button
+    class="btn btn-block btn-primary"
+    translatedLabel="New topic"
+    action=(route-action "createTopic")
+  }}
+</div>
+<div class="m-0 d-flex flex-column">
   <a
     class="sidebar-raw-link {{unless activeCategoryId "active"}}"
     href="/categories"
