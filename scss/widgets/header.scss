@@ -35,6 +35,11 @@
     display: none;
   }
 
+  // Allow the search icon to render alongside header-buttons although is placed in another node
+  ul[role="navigation"] {
+    width: 100%;
+  }
+
   @include media-breakpoint-up(md) {
     flex: auto;
     justify-content: space-between;
@@ -78,7 +83,6 @@
 .d-header .d-header-icons {
   align-items: center;
   display: flex;
-  width: 100%;
   justify-content: space-between;
 
   li {
@@ -140,16 +144,20 @@
 
 .title-wrapper.title-wrapper {
   display: flex;
+  margin-left: 0.5rem;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 0;
+  }
 }
 
 // Hide the custom header links when the user scrolls in a topic
 .extra-info-wrapper + .panel .dc-custom-headers-links {
-  visibility: hidden;
+  display: none !important;
 }
 
 .d-header .extra-info-wrapper {
-  padding-right: 1rem;
-  width: 100%;
+  padding: 0 1rem;
 
   .extra-info {
     &:not(.two-rows) {
@@ -165,5 +173,13 @@
 }
 
 .d-header .extra-info-wrapper + .panel {
+  display: flex;
+  justify-content: flex-end;
   width: auto;
+  margin: 0;
+
+  // Allow the search icon to render alongside header-buttons although is placed in another node
+  ul[role="navigation"] {
+    width: auto;
+  }
 }
