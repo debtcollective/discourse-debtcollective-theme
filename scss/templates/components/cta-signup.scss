@@ -2,3 +2,13 @@
   width: auto;
   max-width: 100%;
 }
+
+.alert.alert-info.signup-cta {
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  > button {
+    margin: 0 0 1rem;
+  }
+}
