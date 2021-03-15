@@ -30,6 +30,17 @@
   @extend %action-button;
 }
 
+button[data-replynopermission="true"] {
+  background: transparent !important;
+  padding: 0 !important;
+
+  &,
+  svg.d-icon,
+  .d-button-label {
+    color: $gray-ligth !important;
+  }
+}
+
 .btn-dark {
   @include btn(
     $text-color: $white,
