@@ -4,10 +4,12 @@
 }
 
 .container.posts {
-  display: block;
-  grid-template-areas: unset;
-  grid-template-columns: unset;
-  -ms-grid-columns: unset;
+  @include media-breakpoint-down(lg) {
+    display: block;
+    grid-template-areas: unset;
+    grid-template-columns: unset;
+    -ms-grid-columns: unset;
+  }
 }
 
 .time-gap.small-action {

@@ -1,17 +1,7 @@
-// Otherwise the timeline won't fit into the screen
-$container-post-width-xl: map-get(
-  $map: $container-max-widths,
-  $key: "lg"
-);
-
 .container.posts,
 .suggested-topics {
   max-width: 100%;
   position: relative;
-
-  @include media-breakpoint-up(xl) {
-    width: $container-post-width-xl;
-  }
 }
 
 .timeline-container:not(.timeline-fullscreen) {
@@ -19,8 +9,11 @@ $container-post-width-xl: map-get(
 
   @include media-breakpoint-up(xl) {
     display: block;
-    margin-left: $container-post-width-xl;
   }
+}
+
+.timeline-ago {
+  font-size: $font-size-xs;
 }
 
 // This is a button that is not needed after the layout update of topic-timeline/topic-progress
