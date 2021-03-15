@@ -47,6 +47,11 @@
   }
 }
 
+.cooked img:not(.thumbnail):not(.ytp-thumbnail-image) {
+  max-width: 100% !important;
+  width: auto;
+}
+
 .topic-map {
   margin: 0;
   margin-top: 0.25rem;

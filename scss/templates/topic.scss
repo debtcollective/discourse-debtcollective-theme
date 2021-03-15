@@ -3,6 +3,13 @@
   margin-top: $spacer;
 }
 
+.container.posts {
+  display: block;
+  grid-template-areas: unset;
+  grid-template-columns: unset;
+  -ms-grid-columns: unset;
+}
+
 .time-gap.small-action {
   margin-top: $spacer * 2;
 }
