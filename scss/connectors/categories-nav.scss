@@ -4,12 +4,7 @@ $dc-categories-height-base: 3rem;
 $dc-categories-height-base-sm: $dc-categories-height-base * 0.875;
 
 #main-outlet {
-  // We need to increase the separation between content and header due to categories-nav
-  padding-top: $header-height + $dc-categories-height-base + $spacer;
-
-  @if $header-categories == "" {
-    padding-top: $header-height + $spacer;
-  }
+  padding-top: 1rem;
 }
 
 .d-header {
