@@ -22,7 +22,7 @@ createWidget("dc-widget-logo", {
             alt: title
           }
         }),
-        h("span.material-icons.ml-1", "keyboard_arrow_right")
+        h("span.material-icons.mr-1", "keyboard_arrow_right")
       ];
     }
 

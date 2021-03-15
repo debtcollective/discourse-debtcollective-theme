@@ -9,7 +9,11 @@
     $hover-bg-color: lighten($btn-action-color, 10%),
     $hover-icon-color: $white
   );
-  border-radius: 0.25rem;
+  border-radius: $border-radius;
+}
+
+.btn {
+  border-radius: $border-radius;
 }
 
 .btn-transparent {
@@ -28,6 +32,17 @@
 .widget-button.reply,
 .dismiss-notifications.btn {
   @extend %action-button;
+}
+
+button[data-replynopermission="true"] {
+  background: transparent !important;
+  padding: 0 !important;
+
+  &,
+  svg.d-icon,
+  .d-button-label {
+    color: $gray-ligth !important;
+  }
 }
 
 .btn-dark {

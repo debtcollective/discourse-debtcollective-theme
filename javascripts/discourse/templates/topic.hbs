@@ -47,8 +47,7 @@
                 rebakePost=(action "rebakePost")
                 changePostOwner=(action "changePostOwner")
                 grantBadge=(action "grantBadge")
-                addNotice=(action "addNotice")
-                removeNotice=(action "removeNotice")
+                changeNotice=(action "changeNotice")
                 lockPost=(action "lockPost")
                 unlockPost=(action "unlockPost")
                 unhidePost=(action "unhidePost")
@@ -187,7 +186,7 @@
                   replyToPost=(action "replyToPost")
                 }}
               {{else}}
-                <div id="topic-footer-buttons">
+                <div id="topic-footer-buttons" class="mb-4 clearfix">
                   {{d-button
                     icon="reply"
                     class="btn-primary pull-right"
@@ -201,6 +200,7 @@
         </section>
       </div>
       {{#topic-navigation
+        class="topic-navigation"
         topic=model
         jumpToDate=(action "jumpToDate")
         jumpToIndex=(action "jumpToIndex") as |info|

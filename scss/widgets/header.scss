@@ -1,6 +1,6 @@
 .header-btn {
   align-items: center;
-  border-radius: 0.25rem;
+  border-radius: $border-radius;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -17,6 +17,13 @@
     max-width: none;
     width: 100%;
   }
+
+  .title {
+    max-width: unset;
+    overflow: unset;
+    white-space: unset;
+    min-width: unset;
+  }
 }
 
 .d-header .panel {
@@ -26,6 +33,11 @@
   &.clearfix::before,
   &.clearfix::after {
     display: none;
+  }
+
+  // Allow the search icon to render alongside header-buttons although is placed in another node
+  ul[role="navigation"] {
+    width: 100%;
   }
 
   @include media-breakpoint-up(md) {
@@ -71,7 +83,6 @@
 .d-header .d-header-icons {
   align-items: center;
   display: flex;
-  width: 100%;
   justify-content: space-between;
 
   li {
@@ -131,15 +142,51 @@
   }
 }
 
+.title-wrapper.title-wrapper {
+  display: flex;
+  margin-left: 0;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 1.5rem;
+  }
+}
+
 // Hide the custom header links when the user scrolls in a topic
 .extra-info-wrapper + .panel .dc-custom-headers-links {
-  visibility: hidden;
+  display: none !important;
 }
 
 .d-header .extra-info-wrapper {
-  width: 100%;
+  padding: 0;
+
+  .extra-info {
+    &:not(.two-rows) {
+      min-height: unset;
+    }
+
+    .header-title {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      margin: 0;
+    }
+  }
+}
+
+.d-header {
+  .extra-info-wrapper {
+    -ms-flex: 4;
+    flex: 4;
+  }
 }
 
 .d-header .extra-info-wrapper + .panel {
+  display: flex;
+  justify-content: flex-end;
   width: auto;
+  margin: 0;
+
+  // Allow the search icon to render alongside header-buttons although is placed in another node
+  ul[role="navigation"] {
+    width: auto;
+  }
 }

@@ -64,7 +64,7 @@
   .select-kit.dropdown-select-box .dropdown-select-box-header {
     padding: 0.375rem 0.75rem;
     min-height: 0;
-    border-radius: 0.25rem;
+    border-radius: $border-radius;
   }
 }
 
@@ -76,6 +76,7 @@ ol.category-breadcrumb {
     background: transparent;
     border: none;
     font-size: 2rem;
+    line-height: 1;
     padding: 0;
   }
 

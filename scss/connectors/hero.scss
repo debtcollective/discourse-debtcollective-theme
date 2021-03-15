@@ -43,7 +43,7 @@ body {
   .btn {
     font-weight: $font-weight-bold;
     font-size: $font-size-base;
-    border-radius: 0.25rem;
+    border-radius: $border-radius;
   }
 
   .btn-lg {

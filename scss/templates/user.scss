@@ -174,7 +174,7 @@
     width: 10rem;
     height: 7.5rem;
     background-color: $blue;
-    border-radius: 0.25rem;
+    border-radius: $border-radius;
 
     .number,
     .label,

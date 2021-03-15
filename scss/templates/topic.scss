@@ -3,6 +3,15 @@
   margin-top: $spacer;
 }
 
+.container.posts {
+  @include media-breakpoint-down(lg) {
+    display: block;
+    grid-template-areas: unset;
+    grid-template-columns: unset;
+    -ms-grid-columns: unset;
+  }
+}
+
 .time-gap.small-action {
   margin-top: $spacer * 2;
 }
@@ -30,7 +39,6 @@ nav.post-controls button.bookmark.bookmarked .d-icon,
 #topic-footer-buttons .btn {
   padding: 0.625rem 0.75rem;
   height: auto;
-  border-radius: 0.625rem;
 }
 
 #topic-footer-buttons .btn:not(.btn-primary) {
@@ -52,6 +60,11 @@ nav.post-controls button.bookmark.bookmarked .d-icon,
   font-weight: $font-weight-bold;
 }
 
+#topic-footer-buttons {
+  max-width: 100%;
+}
+
+.topic-area > .loading-container,
 .cooked .lightbox-wrapper img {
   width: 100%;
 }

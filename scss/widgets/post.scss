@@ -47,6 +47,11 @@
   }
 }
 
+.cooked img:not(.thumbnail):not(.ytp-thumbnail-image) {
+  max-width: 100% !important;
+  width: auto;
+}
+
 .topic-map {
   margin: 0;
   margin-top: 0.25rem;
@@ -145,7 +150,7 @@
 
     .dc-topic-tag {
       font-size: $font-size-xs;
-      border-radius: 0.25rem;
+      border-radius: $border-radius;
       border: 0.0625rem solid $gray-400;
       padding: 0.25rem 0.65rem;
     }
