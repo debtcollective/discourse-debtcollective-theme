@@ -145,7 +145,7 @@
 
     .dc-topic-tag {
       font-size: $font-size-xs;
-      border-radius: 0.25rem;
+      border-radius: $border-radius;
       border: 0.0625rem solid $gray-400;
       padding: 0.25rem 0.65rem;
     }

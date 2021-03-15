@@ -227,7 +227,7 @@ body.modal-open {
         &:not(.hidden) {
           .btn {
             @extend .btn-lg;
-            border-radius: 0.625rem;
+            border-radius: $border-radius;
             height: auto;
           }
 

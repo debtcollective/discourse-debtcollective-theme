@@ -9,7 +9,7 @@
     $hover-bg-color: lighten($btn-action-color, 10%),
     $hover-icon-color: $white
   );
-  border-radius: 0.25rem;
+  border-radius: $border-radius;
 }
 
 .btn-transparent {
