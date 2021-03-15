@@ -144,10 +144,10 @@
 
 .title-wrapper.title-wrapper {
   display: flex;
-  margin-left: 0.5rem;
+  margin-left: 0;
 
   @include media-breakpoint-up(md) {
-    margin-left: 0;
+    margin-left: 1.5rem;
   }
 }
 
@@ -157,7 +157,7 @@
 }
 
 .d-header .extra-info-wrapper {
-  padding: 0 1rem;
+  padding: 0;
 
   .extra-info {
     &:not(.two-rows) {
@@ -169,6 +169,13 @@
       line-height: 1.25;
       margin: 0;
     }
+  }
+}
+
+.d-header {
+  .extra-info-wrapper {
+    -ms-flex: 4;
+    flex: 4;
   }
 }
 
