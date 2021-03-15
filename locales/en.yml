@@ -15,6 +15,7 @@ en:
     header:
       donate: "Donate"
       log_in: "Member Login"
+      log_in_short: "Login"
     show_more:
       expanded: "Show less topics"
       collapsed: "Show more topics"

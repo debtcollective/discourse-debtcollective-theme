@@ -40,10 +40,13 @@ export default {
           }
 
           const buttons = [];
+          const loginLabel = this.site.isMobileDevice
+            ? "dc.header.log_in_short"
+            : "dc.header.log_in";
 
           buttons.push(
             this.attach("button", {
-              label: themePrefix("dc.header.log_in"),
+              label: themePrefix(loginLabel),
               className: "btn header-btn login-button",
               action: "showLogin"
             })

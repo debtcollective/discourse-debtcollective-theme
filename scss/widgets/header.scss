@@ -17,6 +17,13 @@
     max-width: none;
     width: 100%;
   }
+
+  .title {
+    max-width: unset;
+    overflow: unset;
+    white-space: unset;
+    min-width: unset;
+  }
 }
 
 .d-header .panel {
@@ -131,13 +138,30 @@
   }
 }
 
+.title-wrapper.title-wrapper {
+  display: flex;
+}
+
 // Hide the custom header links when the user scrolls in a topic
 .extra-info-wrapper + .panel .dc-custom-headers-links {
   visibility: hidden;
 }
 
 .d-header .extra-info-wrapper {
+  padding-right: 1rem;
   width: 100%;
+
+  .extra-info {
+    &:not(.two-rows) {
+      min-height: unset;
+    }
+
+    .header-title {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      margin: 0;
+    }
+  }
 }
 
 .d-header .extra-info-wrapper + .panel {
