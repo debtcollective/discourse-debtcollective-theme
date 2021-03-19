@@ -27,6 +27,10 @@
     min-width: 100%;
   }
 
+  &.has-sidebar #create-topic {
+    display: none;
+  }
+
   // Avoid to show the link to catefories that will make the user go to the homepage
   a[href="/categories"] {
     display: none;

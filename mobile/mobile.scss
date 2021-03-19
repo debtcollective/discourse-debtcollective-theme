@@ -73,6 +73,11 @@
   }
 }
 
+ol.category-breadcrumb {
+  // to overcome discourse core code
+  display: block !important;
+}
+
 ol.category-breadcrumb .select-kit.combo-box .select-kit-header {
   font-size: 1.5rem;
 }

@@ -1,4 +1,5 @@
 import Component from "@ember/component";
+import discourseComputed from "discourse-common/utils/decorators";
 import { computed } from "@ember/object";
 
 export default Component.extend({
@@ -10,6 +11,16 @@ export default Component.extend({
   categories: computed(function() {
     return this.site.get("categoriesList");
   }),
+
+  @discourseComputed("currentURL")
+  isLatestPage(currentURL) {
+    return currentURL === "/latest" || currentURL === "/";
+  },
+
+  @discourseComputed("currentURL")
+  isEventsPage(currentURL) {
+    return currentURL === settings.events_url;
+  },
 
   didInsertElement() {
     this._super(...arguments);

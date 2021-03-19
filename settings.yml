@@ -27,6 +27,11 @@ show_sidebar:
   default: false
   description:
     en: "enable possibility to show sidebar navigation for large screens"
+events_url:
+  type: string
+  default: "/calendar"
+  desription:
+    en: "which page the users will visit to known about the upcoming events?"
 logo_href:
   type: string
   default: ""
