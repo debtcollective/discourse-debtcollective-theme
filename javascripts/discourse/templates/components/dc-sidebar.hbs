@@ -15,11 +15,18 @@
 </div>
 <div class="m-0 d-flex flex-column">
   <a
-    class="sidebar-raw-link {{unless activeCategoryId "active"}}"
+    class="sidebar-raw-link {{if isLatestPage "active"}}"
     href="/latest"
     {{action "handleClickLink" null}}
   >
     All discussions
+  </a>
+  <a
+    class="sidebar-raw-link {{if isEventsPage "active"}}"
+    href="/calendar"
+    {{action "handleClickLink" null}}
+  >
+    All events
   </a>
 </div>
 <ul class="list-unstyled scrollable-area">
