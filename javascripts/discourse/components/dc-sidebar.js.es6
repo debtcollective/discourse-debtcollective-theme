@@ -19,7 +19,7 @@ export default Component.extend({
 
   @discourseComputed("currentURL")
   isEventsPage(currentURL) {
-    return currentURL === "/calendar";
+    return currentURL === settings.events_url;
   },
 
   didInsertElement() {
