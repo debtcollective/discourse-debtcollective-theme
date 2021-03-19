@@ -5,7 +5,10 @@
 }}
   {{! We need to add a extra wrapper to being able to target this with CSS }}
   {{! Trying to customise with navigation-container won't take effect }}
-  <div class="dc-navigation-container">
+  <div
+    class="dc-navigation-container mt-lg-4
+      {{if themeSettings.show_sidebar "has-sidebar"}}"
+  >
     {{d-navigation
       filterMode=filterMode
       canCreateTopic=canCreateTopic
