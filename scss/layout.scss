@@ -7,6 +7,10 @@ body {
   #main {
     min-height: 100%;
   }
+
+  #main {
+    padding-top: calc(#{$header-height + $dc-categories-height-base});
+  }
 }
 
 // Container we use is neither fluid or typical container from bootstrap. Instead, is a fluid with a max-width
