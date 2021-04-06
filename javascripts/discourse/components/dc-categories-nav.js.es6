@@ -38,6 +38,10 @@ export default Component.extend({
     return linkItems.filter(Boolean);
   }),
 
+  isEnabled: computed(function() {
+    return this.categories.length || this.customLinks.length
+  }),
+
   didInsertElement() {
     this._super(...arguments);
     this._bindEvents();
@@ -55,12 +59,16 @@ export default Component.extend({
   },
 
   _bindEvents() {
-    $(window).scroll(() => {
-      if ($(window).scrollTop() > 0) {
-        this.$(this.element).addClass("animated");
-      } else {
-        this.$(this.element).removeClass("animated");
-      }
-    });
+    if (this.isEnabled) {
+      $(window).scroll(() => {
+        if ($(window).scrollTop() > 0) {
+          this.$(this.element).addClass("animated");
+        } else {
+          this.$(this.element).removeClass("animated");
+        }
+      });
+
+      $("#main-outlet").addClass("with-categories-nav");
+    }
   }
 });

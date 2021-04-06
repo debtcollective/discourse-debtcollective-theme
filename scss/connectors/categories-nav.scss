@@ -5,6 +5,10 @@ $dc-categories-height-base-sm: $dc-categories-height-base * 0.875;
 
 #main-outlet {
   padding-top: 1rem;
+
+  &.with-categories-nav {
+    padding-top: $dc-categories-height-base;
+  }
 }
 
 .d-header {
