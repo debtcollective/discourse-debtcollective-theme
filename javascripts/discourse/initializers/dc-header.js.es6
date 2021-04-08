@@ -1,6 +1,40 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { h } from "virtual-dom";
 
+const GUEST_LINKS = [
+  {
+    href: "https://debtcollective.org/debt-union",
+    text: "Join the Union",
+    target: "_blank"
+  }
+];
+
+const USER_LINKS = [
+  {
+    href: "https://debtcollective.org/hub",
+    text: "Member hub",
+    target: "_blank"
+  }
+];
+
+const HEADER_LINKS = [
+  {
+    href: "https://biden100.debtcollective.org/",
+    text: "Biden Jubilee 100",
+    target: "_blank"
+  },
+  {
+    href: "/",
+    text: "Community",
+    target: "_self"
+  },
+  {
+    href: "https://teespring.com/stores/debt-collective",
+    text: "Store",
+    target: "_blank"
+  }
+];
+
 export default {
   name: "dc-header",
   initialize() {
@@ -159,20 +193,18 @@ export default {
       });
 
       api.decorateWidget("header-icons:before", helper => {
-        const values = [
-          "Join the Union, https://debtcollective.org/debt-union/, _blank",
-          "Community, /",
-          "Store, https://teespring.com/stores/debt-collective, _blank"
-        ];
-        const links = values.map(entry => {
-          const [text, href, target] = entry.split(",").map(str => str.trim());
+        const { user } = helper.attrs;
+        const extraLinks = user ? USER_LINKS : GUEST_LINKS;
+        const links = [...HEADER_LINKS, ...extraLinks];
+        const linkNodes = links.map(link => {
+          const { href, text, target } = link;
           return h("a.dc-header-link", { href, target }, text);
         });
 
         return helper.h(
           "nav#dc-header-links.dc-custom-headers-links.d-none.d-md-block",
           [
-            links,
+            linkNodes,
             h("dc-dropdown#dc-take-action-link", {
               label: "Take Action!",
               items: JSON.stringify([
