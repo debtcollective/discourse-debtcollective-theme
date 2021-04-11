@@ -38,6 +38,7 @@
   // Allow the search icon to render alongside header-buttons although is placed in another node
   ul[role="navigation"] {
     width: 100%;
+    margin-left: 0;
   }
 
   @include media-breakpoint-up(md) {
@@ -125,7 +126,8 @@
 .dc-header-link {
   @extend %navigation-link;
   font-weight: $font-weight-bold;
-  margin-right: 1rem;
+  margin: 0;
+  padding: 0 0.625rem;
 
   &:last-of-type {
     margin-right: 0;
