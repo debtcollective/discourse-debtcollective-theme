@@ -6,7 +6,7 @@ export default {
   initialize() {
     withPluginApi("0.8", api => {
       // Define arbitrary hompage url
-      setDefaultHomepage("/latest");
+      setDefaultHomepage("latest");
 
       api.modifyClass("route:discovery-categories", {
         findCategories() {
