@@ -22,6 +22,11 @@ export default Component.extend({
     return currentURL === settings.events_url;
   },
 
+  @discourseComputed("currentURL")
+  isCategoriesPage(currentURL) {
+    return currentURL === '/categories'
+  },
+
   didInsertElement() {
     this._super(...arguments);
     this.appEvents.on("page:changed", this, "_setActiveCategoryId");
