@@ -20,10 +20,6 @@ en:
       expanded: "Show less topics"
       collapsed: "Show more topics"
     categories:
-      currentEfforts:
-        title: "Current efforts"
-        description: "We strive to make accessible to you all the efforts that are happening right now around the debt collective organization.
-        Below you can find some of those. Keep exploring the community to find out more"
       categories:
         title: "Categories"
     popup:

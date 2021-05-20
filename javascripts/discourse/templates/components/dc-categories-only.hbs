@@ -1,22 +1,3 @@
-{{#if themeSettings.show_current_efforts}}
-  {{#if currentEfforts.length}}
-    <div class="dc-categories-container">
-      <h2 class="mt-0 mb-2 dc-heading">
-        {{theme-i18n "dc.categories.currentEfforts.title"}}
-      </h2>
-      <p>
-        {{{theme-i18n "dc.categories.currentEfforts.description"}}}
-      </p>
-      <div class="mt-4 dc-row">
-        {{#each currentEfforts as |t|}}
-          <div class="dc-col-sm-4">
-            {{dc-topic-list-item-small topic=t}}
-          </div>
-        {{/each}}
-      </div>
-    </div>
-  {{/if}}
-{{/if}}
 {{#if topicCategories}}
   <div class="mt-4 mb-2 dc-categories-container">
     <div class="flex-row d-flex align-items-center justify-content-between">

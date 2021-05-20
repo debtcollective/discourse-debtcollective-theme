@@ -28,6 +28,13 @@
   >
     All events
   </a>
+  <a
+    class="sidebar-raw-link {{if isCategoriesPage "active"}}"
+    href="/categories"
+    {{action "handleClickLink" null}}
+  >
+    All categories
+  </a>
 </div>
 <ul class="list-unstyled scrollable-area">
   {{#each categories as |category|}}
