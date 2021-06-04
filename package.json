@@ -83,6 +83,10 @@
     }
   },
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "netmask": "^2.0.2",
+    "node-fetch": "^2.6.1",
+    "postcss": "^8.3.0",
+    "trim": "^1.0.1",
+    "y18n": "^5.0.8"
   }
 }
