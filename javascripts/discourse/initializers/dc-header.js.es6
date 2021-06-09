@@ -56,18 +56,6 @@ export default {
         },
         didInsertElement() {
           this._super();
-          loadStencilScript(
-            "https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js"
-          );
-
-          // TODO: in order for CORS to work properly this values should come from ENV
-          addWebComponent("dc-header", {
-            class: "hydrated",
-            community: "https://community.debtcollective.org",
-            homepage: "https://debtcollective.org/",
-            host: "https://community.debtcollective.org",
-            id: "dc-header"
-          });
         },
         afterRender() {
           this._super();
@@ -239,25 +227,3 @@ export default {
     });
   }
 };
-
-function loadStencilScript(src) {
-  var scriptModule = document.createElement("script");
-  scriptModule.setAttribute("type", "module");
-  scriptModule.setAttribute("src", src);
-  document.head.appendChild(scriptModule);
-
-  var scriptNoModule = document.createElement("script");
-  scriptNoModule.setAttribute("nomodule", "");
-  scriptNoModule.setAttribute("src", src);
-  document.head.appendChild(scriptNoModule);
-}
-
-function addWebComponent(tag, attrs) {
-  var component = document.createElement(tag);
-
-  Object.keys(attrs).forEach(key => {
-    component.setAttribute(key, attrs[key]);
-  });
-
-  document.body.appendChild(component);
-}
