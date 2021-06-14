@@ -12,6 +12,8 @@
   background: $beige;
   height: $header-height;
   margin-bottom: 0;
+  // Allow to swap by dc-header-component instead
+  visibility: hidden !important;
 
   .wrap {
     max-width: none;

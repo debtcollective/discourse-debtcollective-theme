@@ -56,9 +56,6 @@ export default {
         },
         didInsertElement() {
           this._super();
-          loadStencilScript(
-            "https://unpkg.com/@debtcollective/dc-dropdown-component@latest/dist/dropdown-component/dropdown-component.esm.js"
-          );
         },
         afterRender() {
           this._super();
@@ -230,15 +227,3 @@ export default {
     });
   }
 };
-
-function loadStencilScript(src) {
-  var scriptModule = document.createElement("script");
-  scriptModule.setAttribute("type", "module");
-  scriptModule.setAttribute("src", src);
-  document.head.appendChild(scriptModule);
-
-  var scriptNoModule = document.createElement("script");
-  scriptNoModule.setAttribute("nomodule", "");
-  scriptNoModule.setAttribute("src", src);
-  document.head.appendChild(scriptNoModule);
-}
