@@ -1,6 +1,11 @@
 extend_content_security_policy:
   type: list
   default: "script_src: https://unpkg.com/@debtcollective/|script_src: https://cdn.jsdelivr.net/gh/GraemeFulton/blm-badge/blmbadge.min.js"
+header_categories_visible:
+  type: bool
+  default: true
+  description:
+    en: "Show the sub header with categories or not"
 header_categories:
   type: list
   default: ""
@@ -12,6 +17,15 @@ header_categories_custom_links:
   default: ""
   description:
     en: "A list of links to render alongside header categories with format: text,url"
+header_imported:
+  default: false
+  description:
+    en: "Show imported header instead built-in"
+header_imported_returnurl:
+  type: string
+  default: "https://community.debtcollective.org"
+  desription:
+    en: "set the url used to redirect user after success login"
 show_hero:
   type: bool
   default: true
