@@ -8,6 +8,13 @@
   padding: 0.75rem 1rem !important;
 }
 
+.d-header-wrap {
+  // variable created with theme settings
+  @if $header-discourse-visible {
+    display: none !important;
+  }
+}
+
 .d-header {
   background: $beige;
   height: $header-height;

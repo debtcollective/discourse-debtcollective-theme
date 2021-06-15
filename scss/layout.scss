@@ -9,6 +9,13 @@ body {
   }
 }
 
+#main {
+  // variable created with theme settings
+  @if $header-discourse-visible {
+    padding-top: 5rem;
+  }
+}
+
 // Container we use is neither fluid or typical container from bootstrap. Instead, is a fluid with a max-width
 %custom-container {
   @include make-container;
