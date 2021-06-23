@@ -11,8 +11,10 @@ body {
 
 #main {
   // variable created with theme settings
+  padding-top: 5rem;
+
   @if $header-discourse-visible {
-    padding-top: 5rem;
+    padding-top: 0rem;
   }
 }
 
