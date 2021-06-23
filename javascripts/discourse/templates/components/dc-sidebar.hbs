@@ -35,6 +35,19 @@
   >
     All categories
   </a>
+  <a
+    id="search-button"
+    class="sidebar-raw-link search-link"
+    href="/search"
+    title="search topics, posts, users, or categories"
+    aria-label="search topics, posts, users, or categories"
+    {{action "handleClickLink" null}}
+  >
+    <span class="material-icons icon">
+      search
+    </span>
+    Search
+  </a>
 </div>
 <ul class="list-unstyled scrollable-area">
   {{#each categories as |category|}}
