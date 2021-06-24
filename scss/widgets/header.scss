@@ -10,9 +10,9 @@
 
 .d-header-wrap {
   // variable created with theme settings
-  display: none !important;
-  @if $header-discourse-visible {
-    display: block !important;
+  display: block !important;
+  @if $header-imported {
+    display: none !important;
   }
 }
 
