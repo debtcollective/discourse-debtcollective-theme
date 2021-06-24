@@ -3,6 +3,12 @@
   position: fixed;
   width: inherit;
 
+  .search-link .icon {
+    font-size: 1.25rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   .scrollable-area {
     height: calc(
       100vh - #{$header-height + $dc-categories-height-base + $spacer * 3}
