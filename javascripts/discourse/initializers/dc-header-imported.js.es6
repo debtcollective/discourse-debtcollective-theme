@@ -13,8 +13,6 @@ export default {
           const header = document.querySelector("#dc-header");
 
           header.addEventListener("linkClicked", ({ detail }) => {
-            console.log("linkClicked", detail);
-
             if (detail.namespace === "profile") {
               if (
                 detail.to.charAt(0) === "/" ||
