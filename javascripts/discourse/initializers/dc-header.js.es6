@@ -11,7 +11,7 @@ const GUEST_LINKS = [
 
 const USER_LINKS = [
   {
-    href: "https://debtcollective.org/hub",
+    href: "https://membership.debtcollective.org/",
     text: "Member hub",
     target: "_blank"
   }
